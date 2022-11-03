@@ -1,0 +1,86 @@
+/****************************************************************/
+/*          S A S   S A M P L E   L I B R A R Y                 */
+/*                                                              */
+/*    NAME: MIANAEX9                                            */
+/*   TITLE: Documentation Example 9 for PROC MIANALYZE          */
+/* PRODUCT: STAT                                                */
+/*  SYSTEM: ALL                                                 */
+/*    KEYS: multiple imputation                                 */
+/*   PROCS: MI, MIANALYZE, LOGISTIC                             */
+/*    DATA:                                                     */
+/*                                                              */
+/*     REF: PROC MIANALYZE, EXAMPLE 9                           */
+/*    MISC:                                                     */
+/****************************************************************/
+
+*-----------------------------Fish3 Data-----------------------------*
+| The data set contains three species of the fish                    |
+| (Parkki, Perch, and Roach) and two measurements: Length and Width. |
+| Some values have been set to missing, and the resulting data set   |
+| has an arbitrary missing pattern in the variables                  |
+| Length, Width, and Species.                                        |
+*--------------------------------------------------------------------*;
+data Fish3;
+   title 'Fish Measurement Data';
+   input Species $ Length Width @@;
+   datalines;
+Roach   16.2  2.2680    Roach   20.3  2.8217    Roach   21.2   .
+Roach     .   3.1746    Roach   22.2  3.5742    Roach   22.8  3.3516
+Roach   23.1  3.3957    .       23.7   .        Roach   24.7  3.7544
+Roach   24.3  3.5478    Roach   25.3   .        Roach   25.0  3.3250
+Roach   25.0  3.8000    Roach   27.2  3.8352    Roach   26.7  3.6312
+Roach   26.8  4.1272    Roach   27.9  3.9060    Roach   29.2  4.4968
+Roach   30.6  4.7736    Roach   35.0  5.3550    Parkki  16.5  2.3265
+Parkki  17.4   .        Parkki  19.8  2.6730    Parkki  21.3  2.9181
+Parkki  22.4  3.2928    Parkki  23.2  3.2944    Parkki  23.2  3.4104
+Parkki  24.1  3.1571    .         .   3.6636    Parkki  28.0  4.1440
+Parkki  29.0  4.2340    Perch    8.8  1.4080    .       14.7  1.9992
+Perch   16.0  2.4320    Perch   17.2  2.6316    Perch   18.5  2.9415
+Perch   19.2  3.3216    .       19.4  3.1234    Perch   20.2   .
+Perch   20.8  3.0368    Perch   21.0  2.7720    Perch   22.5  3.5550
+Perch   22.5  3.3075    Perch   22.5  3.6675    Perch     .   3.5340
+Perch   23.5  3.4075    Perch   23.5  3.5250    Perch   23.5  3.5250
+.       23.5  3.5250    Perch   23.5  3.9950    Perch   24.0  3.6240
+Perch   24.0  3.6240    Perch   24.2  3.6300    Perch   24.5  3.6260
+Perch   25.0  3.7250    Perch     .   3.7230    Perch   25.5  3.8250
+Perch     .   4.1658    Perch   26.5  3.6835    .       27.0  4.2390
+Perch     .   4.1440    Perch   28.7  5.1373    .       28.9  4.3350
+Perch   28.9  4.3350    Perch   28.9  4.5662    Perch   29.4  4.2042
+Perch   30.1  4.6354    Perch   31.6  4.7716    Perch   34.0  6.0180
+Perch   36.5  6.3875    Perch   37.3  7.7957    Perch   39.0   .
+Perch   38.3  6.7408    Perch     .   6.2646    .       39.3   .
+Perch   41.4  7.4934    Perch   41.4  6.0030    Perch   41.3  7.3514
+Perch   42.3  7.1064    Perch   42.5  7.2250    Perch   42.4  7.4624
+Perch   42.5  6.6300    Perch   44.6  6.8684    Perch   45.2  7.2772
+Perch   45.5  7.4165    Perch   46.0  8.1420    .       46.6  7.5958
+;
+
+proc mi data=Fish3 seed=30535 out=outfish3;
+   class Species;
+   fcs logistic ( Species= Length Width / link=glogit);
+   var Length Width Species;
+run;
+
+ods select none;
+proc logistic data=outfish3;
+   class Species;
+   model Species= Length Width / link=glogit covb;
+   by _Imputation_;
+   ods output ParameterEstimates=lgsparms
+              CovB=lgscovb;
+run;
+ods select all;
+
+proc print data=lgsparms (obs=12);
+   title 'LOGISTIC Model Coefficients (First Two Imputations)';
+run;
+
+proc print data=lgscovb (obs=12);
+   title 'LOGISTIC Model Covariance Matrices (First Two Imputations)';
+run;
+
+proc mianalyze parms(link=glogit)=lgsparms
+               covb(effectvar=stacking)=lgscovb
+               mult;
+   modeleffects Intercept Length Width;
+run;

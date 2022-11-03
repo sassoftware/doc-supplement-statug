@@ -1,0 +1,1 @@
+The sample data sets and files are provided "as-is" by SAS Institute Inc. We cannot accept contributions to this project at this time.
