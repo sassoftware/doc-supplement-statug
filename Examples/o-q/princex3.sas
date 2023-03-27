@@ -1,17 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: PRINCEX3                                            */
+/*    NAME: princex3                                            */
 /*   TITLE: Documentation Example 3 for PROC PRINCOMP           */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: multivariate analysis                               */
 /*   PROCS: PRINCOMP                                            */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC PRINCOMP, Example 3                            */
-/*    MISC:                                                     */
-/*                                                              */
 /****************************************************************/
 
 options validvarname=any;
@@ -71,3 +66,4 @@ run;
 proc princomp data=Jobratings(drop='Overall Rating'n)
               n=5 plots(ncomp=3)=all;
 run;
+

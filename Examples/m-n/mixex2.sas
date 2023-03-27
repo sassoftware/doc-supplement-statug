@@ -10,6 +10,7 @@
 /*   PROCS: MIXED                                               */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /*                                                              */
@@ -21,6 +22,7 @@
 | from Pothoff and Roy (1964) and are analyzed by   |
 | Jennrich and Schluchter (1986).                   |
 *---------------------------------------------------*;
+
 data pr;
    input Person Gender $ y1 y2 y3 y4;
    y=y1; Age=8;  output;
@@ -57,28 +59,33 @@ data pr;
 26   M   23.0    24.5    26.0    30.0
 27   M   22.0    21.5    23.5    25.0
 ;
+
 proc mixed data=pr method=ml covtest;
    class Person Gender;
    model y = Gender Age Gender*Age / s;
    repeated / type=un subject=Person r;
 run;
+
 /* first-order autoregressive */
 proc mixed data=pr method=ml;
    class Person Gender;
    model y = Gender Age Gender*Age / s;
    repeated / type=ar(1) sub=Person r;
 run;
+
 /* random coefficients model */
 proc mixed data=pr method=ml;
    class Person Gender;
    model y = Gender Age Gender*Age / s;
    random intercept Age / type=un sub=Person g;
 run;
+
 proc mixed data=pr method=ml covtest;
    class Person Gender;
    model y = Gender Age Gender*Age / s;
    repeated / type=cs subject=Person r;
 run;
+
 
 /* compound symmetry specified on RANDOM statement */
 proc mixed data=pr method=ml;
@@ -86,8 +93,10 @@ proc mixed data=pr method=ml;
    model y = Gender Age Gender*Age / s;
    random Person;
 run;
+
 proc mixed data=pr method=ml;
    class Person Gender;
    model y = Gender Age Gender*Age / s;
    repeated / type=cs subject=Person group=Gender;
 run;
+

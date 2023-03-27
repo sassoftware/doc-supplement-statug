@@ -1,19 +1,15 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVMEX1                                              */
-/*   TITLE: Documentation Example 1 for PROC SURVEYMEANS        */
+/*    NAME: svmex1                                              */
+/*   TITLE: Example 1 in PROC SURVEYMEANS Documentation         */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: survey sampling, categorical data analysis          */
-/*    KEYS: stratification, clustering                          */
+/*    KEYS: survey sampling, categorical data analysis,         */
+/*          stratification, clustering                          */
 /*    KEYS: unequal weighting, descriptive statistics           */
 /*   PROCS: SURVEYMEANS                                         */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYMEANS, Example 1                         */
-/*                                                              */
 /*    MISC: Stratified Cluster Sample Design                    */
 /*                                                              */
 /****************************************************************/
@@ -35,7 +31,6 @@ data IceCreamStudy;
 7  78  6     7 412  6    7 156  2     9 301  8
 ;
 
-
 data StudyGroups;
    input Grade _total_;
    datalines;
@@ -43,7 +38,6 @@ data StudyGroups;
 8 252
 9 403
 ;
-
 
 data IceCreamStudy;
    set IceCreamStudy;
@@ -53,7 +47,6 @@ data IceCreamStudy;
    Weight=1/Prob;
 run;
 
-
 title1 'Analysis of Ice Cream Spending';
 proc surveymeans data=IceCreamStudy total=StudyGroups;
    strata Grade / list;
@@ -61,3 +54,4 @@ proc surveymeans data=IceCreamStudy total=StudyGroups;
    var Spending Group;
    weight Weight;
 run;
+

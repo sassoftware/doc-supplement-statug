@@ -11,12 +11,11 @@
 /*    KEYS: common relative risks, Breslow-Day test,            */
 /*    KEYS: ODS Graphics, relative risk plot                    */
 /*   PROCS: FREQ                                                */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC FREQ, Example 7                                */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Cochran-Mantel-Haenszel Statistics --------------------------*/
+
 data Migraine;
    input Gender $ Treatment $ Response $ Count @@;
    datalines;
@@ -25,6 +24,7 @@ female Placebo Better  5   female Placebo Same 20
 male   Active  Better 12   male   Active  Same 16
 male   Placebo Better  7   male   Placebo Same 19
 ;
+
 ods graphics on;
 proc freq data=Migraine;
    tables Gender*Treatment*Response /
@@ -33,3 +33,4 @@ proc freq data=Migraine;
    title 'Clinical Trial for Treatment of Migraine Headaches';
 run;
 ods graphics off;
+

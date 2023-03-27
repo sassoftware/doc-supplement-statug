@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -73,10 +72,10 @@ GMC      Pontiac    Phoenix         4155554415
 GMC      Pontiac    Sunbird         3134533234
 ;
 
-
 ods graphics on;
 
 proc prinqual data=cars plots=all maxiter=100;
    transform monotone(mpg -- cargo);
    id model;
 run;
+

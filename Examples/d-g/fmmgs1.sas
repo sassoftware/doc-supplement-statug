@@ -56,3 +56,4 @@ proc fmm data=yeast seed=12345;
    bayes;
 run;
 ods graphics off;
+

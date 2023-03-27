@@ -44,6 +44,7 @@ proc mixed data=hh;
 run;
 
 ods show;
+
 proc template;
    define statgraph surface;
       begingraph;
@@ -59,3 +60,4 @@ run;
 
 *
 ods html close;
+

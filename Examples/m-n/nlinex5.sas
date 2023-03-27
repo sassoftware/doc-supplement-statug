@@ -16,9 +16,9 @@
 /****************************************************************/
 
 data theop;
-  input time dose conc @@;
-  if (dose = 4) then group=1; else group=2;
-  datalines;
+   input time dose conc @@;
+   if (dose = 4) then group=1; else group=2;
+   datalines;
  0.00   4  0.1633  0.25   4   2.045
  0.27   4     4.4  0.30   4    7.37
  0.35   4    1.89  0.37   4    2.89
@@ -105,11 +105,11 @@ run;
 
 %macro SSReductionTest;
    data aov; merge aovred aovfull;
-     if (Source='Error') then do;
-        Fstat  = ((SSred-SS)/(dfred-df))/ms;
-        pvalue = 1-Probf(Fstat,dfred-df,df);
-        output;
-     end;
+      if (Source='Error') then do;
+         Fstat  = ((SSred-SS)/(dfred-df))/ms;
+         pvalue = 1-Probf(Fstat,dfred-df,df);
+         output;
+      end;
    run;
    proc print data=aov label noobs;
       label Fstat  = 'F Value'
@@ -161,3 +161,4 @@ proc sgplot data=predvals;
    yaxis label='Concentration';
    xaxis label='Time';
 run;
+

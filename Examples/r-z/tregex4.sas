@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -34,7 +33,6 @@ proc format;
               2 = 'No ';
 run;
 
-
 data Tires;
    input Brand Price Life Hazard Rank;
    format Brand BrandF9. Price PriceF9. Life LifeF6. Hazard HazardF3.;
@@ -59,7 +57,6 @@ data Tires;
 3 3 3 2 11
 ;
 
-
 proc transreg maxiter=50 utilities short;
    ods select TestsNote ConvergenceStatus FitStatistics Utilities;
    model monotone(Rank / reflect) =
@@ -71,3 +68,4 @@ proc print label;
    var Rank TRank PRank Brand Price Life Hazard;
    label PRank = 'Predicted Ranks';
 run;
+

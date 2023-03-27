@@ -84,3 +84,4 @@ title 'Mean Score of Variable Factor1 by Each Type of Schools';
 proc sgplot data=New;
    hbar type / stat = mean response=Factor1;
 run;
+

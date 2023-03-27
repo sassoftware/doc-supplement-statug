@@ -10,6 +10,7 @@
 /*   PROCS: MIXED, PRINT                                        */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF:                                                     */
 /*    MISC: Influence diagnostics                               */
 /*                                                              */
@@ -57,3 +58,4 @@ run;
 proc print data=inf label;
    var iter CookDCP CovRatioCP;
 run;
+

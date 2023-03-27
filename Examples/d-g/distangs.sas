@@ -62,3 +62,4 @@ ods graphics on;
 proc cluster data=Dist method=Ward plots=dendrogram(height=rsq);
    id Country;
 run;
+

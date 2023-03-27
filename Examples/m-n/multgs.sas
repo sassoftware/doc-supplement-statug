@@ -52,3 +52,4 @@ proc multtest bootstrap nsample=20000 seed=41287 notables
    contrast 'Trend' 0 1 2;
 run;
 ods graphics off;
+

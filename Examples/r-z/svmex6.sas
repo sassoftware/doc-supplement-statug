@@ -1,17 +1,14 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVMEX6                                              */
-/*   TITLE: Documentation Example 6 for PROC SURVEYMEANS        */
+/*    NAME: svmex6                                              */
+/*   TITLE: Example 6 in PROC SURVEYMEANS Documentation         */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: domain means, survey sampling, mean comparison      */
-/*    KEYS: domain analysis, domain mean comparison             */
+/*    KEYS: domain means, survey sampling, mean comparison,     */
+/*          domain analysis, domain mean comparison             */
 /*   PROCS: SURVEYMEANS                                         */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYMEANS, Example 6                         */
-/*                                                              */
 /*    MISC: Domain Mean Comparison                              */
 /*                                                              */
 /****************************************************************/
@@ -57,3 +54,4 @@ proc surveymeans data=IceCreamDataDomain total=StudentTotals;
    domain Gender*Grade('8') / diffmeans;
    weight Weight;
 run;
+

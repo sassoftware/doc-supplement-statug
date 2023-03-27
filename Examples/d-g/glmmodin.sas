@@ -13,6 +13,7 @@
 /*    MISC:                                                     */
 /*                                                              */
 /****************************************************************/
+
 title 'Nitrogen Content of Red Clover Plants';
 data Clover;
    input Strain $ Nitrogen @@;
@@ -24,14 +25,18 @@ data Clover;
 3DOK13 14.3 3DOK13 14.4 3DOK13 11.8 3DOK13 11.6 3DOK13 14.2
 COMPOS 17.3 COMPOS 19.4 COMPOS 19.1 COMPOS 16.9 COMPOS 20.8
 ;
+
 proc glmmod data=Clover;
    class Strain;
    model Nitrogen = Strain;
 run;
+
 proc glmmod data=Clover outdesign=CloverDesign noprint;
    class Strain;
    model Nitrogen = Strain;
 run;
+
 proc reg data=CloverDesign;
    model Nitrogen = Col2-Col7;
 run;
+

@@ -5,13 +5,11 @@
 /*   TITLE: Documentation Example 1 for PROC SURVEYIMPUTE       */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: Approximate Bayesian bootstrap, hot-deck            */
-/*    KEYS: imputation                                          */
+/*    KEYS: hot-deck imputation, approximate Bayesian bootstrap */
+/*    KEYS: imputation cells, logistic regression analysis      */
 /*   PROCS: SURVEYIMPUTE, SURVEYLOGISTIC, MIANALYZE             */
 /*    DATA: Simulated data                                      */
-/*                                                              */
-/*     REF: SURVEYIMPUTE, Example 1                             */
-/*    MISC:                                                     */
+/*     REF: PROC SURVEYIMPUTE, Example 1                        */
 /****************************************************************/
 
 data DrugAbuse;
@@ -797,3 +795,4 @@ proc mianalyze parms(classvar=classval)=Estimates
    modeleffects Intercept Treatment Insurance Age Sex Race;
    ods output parameterestimates=ABBLogisticAnalysis;
 run;
+

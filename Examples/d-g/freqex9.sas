@@ -10,12 +10,11 @@
 /*    KEYS: Cochran-Mantel-Haenszel statistics,                 */
 /*    KEYS: rank scores, ANOVA statistic                        */
 /*   PROCS: FREQ                                                */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC FREQ, Example 9                                */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Friedman's Chi-Square Test ----------------------------------*/
+
 data Hypnosis;
    length Emotion $ 10;
    input Subject Emotion $ SkinResponse @@;
@@ -29,11 +28,14 @@ data Hypnosis;
 7 fear 21.0  7 joy 13.6  7 sadness 13.7  7 calmness 14.8
 8 fear 20.3  8 joy 23.6  8 sadness 16.3  8 calmness 14.8
 ;
+
 proc freq data=Hypnosis;
    tables Subject*Emotion*SkinResponse /
           cmh2 scores=rank noprint;
 run;
+
 proc freq data=Hypnosis;
    tables Emotion*SkinResponse /
           cmh2 scores=rank noprint;
 run;
+

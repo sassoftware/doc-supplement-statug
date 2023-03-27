@@ -26,3 +26,4 @@ proc bchoice data=Sashelp.Margarin seed=123 nmc=40000 thin=2
    random  Brand LogPrice / subject=HouseID remean=(LogInc FamSize)
            type=un monitor=(1);
 run;
+

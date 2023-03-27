@@ -43,3 +43,4 @@ proc lifereg data=Fan;
    npintervals=simul;
    inset;
 run;
+

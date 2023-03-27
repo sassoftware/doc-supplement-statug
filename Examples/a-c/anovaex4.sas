@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Latin Square Split Plot Design ------------------------------*/
+
 
 title1 'Sugar Beet Varieties';
 title3 'Latin Square Split-Plot Design';
@@ -41,7 +43,9 @@ data Beets;
 5 18.3 4 16.6 3 16.4 2 17.6 6 17.1 1 16.5
 ;
 
+
 /* Harvest: Split Plot on Original Latin Square for Whole Plots */
+
 
 proc anova data=Beets;
    class Column Rep Variety Harvest;
@@ -51,3 +55,4 @@ proc anova data=Beets;
    test h=Rep Column Variety e=Rep*Column*Variety;
    test h=Harvest            e=Harvest*Rep;
 run;
+

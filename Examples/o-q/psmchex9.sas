@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: PSMCHEX09                                           */
+/*    NAME: PSMCHEX9                                            */
 /*   TITLE: Documentation Example 9 for PROC PSMATCH            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -177,3 +177,4 @@ data Test1;
 
  proc print data=Test1;
  run;
+

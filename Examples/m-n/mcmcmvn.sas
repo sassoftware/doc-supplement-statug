@@ -46,3 +46,4 @@ proc mcmc data=inputdata seed=17 nmc=3000 diag=none;
    prior Sigma ~ iwish(2, S);
    model data ~ mvn(mu, Sigma);
 run;
+

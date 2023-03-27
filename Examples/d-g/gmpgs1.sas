@@ -53,3 +53,4 @@ proc glmpower data=Exemplary;
 run;
 
 ods graphics off;
+

@@ -14,6 +14,7 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 data house;
    input price sqft age feats ne cor tax @@;
    label price = "Selling price"
@@ -95,12 +96,15 @@ data house;
  766 1200  7 4 0 1  634
  739  970  4 4 0 1  541
 ;
+
 ods graphics on;
 proc robustreg data=house method=MM plots=all;
    model price = sqft age feats ne cor tax sum /
-                 leverage(opc mcdinfo) diagnostics;
+         leverage(opc mcdinfo) diagnostics;
 run;
+
 proc robustreg data=house method=MM plots=all;
    model price = sqft age feats ne tax/leverage(mcdinfo) diagnostics;
 run;
 ods graphics off;
+

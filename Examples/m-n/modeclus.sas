@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -24,7 +23,6 @@ data example;
 59 72  69 72  80 80  31 53  51 69  72 81
 ;
 
-
 proc sgplot;
    scatter y=y x=x;
 run;
@@ -36,3 +34,4 @@ proc sgplot data=out noautolegend;
    scatter y=y x=x / group=cluster markerchar=cluster;
    by _r_;
 run;
+

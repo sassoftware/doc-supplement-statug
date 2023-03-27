@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -63,3 +62,4 @@ proc transreg ss2 data=x;
                        smooth(x / sm=50);
    output p;
 run;
+

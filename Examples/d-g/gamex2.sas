@@ -48,7 +48,6 @@ proc gam data=equip;
 run;
 
 proc sort data=est;by month;run;
-
 proc sgplot data=est;
    title "Predicted Seasonal Trend";
    yaxis label="Number of Removals";
@@ -66,6 +65,7 @@ title2 'Spline model';
 proc gam data=equip;
    model removals=spline(month) / dist=Poisson method=gcv;
 run;
+
 ods graphics on;
 
 proc gam data=equip plots=components(clm);
@@ -73,3 +73,4 @@ proc gam data=equip plots=components(clm);
 run;
 
 ods graphics off;
+

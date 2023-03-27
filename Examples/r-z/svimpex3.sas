@@ -5,12 +5,14 @@
 /*   TITLE: Documentation Example 3 for PROC SURVEYIMPUTE            */
 /* PRODUCT: STAT                                                     */
 /*  SYSTEM: ALL                                                      */
-/*    KEYS: FEFI, NHANES, BRR, REPWEIGHTS                            */
+/*    KEYS: fully efficient fractional imputation (FEFI), NHANES     */
+/*    KEYS: balanced repeated replication (BRR)                      */
+/*    KEYS: imputation-adjusted replicate weights, domain analysis   */
 /*   PROCS: SURVEYIMPUTE, SURVEYFREQ                                 */
 /*    DATA: NHANES III                                               */
 /*    URL:  http://www.cdc.gov/nchs/nhanes/about_nhanes.htm          */
 /*  UPDATE: March 30, 2018                                           */
-/*     REF:                                                          */
+/*     REF: PROC SURVEYIMPUTE, Example 3                             */
 /*    MISC: You must download the core and imp1 data sets from       */
 /*          NHANES III before running the sample program. See the    */
 /*          description in the example about how to create the smoke */
@@ -62,3 +64,4 @@ proc surveyfreq data=SmokeImputed varmethod=brr(fay=0.3) varheader=label;
 run;
 
 */
+

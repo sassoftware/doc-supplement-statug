@@ -42,3 +42,4 @@ proc bglimm data=school seed=123 dic;
    estimate 'School 2 vs 3' School 0 1 -1  / exp bycat;
    estimate 'Afternoon vs Regular' Program 1 -1  / exp bycat;
 run;
+

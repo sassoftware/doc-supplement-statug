@@ -1,16 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SEQDEX7                                             */
+/*    NAME: seqdex7                                             */
 /*   TITLE: Documentation Example 7 for PROC SEQDESIGN          */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: group sequential design                             */
 /*   PROCS: SEQDESIGN                                           */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC SEQDESIGN, EXAMPLE 7                           */
-/*    MISC:                                                     */
 /****************************************************************/
 
 ods graphics on;
@@ -38,3 +34,4 @@ proc seqdesign altref=0.693147
                             alpha=0.05  beta=0.20
                             ;
 run;
+

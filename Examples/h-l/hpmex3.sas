@@ -10,9 +10,11 @@
 /*   PROCS: HPMIXED, GLIMMIX                                    */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF: PROC HPMIXED, EXAMPLE 3.                            */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data Sim;
    keep Species Farm Animal Yield;
    array AnimalEffect{3000};
@@ -32,6 +34,7 @@ data Sim;
       output;
    end;
 run;
+
 proc hpmixed data=Sim;
    class Species Farm Animal;
    model Yield = Farm|Species;
@@ -39,6 +42,7 @@ proc hpmixed data=Sim;
    test Species Species*Farm;
    ods output CovParms=HPMEstimate;
 run;
+
 ods graphics on;
 proc glimmix data=Sim;
    class Species Farm Animal;
@@ -47,3 +51,4 @@ proc glimmix data=Sim;
    parms /pdata=HPMEstimate hold=1,2 noiter;
    lsmeans Farm / pdiff=all plot=diffplot;
 run;
+

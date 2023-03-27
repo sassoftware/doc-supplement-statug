@@ -94,3 +94,4 @@ run;
 proc print data=OutEx4a(obs=10);
    var StudentID Music Gender Absence _PS_ _MATCHWGT_ _MatchID;
 run;
+

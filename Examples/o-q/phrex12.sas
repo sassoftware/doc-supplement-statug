@@ -397,3 +397,4 @@ proc phreg data=Liver;
    logAlbumin=log(Albumin);
    assess var=(logBilirubin) ph / crpanel resample seed=19;
 run;
+

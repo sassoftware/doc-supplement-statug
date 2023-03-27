@@ -35,3 +35,4 @@ data sales;
 proc calis data=sales meanstr nostand;
    mstruct var=q1-q4;
 run;
+

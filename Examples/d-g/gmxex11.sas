@@ -17,6 +17,7 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data foot_mv;
    input yr b1 b2 b3 k1 k2 k3;
    sire = _n_;
@@ -56,6 +57,7 @@ data foot_mv;
  -1  0  0 -1  63 20  3
  -1  0  0 -1  41  8  1
 ;
+
 data footshape; set foot_mv;
    array k{3};
    do Shape = 1 to 3;
@@ -64,6 +66,7 @@ data footshape; set foot_mv;
    end;
    drop k:;
 run;
+
 proc glimmix data=footshape method=quad;
    class sire;
    model Shape = yr b1 b2 b3 / s link=cumprobit dist=multinomial;
@@ -71,6 +74,7 @@ proc glimmix data=footshape method=quad;
    ods output Solutionr=solr;
    freq count;
 run;
+
 ods select FitStatistics CovParms Covtests;
 proc glimmix data=footshape method=quad;
    class sire;
@@ -79,6 +83,7 @@ proc glimmix data=footshape method=quad;
    covtest GLM;
    freq count;
 run;
+
 proc sort data=solr;
    by Estimate;
 run;
@@ -95,3 +100,4 @@ proc sgplot data=solr;
    xaxis grid label='Sire Rank' values=(1 5 10 15 20 25 30);
    yaxis grid label='Predicted Sire Effect';
 run;
+

@@ -8,12 +8,11 @@
 /*    KEYS: categorical data analysis,                          */
 /*    KEYS: frequency/crosstabulation tables                    */
 /*   PROCS: FREQ                                                */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC FREQ, Example 1                                */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Output Data Set of Frequencies ------------------------------*/
+
 data Color;
    input Region Eyes $ Hair $ Count @@;
    label Eyes  ='Eye Color'
@@ -30,11 +29,14 @@ data Color;
 2 green dark   23  2 brown fair   56  2 brown red    42
 2 brown medium 53  2 brown dark   54  2 brown black  13
 ;
+
 proc freq data=Color;
    tables Eyes Hair Eyes*Hair / out=FreqCount outexpect sparse;
    weight Count;
    title 'Eye and Hair Color of European Children';
 run;
+
 proc print data=FreqCount noobs;
    title2 'Output Data Set from PROC FREQ';
 run;
+

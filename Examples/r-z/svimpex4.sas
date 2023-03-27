@@ -5,12 +5,15 @@
 /*   TITLE: Documentation Example 4 for PROC SURVEYIMPUTE            */
 /* PRODUCT: STAT                                                     */
 /*  SYSTEM: ALL                                                      */
-/*    KEYS: FHDI, NHANES, BRR, REPWEIGHTS                            */
+/*    KEYS: fractional hot-deck imputation (FHDI), NHANES            */
+/*    KEYS: balanced repeated replication (BRR)                      */
+/*    KEYS: imputation-adjusted replicate weights                    */
+/*    KEYS: domain analysis, regression analysis                     */
 /*   PROCS: SURVEYIMPUTE, SURVEYMEANS, SURVEYREG                     */
 /*    DATA: NHANES III                                               */
 /*    URL:  http://www.cdc.gov/nchs/nhanes/about_nhanes.htm          */
 /*  UPDATE: March 30, 2018                                           */
-/*     REF:                                                          */
+/*     REF: PROC SURVEYIMPUTE, Example 4                             */
 /*    MISC: You must download the core and imp1 data sets from       */
 /*          NHANES III before running the sample program. See the    */
 /*          description in the example about how to create the       */
@@ -135,3 +138,4 @@ proc surveyreg data=resid plots(nbins=60)=fit(shape=hexagonal);
 run;
 
 */
+

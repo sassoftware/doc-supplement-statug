@@ -13,9 +13,11 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Unbalanced ANOVA for Two-Way Design with Interaction --------*/
 
 /* Note: Kutner's 24 for drug 2, disease 1 changed to 34. ------*/
+
 title 'Unbalanced Two-Way Analysis of Variance';
 data a;
    input drug disease @;
@@ -37,16 +39,20 @@ data a;
 4 2 27 12 12 -5 16 15
 4 3 22  7 25  5 12  .
 ;
+
 proc glm;
    class drug disease;
    model y=drug disease drug*disease / ss1 ss2 ss3 ss4;
 run;
+
 proc glm;
    class drug disease;
    model y=drug disease drug*disease / ss1 ss2 ss3 ss4;
    lsmeans drug / pdiff=all adjust=tukey;
 run;
+
 /* Reproduce the Analysis with ODS Graphics Enabled ------------*/
+
 ods graphics on;
 proc glm plot=meanplot(cl);
    class drug disease;
@@ -54,3 +60,4 @@ proc glm plot=meanplot(cl);
    lsmeans drug / pdiff=all adjust=tukey;
 run;
 ods graphics off;
+

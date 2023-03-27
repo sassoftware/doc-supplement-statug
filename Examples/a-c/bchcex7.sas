@@ -120,3 +120,4 @@ proc bchoice data=Chocs outpost=Bsamp nmc=10000 thin=2 seed=124;
 run;
 
 %SUMINT(data=Predout, var=Prob_1_:)
+

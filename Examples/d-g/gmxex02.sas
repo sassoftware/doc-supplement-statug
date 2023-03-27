@@ -18,8 +18,8 @@
 /****************************************************************/
 
 data salamander;
-  input day fpop$ fnum mpop$ mnum mating @@;
-  datalines;
+   input day fpop$ fnum mpop$ mnum mating @@;
+   datalines;
 4  rb  1 rb  1 1  4  rb  2 rb  5 1
 4  rb  3 rb  2 1  4  rb  4 rb  4 1
 4  rb  5 rb  3 1  4  rb  6 ws  9 1
@@ -98,5 +98,5 @@ proc glimmix data=salamander;
    lsmeans fpop*mpop / plots=diffplot;
    lsmeans fpop*mpop / slicediff=(mpop fpop);
 run;
-
 ods graphics off;
+

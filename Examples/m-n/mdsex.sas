@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -474,7 +473,6 @@ data body;
 10 12 11 13  9 14  8  7  4  6  2  3  5  1  0
 ;
 
-
 ods graphics on;
 
 proc mds data=body condition=row level=ordinal coef=diagonal
@@ -482,3 +480,4 @@ proc mds data=body condition=row level=ordinal coef=diagonal
    subject subject;
    title5 'Nonmetric Weighted MDS';
 run;
+

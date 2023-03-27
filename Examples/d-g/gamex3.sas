@@ -284,3 +284,4 @@ proc sgrender data=PredGAMb template=scatter2;
 run;
 
 ods graphics off;
+

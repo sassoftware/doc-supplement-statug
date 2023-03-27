@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Regression with Mileage Data --------------------------------*/
+
 title 'Gasoline Mileage Experiment';
 data mileage;
    input mph mpg @@;
@@ -25,8 +27,10 @@ data mileage;
 55   .
 60 24.8
 ;
+
 ods graphics on;
 proc glm;
    model mpg=mph mph*mph / p clm;
 run;
 ods graphics off;
+

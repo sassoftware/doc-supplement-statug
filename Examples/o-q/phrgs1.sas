@@ -47,3 +47,4 @@ proc phreg data=Rats;
    model Days*Status(0)=Group X;
    X=Group*(log(Days) - 5.4);
 run;
+

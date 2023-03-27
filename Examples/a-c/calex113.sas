@@ -67,3 +67,4 @@ proc calis method=fiml data=missing;
       verbal = 1.,
       math   = 1.;
 run;
+

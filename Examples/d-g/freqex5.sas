@@ -9,18 +9,18 @@
 /*    KEYS: chi-square tests, Fisher's exact test,              */
 /*    KEYS: odds ratio, relative risks                          */
 /*   PROCS: FREQ                                                */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC FREQ, Example 5                                */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Analysis of a 2x2 Contingency Table -------------------------*/
+
 proc format;
    value ExpFmt 1='High Cholesterol Diet'
                 0='Low Cholesterol Diet';
    value RspFmt 1='Yes'
                 0='No';
 run;
+
 data FatComp;
    input Exposure Response Count;
    label Response='Heart Disease';
@@ -30,9 +30,11 @@ data FatComp;
 1 0  4
 1 1 11
 ;
+
 proc sort data=FatComp;
    by descending Exposure descending Response;
 run;
+
 proc freq data=FatComp order=data;
    format Exposure ExpFmt. Response RspFmt.;
    tables Exposure*Response / chisq relrisk;
@@ -40,3 +42,4 @@ proc freq data=FatComp order=data;
    weight Count;
    title 'Case-Control Study of High Fat/Cholesterol Diet';
 run;
+

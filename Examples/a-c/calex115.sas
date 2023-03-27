@@ -80,3 +80,4 @@ proc calis data=scores;
       x1-x3  = evar1  evar1  phi,
       y1-y3  = theta  evar2  evar2;
 run;
+

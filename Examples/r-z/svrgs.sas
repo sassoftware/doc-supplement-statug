@@ -1,19 +1,15 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVRGS                                               */
+/*    NAME: svrgs                                               */
 /*   TITLE: Getting Started Examples for PROC SURVEYREG         */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: regression, survey sampling                         */
-/*    KEYS: stratification, clustering                          */
-/*    KEYS: unequal weighting, linear model                     */
+/*    KEYS: regression, survey sampling,                        */
+/*          stratification, clustering,                         */
+/*          unequal weighting, linear model                     */
 /*   PROCS: SURVEYREG                                           */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYREG, Getting Started                     */
-/*                                                              */
-/*    MISC:                                                     */
 /*                                                              */
 /****************************************************************/
 
@@ -80,3 +76,4 @@ run;
 
 proc print data=MyParmEst;
 run;
+

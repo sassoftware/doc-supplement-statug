@@ -66,3 +66,4 @@ proc lifetest data=Exposed notable;
    strata Sex / test=none;
    test Treatment;
 run;
+

@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Randomized Complete Block with One Factor -------------------*/
+
 
 title1 'Randomized Complete Block';
 data RCB;
@@ -24,14 +26,19 @@ data RCB;
 3 A 35.3 124   3 B 40.1 134   3 C 33.6 116
 ;
 
+
 /* Perform Analysis for Balanced Data RCB ----------------------*/
+
 
 proc anova data=RCB;
    class Block Treatment;
    model Yield Worth=Block Treatment;
 run;
 
+
 /* Produce Treatment Means -------------------------------------*/
+
 
    means Treatment;
 run;
+

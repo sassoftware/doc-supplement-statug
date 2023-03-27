@@ -12,6 +12,7 @@
 /*     REF: PROC PRINQUAL, DETAILS                              */
 /*    MISC:                                                     */
 /****************************************************************/
+
 ods graphics on;
 
 * Generate Three-Dimensional Data;
@@ -33,7 +34,9 @@ proc prinqual data=X n=1 maxiter=2000 plots=transformation out=results;
    transform spline(X1-X3 / nknots=9);
 run;
 
+
 * Plot the Linearized Scatter Plot;
 proc sgscatter data=results;
    plot tx1*tx2 tx1*tx3 tx3*tx2;
 run;
+

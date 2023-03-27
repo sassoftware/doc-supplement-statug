@@ -67,3 +67,4 @@ proc phreg data=Test;
    X1= T*(A=1);
    X2= T*(A=2);
 run;
+

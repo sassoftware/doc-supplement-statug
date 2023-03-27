@@ -48,3 +48,4 @@ proc mi data=Fitness1 seed=501213 nimpute=5 mu0=50 10 180;
    mcmc plots=(trace(mean(Oxygen)) acf(mean(Oxygen)));
    var Oxygen RunTime RunPulse;
 run;
+

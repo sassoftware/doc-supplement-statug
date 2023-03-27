@@ -144,3 +144,4 @@ proc spp data=simAll seed=1  plots(equate)=(residual);
    trend slope = field(x,y, Slope);
    model trees = elev slope/residual(b=5) gof;
 run;
+

@@ -10,6 +10,7 @@
 /*   PROCS: MIXED                                               */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /*                                                              */
@@ -19,6 +20,7 @@
 | Data represent a balanced split-plot example and  |
 | were reported by Stroup (1989).                   |
 *---------------------------------------------------*;
+
 data sp;
    input Block A B Y @@;
    datalines;
@@ -35,11 +37,13 @@ data sp;
 4 2 1  35  4 2 2  30
 4 3 1  17  4 3 2  18
 ;
+
 proc mixed;
    class A B Block;
    model Y = A B A*B;
    random Block A*Block;
 run;
+
 proc mixed data=sp;
    class A B Block;
    model Y = A B A*B;
@@ -55,3 +59,4 @@ proc mixed data=sp;
    estimate 'a1 mean broad'
              intercept 1 a 1 b .5 .5 A*B .5 .5;
 run;
+

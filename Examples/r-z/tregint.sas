@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -32,7 +31,6 @@ data a;
 2 5 5
 ;
 
-
 ods graphics on;
 
 proc transreg data=a plots=(tran fit) ss2;
@@ -54,3 +52,4 @@ run;
 proc transreg data=b plots(interpolate)=(tran fit) ss2;
    model ide(y) = pbs(x) * class(c / zero=none);
 run;
+

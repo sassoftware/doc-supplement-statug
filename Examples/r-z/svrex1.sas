@@ -1,19 +1,15 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVREX1                                              */
+/*    NAME: svrex1                                              */
 /*   TITLE: Documentation Example 1 for PROC SURVEYREG          */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: regression, survey sampling                         */
-/*    KEYS: unequal weighting, linear model                     */
-/*    KEYS: simple random sampling                              */
+/*    KEYS: regression, survey sampling,                        */
+/*          unequal weighting, linear model,                    */
+/*          simple random sampling                              */
 /*   PROCS: SURVEYREG                                           */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYREG, Example 1                           */
-/*                                                              */
-/*    MISC:                                                     */
 /*                                                              */
 /****************************************************************/
 
@@ -46,3 +42,4 @@ title 'Study of Labor Force Participation Rates of Women';
 proc surveyreg data=Labor total=200;
    model LFPR1972 = LFPR1968;
 run;
+

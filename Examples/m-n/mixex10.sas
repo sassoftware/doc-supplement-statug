@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: mixexiso                                            */
+/*    NAME: mixex10                                            */
 /*   TITLE: Documentation Example 10 for PROC MIXED             */
 /*          Isotonic Contrasts for Ordered Mean Values          */
 /* PRODUCT: STAT                                                */
@@ -12,9 +12,11 @@
 /*   PROCS: MIXED                                               */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data FerriteCores;
    do Temp = 1 to 4;
       do rep = 1 to 5; drop rep;
@@ -28,6 +30,7 @@ data FerriteCores;
 11.9 11.2 11.0 11.1 11.3
 11.4 10.7 10.9 11.3 11.7
 ;
+
 proc mixed data=FerriteCores;
    class Temp;
    model MagneticForce = Temp;
@@ -38,3 +41,4 @@ proc mixed data=FerriteCores;
         / adjust=simulate(seed=1) cl upper;
    ods select LSMestimates;
 run;
+

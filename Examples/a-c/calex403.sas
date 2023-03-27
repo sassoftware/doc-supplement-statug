@@ -60,3 +60,4 @@ proc calis data=Kinzer nobs=326 nose;
       B   = [factor1 factor2],
       Psi = D;
 run;
+

@@ -8,7 +8,7 @@
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS:                                                     */
-/*   PROCS: ,PLM                                                */
+/*   PROCS: PLM                                                 */
 /*                                                              */
 /****************************************************************/
 
@@ -82,3 +82,4 @@ run;
 
 proc print data=score3out;
 run;
+

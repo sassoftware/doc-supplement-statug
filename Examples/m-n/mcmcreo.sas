@@ -12,6 +12,7 @@
 /*     REF: PROC MCMC                                           */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data input;
    array names{*} $ n1-n10 ("John" "Mary" "Chris" "Rob" "Greg"
                      "Jen" "Henry" "Alice" "James" "Toby");
@@ -26,8 +27,10 @@ run;
 
 proc print data=input;
 run;
+
 ods select reobsinfo;
 proc mcmc data=input reobsinfo stats=none diag=none;
    random u ~ normal(0, sd=1) subject=index;
    model general(0);
 run;
+

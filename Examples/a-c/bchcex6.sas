@@ -4539,3 +4539,4 @@ data WTPout;
    Platter_WTP = Brand_Platter/price;
    Moosey_WTP  = Brand_Moosey/price;
 run;
+

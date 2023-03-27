@@ -7,10 +7,7 @@
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: standardized rate                                   */
 /*   PROCS: STDRATE                                             */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC STDRATE, EXAMPLE 2                             */
-/*    MISC:                                                     */
 /****************************************************************/
 
 data School;
@@ -40,3 +37,4 @@ proc stdrate data=School
    population group=Smoking event=Case total=Student;
    strata Pet Grade / order=data stats(cl=none) effect;
 run;
+

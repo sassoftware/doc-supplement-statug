@@ -10,12 +10,11 @@
 /*    KEYS: frequency tables, crosstabulation tables,           */
 /*    KEYS: Rao-Scott chi-square test, ODS Graphics             */
 /*   PROCS: SURVEYFREQ                                          */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYFREQ, Getting Started                    */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Generate Data -----------------------------------------------*/
+
 proc format;
    value ResponseCode
       1 = 'Very Unsatisfied'
@@ -42,6 +41,7 @@ proc format;
       0 = 'Faculty'
       1 = 'Admin/Guidance';
 run;
+
 data SIS_Survey;
    format Response ResponseCode.;
    format NewUser UserCode.;
@@ -200,7 +200,9 @@ data SIS_Survey;
       output;
    end;
 run;
+
 /* One-Way Frequency Table -------------------------------------*/
+
 title 'Student Information System Survey';
 proc surveyfreq data=SIS_Survey;
    tables  Response;
@@ -208,9 +210,11 @@ proc surveyfreq data=SIS_Survey;
    cluster School;
    weight  SamplingWeight;
 run;
+
 /* One-Way Frequency Table
       Confidence Limits for Percentages
       Rao-Scott Chi-Square Goodness-of-Fit Test ----------------*/
+
 ods graphics on;
 proc surveyfreq data=SIS_Survey nosummary;
    tables  Response / clwt nopct chisq
@@ -219,7 +223,9 @@ proc surveyfreq data=SIS_Survey nosummary;
    cluster School;
    weight  SamplingWeight;
 run;
+
 /* Two-Way Crosstabulation Table -------------------------------*/
+
 proc surveyfreq data=SIS_Survey nosummary;
    tables  SchoolType * Response /
       plots=wtfreqplot(type=dot scale=percent groupby=row);
@@ -228,12 +234,15 @@ proc surveyfreq data=SIS_Survey nosummary;
    weight  SamplingWeight;
 run;
 ods graphics off;
+
 /* Two-Way Crosstabulation Table
       Row Percentages
       Rao-Scott Chi-Square Test  -------------------------------*/
+
 proc surveyfreq data=SIS_Survey nosummary;
    tables  SchoolType * Response / row nowt chisq;
    strata  State NewUser;
    cluster School;
    weight  SamplingWeight;
 run;
+

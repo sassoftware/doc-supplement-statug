@@ -11,9 +11,11 @@
 /*   PROCS: VARCOMP                                             */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF: PROC VARCOMP, EXAMPLE 1.                            */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data a;
    input a b y @@;
    datalines;
@@ -21,19 +23,24 @@ data a;
 2 1 208   2 1 178   2 1 187   2 2 146   2 2 145   2 2 141
 3 1 186   3 1 183   3 2 142   3 2 125   3 2 136
 ;
+
 proc varcomp method=type1 data=a;
    class a b;
    model y=a|b / fixed=1;
 run;
+
 proc varcomp method=mivque0 data=a;
    class a b;
    model y=a|b / fixed=1;
 run;
+
 proc varcomp method=ml data=a;
    class a b;
    model y=a|b / fixed=1;
 run;
+
 proc varcomp method=reml data=a;
    class a b;
    model y=a|b / fixed=1;
 run;
+

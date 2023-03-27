@@ -69,3 +69,4 @@ proc bchoice data=Travel2 seed=124;
    class Mode Subject / param=ref order=data;
    model Choice = Mode Mode*AgeCtr TravTime / choiceset=(Subject);
 run;
+

@@ -59,3 +59,4 @@ proc krige2d data=thick;
 run;
 
 ods graphics off;
+

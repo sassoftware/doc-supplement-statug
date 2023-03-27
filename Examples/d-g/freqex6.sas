@@ -9,12 +9,11 @@
 /*    KEYS: frequency/crosstabulation tables,                   */
 /*    KEYS: chi-square tests, output data sets                  */
 /*   PROCS: FREQ                                                */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC FREQ, Example 6                                */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Output Data Set of Chi-Square Statistics --------------------*/
+
 data Color;
    input Region Eyes $ Hair $ Count @@;
    label Eyes  ='Eye Color'
@@ -31,13 +30,16 @@ data Color;
 2 green dark   23  2 brown fair   56  2 brown red    42
 2 brown medium 53  2 brown dark   54  2 brown black  13
 ;
+
 proc freq data=Color order=data;
    tables Eyes*Hair / expected cellchi2 norow nocol chisq;
    output out=ChiSqData n nmiss pchi lrchi;
    weight Count;
    title 'Chi-Square Tests for 3 by 5 Table of Eye and Hair Color';
 run;
+
 proc print data=ChiSqData noobs;
    title1 'Chi-Square Statistics for Eye and Hair Color';
    title2 'Output Data Set from the FREQ Procedure';
 run;
+

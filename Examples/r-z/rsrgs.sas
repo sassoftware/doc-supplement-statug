@@ -1,5 +1,3 @@
-
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -38,7 +36,6 @@ data smell;
 -31 80 .5 4    -35  80 .5 4    -26 80 .5 4
 ;
 
-
 proc rsreg data=smell;
    model Odor = T R H / lackfit;
 run;
@@ -50,3 +47,4 @@ proc rsreg data=smell
    ods select 'T * R = Pred';
 run;
 ods graphics off;
+

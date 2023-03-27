@@ -5707,3 +5707,4 @@ proc causaltrt data=school method=regadj att;
    psmodel Catholic(ref='Yes');
    model Math = BaseMath Income FatherEd MotherEd;
 run;
+

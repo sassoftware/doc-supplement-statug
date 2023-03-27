@@ -111,3 +111,4 @@ proc freq data=simout;
    tables lda /nocum plot=freqplot(scale=percent);
 run;
 ods graphics off;
+

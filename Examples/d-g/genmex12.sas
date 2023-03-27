@@ -68,3 +68,4 @@ proc genmod data=tmp1;
    class C1 C2;
    model yTweedie = C1 C2 D1 / dist=Tweedie(p=1.5) type3;
 run;
+

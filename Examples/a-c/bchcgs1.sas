@@ -110,3 +110,4 @@ proc bchoice data=Chocs outpost=Bsamp nmc=10000 thin=2 diag=(AutoCorr
    class Dark(ref='0') Soft(ref='0') Nuts(ref='0') Subj;
    model Choice = Dark Soft Nuts / choiceset=(Subj) cprior=normal(var=1000);
 run;
+

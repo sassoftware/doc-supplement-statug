@@ -9,12 +9,11 @@
 /*    KEYS: probability proportional to size (PPS) sampling,    */
 /*    KEYS: stratified sampling, Brewer's method                */
 /*   PROCS: SURVEYSELECT, PRINT                                 */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYSELECT, Example 2                        */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Sampling Frame ----------------------------------------------*/
+
 data HospitalFrame;
    input Hospital$ Type$ SizeMeasure @@;
    if (SizeMeasure < 20) then Size='Small ';
@@ -34,17 +33,22 @@ data HospitalFrame;
 026 Urban 61.460   058 Urban 65.931
 119 Urban 66.352
 ;
+
 title1 'Hospital Utilization Survey';
 title2 'Sampling Frame, Region 1';
 proc print data=HospitalFrame;
 run;
+
 /* PPS Selection of Two Units Per Stratum ----------------------*/
+
 title2 'Stratified PPS Sampling';
 proc surveyselect data=HospitalFrame method=pps_brewer
                   seed=48702 out=SampleHospitals;
    size SizeMeasure;
    strata Type Size notsorted;
 run;
+
 title2 'Sample Selected by Stratified PPS Design';
 proc print data=SampleHospitals;
 run;
+

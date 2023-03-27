@@ -39,3 +39,4 @@ proc genmod data=ingots;
    exact Heat Soak / joint estimate;
    exactoptions statustime=10;
 run;
+

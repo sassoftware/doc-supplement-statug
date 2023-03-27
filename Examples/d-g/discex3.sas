@@ -18,8 +18,8 @@ title 'Discriminant Analysis of Fisher (1936) Iris Data';
 title2 'Using Quadratic Discriminant Function';
 
 proc discrim data=sashelp.iris outstat=irisstat
-             wcov pcov method=normal pool=test
-             distance anova manova listerr crosslisterr;
+   wcov pcov method=normal pool=test
+   distance anova manova listerr crosslisterr;
    class Species;
    var SepalLength SepalWidth PetalLength PetalWidth;
 run;
@@ -27,3 +27,4 @@ run;
 proc print data=irisstat;
    title2 'Output Discriminant Statistics';
 run;
+

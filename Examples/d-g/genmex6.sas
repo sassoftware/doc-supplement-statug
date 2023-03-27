@@ -180,3 +180,4 @@ proc genmod data=resp;
                                   zrow =(z1-z6)
                                   ypair=(y1 y2);
 run;
+

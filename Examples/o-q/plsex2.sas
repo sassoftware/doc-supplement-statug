@@ -82,3 +82,4 @@ proc pls data=pentaTrain nfac=2 plot=(diagnostics dmod);
                    S3 L3 P3
                    S4 L4   ;
 run;
+

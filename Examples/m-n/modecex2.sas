@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -33,7 +32,6 @@ data mileages(type=distance drop=col: _: i);
    end;
 run;
 
-
 *-----Clustering with K-Nearest-Neighbor Density Estimates-----;
 proc modeclus data=mileages all m=1 k=3;
    id CITY;
@@ -48,3 +46,4 @@ run;
 proc modeclus data=mileages list m=1 ck=2 r=600 800;
    id CITY;
 run;
+

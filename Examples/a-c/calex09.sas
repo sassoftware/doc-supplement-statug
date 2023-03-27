@@ -94,3 +94,4 @@ proc calis data=Kinzer nobs=326 nose;
    k6   = d6 * d6 * psi6;
    fitindex on(only)=[chisq df probchi];
 run;
+

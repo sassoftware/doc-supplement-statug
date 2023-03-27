@@ -12,6 +12,7 @@
 /*     REF: PROC MCMC                                           */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data a;
 run;
 
@@ -27,3 +28,4 @@ proc mcmc data=a stats=none diag=none nmc=10000 outpost=gout
    model general(0);
 run;
 ods graphics off;
+

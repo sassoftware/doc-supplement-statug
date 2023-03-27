@@ -52,3 +52,4 @@ run;
 proc print data=outex6(obs=10);
    title 'First 10 Observations of the Imputed Data Set';
 run;
+

@@ -47,3 +47,4 @@ proc mi data=Fitness1 seed=21355417 nimpute=40 mu0=50 10 180;
    mcmc chain=multiple displayinit initial=em(itprint);
    var Oxygen RunTime RunPulse;
 run;
+

@@ -13,6 +13,7 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 title1 'Reliability of Automobile Models';
 data auto;
    input Make $ Model Score @@;
@@ -30,6 +31,7 @@ d 1 69  d 2 73  d 3 90
 d 1 72  d 2 88  d 3 87
 d 1 76  d 2 87  d 3 92
 ;
+
 proc sort data=auto;
    by Make Model;
 run;
@@ -39,3 +41,4 @@ proc nested data=auto;
    class Make Model;
    var Score;
 run;
+

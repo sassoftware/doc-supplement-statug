@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: GLMEX5                                              */
+/*    NAME: GLMEX6                                              */
 /*   TITLE: Example 6 for PROC GLM                              */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Multivariate Analysis of Variance ---------------------------*/
+
 title "Romano-British Pottery";
 data pottery;
    input Site $12. Al Fe Mg Ca Na;
@@ -45,9 +47,11 @@ AshleyRails  16.7 0.92 0.53 0.01 0.05
 AshleyRails  14.8 2.74 0.67 0.03 0.05
 AshleyRails  19.1 1.64 0.60 0.10 0.03
 ;
+
 proc glm data=pottery;
    class Site;
    model Al Fe Mg Ca Na = Site;
    contrast 'Llanederyn vs. the rest' Site 1 1 1 -3;
    manova h=_all_ / printe printh;
 run;
+

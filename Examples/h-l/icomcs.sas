@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: STATUS1                                             */
+/*    NAME: ICOMCS                                              */
 /*   TITLE: Convergence Status Example                          */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -48,3 +48,4 @@ run;
 proc print data=cs;
    id status;
 run;
+

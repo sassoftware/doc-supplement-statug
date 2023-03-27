@@ -815,3 +815,4 @@ proc logistic data=Scored(where=(InLaborForce2=.))
    model InLaborForce = XBeta;
    test intercept = 0, XBeta = 1;
 run;
+

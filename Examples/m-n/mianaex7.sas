@@ -71,3 +71,4 @@ run;
 proc mianalyze parms=lgsparms;
    modeleffects Intercept Length Width;
 run;
+

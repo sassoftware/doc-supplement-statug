@@ -62,3 +62,4 @@ proc calis data=frets vardef=n;
    matrix _cov_ [1,1] = 2*sigma_sq;
    fitindex on(only)=[chisq df probchi];
 run;
+

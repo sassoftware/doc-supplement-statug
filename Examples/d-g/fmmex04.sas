@@ -80,3 +80,4 @@ proc sort data=Pred nodupkey;
 proc print data=pred noobs;
   var type pred:;
 run;
+

@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -10,6 +9,7 @@
 /*   PROCS: CANDISC SGPLOT                                      */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: saswfk                UPDATE: July 25, 2010         */
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /*                                                              */
@@ -42,3 +42,4 @@ proc candisc anova;
    class Group;
    var x y;
 run;
+

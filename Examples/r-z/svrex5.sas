@@ -1,18 +1,15 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVREX5                                              */
+/*    NAME: svrex5                                              */
 /*   TITLE: Documentation Example 5 for PROC SURVEYREG          */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: regression, survey sampling                         */
-/*    KEYS: stratification, regression estimator                */
-/*    KEYS: unequal weighting, linear model                     */
+/*    KEYS: regression, survey sampling,                        */
+/*          stratification, regression estimator,               */
+/*          unequal weighting, linear model                     */
 /*   PROCS: SURVEYREG                                           */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYREG, Example 5                           */
-/*                                                              */
 /*    MISC: Regression Estimator for Stratified Sample          */
 /*                                                              */
 /****************************************************************/
@@ -106,3 +103,4 @@ proc surveyreg data=FarmsByState total=StratumTotals;
              State 165 70 FarmAreaIA 13200 FarmAreaNE 8750
              State*Region 100 50 15 30 40 /e;
 run;
+

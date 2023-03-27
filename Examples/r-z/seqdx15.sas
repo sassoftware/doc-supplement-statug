@@ -1,16 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SEQDX15                                             */
+/*    NAME: seqdx15                                             */
 /*   TITLE: Documentation Example 15 for PROC SEQDESIGN         */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: group sequential design                             */
 /*   PROCS: SEQDESIGN                                           */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC SEQDESIGN, EXAMPLE 15                          */
-/*    MISC:                                                     */
 /****************************************************************/
 
 proc seqdesign;
@@ -48,3 +44,4 @@ proc seqdesign;
                       acctime=20 accnobs=360
                       ceiling=n);
 run;
+

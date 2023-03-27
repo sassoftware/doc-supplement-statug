@@ -10,12 +10,11 @@
 /*    KEYS: chi-square statistics, Fisher's exact test,         */
 /*    KEYS: Cochran-Mantel-Haenszel statistics                  */
 /*   PROCS: FREQ                                                */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC FREQ, Getting Started                          */
-/*    MISC:                                                     */
+/*     REF: PROC FREQ, Getting Started Example 1                */
 /****************************************************************/
+
 /* Frequency Tables and Statistics -----------------------------*/
+
 data SummerSchool;
    input Gender $ Internship $ Enrollment $ Count @@;
    datalines;
@@ -24,10 +23,12 @@ boys   no yes 14   boys   no no 27
 girls yes yes 32   girls yes no 10
 girls  no yes 53   girls  no no 23
 ;
+
 proc freq data=SummerSchool order=data;
    tables Internship*Enrollment / chisq;
    weight Count;
 run;
+
 ods graphics on;
 proc freq data=SummerSchool;
    tables Gender*Internship*Enrollment /
@@ -35,3 +36,4 @@ proc freq data=SummerSchool;
    weight Count;
 run;
 ods graphics off;
+

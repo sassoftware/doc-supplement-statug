@@ -50,3 +50,4 @@ data IrtBinary;
 proc irt data=IrtBinary;
    var item1-item10;
 run;
+

@@ -35,3 +35,4 @@ proc phreg data=Rats;
    bayes seed=1 piecewise=hazard statistics=(summary interval)
          diagnostics=(autocorr geweke ess);
 run;
+

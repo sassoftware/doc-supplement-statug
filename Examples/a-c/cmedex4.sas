@@ -344,3 +344,4 @@ proc calis data=cognitive;
       SocStatus  ===> Encourage Motivation CogPerform;
    effpart  Encourage ===> CogPerform;
 run;
+

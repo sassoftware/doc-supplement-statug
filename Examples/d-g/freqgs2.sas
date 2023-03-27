@@ -9,12 +9,11 @@
 /*    KEYS: measures of agreement, kappa statistics,            */
 /*    KEYS: ODS Graphics, agreement plot                        */
 /*   PROCS: FREQ                                                */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC FREQ, Getting Started                          */
-/*    MISC:                                                     */
+/*     REF: PROC FREQ, Getting Started Example 2                */
 /****************************************************************/
+
 /* Agreement Study ---------------------------------------------*/
+
 data SkinCondition;
    input Derm1 $ Derm2 $ Count;
    datalines;
@@ -35,6 +34,7 @@ clear        poor 2
 clear    marginal 6
 clear       clear 13
 ;
+
 ods graphics on;
 proc freq data=SkinCondition order=data;
    tables Derm1*Derm2 /
@@ -43,3 +43,4 @@ proc freq data=SkinCondition order=data;
    weight Count;
 run;
 ods graphics off;
+

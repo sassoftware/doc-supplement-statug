@@ -12,6 +12,7 @@
 /*     REF: PROC FASTCLUS, EXAMPLE 2.                           */
 /*    MISC:                                                     */
 /****************************************************************/
+
 title 'Using PROC FASTCLUS to Analyze Data with Outliers';
 data x;
    drop n;
@@ -40,7 +41,9 @@ run;
 proc sgscatter data=mean1;
    compare y=(_gap_ _radius_) x=_freq_;
 run;
+
    /*    Remove low frequency clusters.  */
+
 data seed;
    set mean1;
    if _freq_>5;
@@ -55,9 +58,11 @@ run;
 proc sgplot data=out;
    scatter y=y x=x / group=cluster;
 run;
+
    /*   Run PROC FASTCLUS again, selecting seeds from the        */
    /*   high frequency clusters in the previous analysis         */
    /*   STRICT= prevents outliers from distorting the results.   */
+
 title2 'PROC FASTCLUS Analysis Using STRICT= to Omit Outliers';
 proc fastclus data=x seed=seed
      maxc=2 strict=3.0 out=out outseed=mean2;
@@ -67,8 +72,10 @@ run;
 proc sgplot data=out;
    scatter y=y  x=x / group=cluster;
 run;
+
    /* Run PROC FASTCLUS one more time with zero iterations */
    /* to assign outliers and tails to clusters.            */
+
 title2 'Final PROC FASTCLUS Analysis Assigning Outliers to Clusters';
 proc fastclus data=x seed=mean2 maxc=2 maxiter=0 out=out;
    var x y;
@@ -77,3 +84,4 @@ run;
 proc sgplot data=out;
    scatter y=y x=x / group=cluster;
 run;
+

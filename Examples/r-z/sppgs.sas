@@ -26,3 +26,4 @@ proc spp data=sashelp.bei plots(equate)=(residual intensity);
    trend grad = field(x,y,gradient);
    model trees = elev grad / grid(64,64) residual(B=70) ;
 run;
+

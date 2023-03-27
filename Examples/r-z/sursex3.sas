@@ -9,12 +9,11 @@
 /*    KEYS: probability proportional to size (PPS) sampling,    */
 /*    KEYS: stratified sampling, dollar-unit sampling           */
 /*   PROCS: SURVEYSELECT, SORT, PRINT                           */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYSELECT, Example 3                        */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Sampling Frame ----------------------------------------------*/
+
 data TravelExpense;
    input ID$ Amount @@;
    if (Amount < 500) then Level='1_Low ';
@@ -36,19 +35,25 @@ data TravelExpense;
 517  940.35   382  217.85   024  142.90
 478  806.90   107  560.72
 ;
+
 proc sort data=TravelExpense;
    by Level;
 run;
+
 title1 'Travel Expense Audit';
 proc print data=TravelExpense;
 run;
+
 /* PPS (Dollar-Unit) Sampling ----------------------------------*/
+
 title2 'Stratified PPS (Dollar-Unit) Sampling';
 proc surveyselect data=TravelExpense method=pps n=(6 10 4)
                   seed=47279 out=AuditSample;
    size Amount;
    strata Level;
 run;
+
 title2 'Sample Selected by Stratified PPS Design';
 proc print data=AuditSample;
 run;
+

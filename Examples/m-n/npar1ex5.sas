@@ -6,13 +6,11 @@
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: nonparametric methods, categorical data analysis,   */
-/*    KEYS: multisample Savage test, exact test                 */
+/*    KEYS: multisample Savage test, exact tests                */
 /*   PROCS: NPAR1WAY                                            */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC NPAR1WAY, Example 5                            */
-/*    MISC:                                                     */
 /****************************************************************/
+
 data Mice;
    input Treatment $ Days @@;
    datalines;
@@ -20,8 +18,10 @@ data Mice;
 2 3 2 4 2 4 2 4 2 15
 3 4 3 4 3 10 3 10 3 26
 ;
+
 proc npar1way savage data=Mice;
    class Treatment;
    var Days;
    exact savage;
 run;
+

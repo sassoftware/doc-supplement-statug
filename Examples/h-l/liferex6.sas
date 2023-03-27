@@ -46,3 +46,4 @@ proc lifereg data=Micro;
    ppout;
    inset;
 run;
+

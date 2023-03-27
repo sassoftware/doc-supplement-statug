@@ -12,6 +12,7 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data SO4;
    input Latitude Longitude SO4 @@;
    format Latitude f4.0;
@@ -109,6 +110,7 @@ data SO4;
 43.87333 104.19222 0.306 44.91722 110.42028 0.210
 45.07611  72.67556 2.646
 ;
+
 proc format;
    picture latitude  -90 - 0  = '000S'
                       0  - 90 = '000N';
@@ -120,6 +122,7 @@ data SO4;
    format longitude longitude. latitude  latitude.;
    longitude = -longitude;
 run;
+
 proc template;
    define statgraph gradientScatter;
       beginGraph;
@@ -140,6 +143,7 @@ run;
 proc sgrender data=SO4 template=gradientScatter;
 run;
 
+
 ods graphics on;
 
 proc loess data=SO4;
@@ -147,6 +151,7 @@ proc loess data=SO4;
 run;
 
 ods graphics off;
+
 
 data PredPoints;
    format longitude longitude.
@@ -163,6 +168,7 @@ proc loess data=SO4;
    score data=PredPoints / print;
    ods Output ScoreResults=ScoreOut;
 run;
+
 proc template;
    define statgraph surface;
       begingraph;
@@ -175,3 +181,4 @@ run;
 
 proc sgrender data=ScoreOut template=surface;
 run;
+

@@ -60,3 +60,4 @@ proc logistic data=school;
    model Style(order=data)=School Program / link=glogit;
    effectplot interaction(plotby=Program) / clm noobs;
 run;
+

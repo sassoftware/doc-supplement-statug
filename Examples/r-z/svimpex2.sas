@@ -5,12 +5,12 @@
 /*   TITLE: Documentation Example 2 for PROC SURVEYIMPUTE       */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: fully efficient fractional imputation, hot-deck     */
+/*    KEYS: fully efficient fractional imputation (FEFI)        */
+/*    KEYS: imputation-adjusted replicate weights               */
+/*    KEYS: logistic regression analysis                        */
 /*   PROCS: SURVEYIMPUTE, SURVEYLOGISTIC                        */
 /*    DATA: Simulated data from example 1                       */
-/*                                                              */
-/*     REF: SURVEYIMPUTE, Example 2                             */
-/*    MISC:                                                     */
+/*     REF: PROC SURVEYIMPUTE, Example 2                        */
 /****************************************************************/
 
 data DrugAbuse;
@@ -772,3 +772,4 @@ proc surveylogistic data=DrugAbuseFEFI varmethod=Jackknife;
    repweights ImpRepWt_: / jkcoefs=DrugAbuseJKCOEFS;
    ods output parameterestimates=FEFILogisticAnalysis;
 run;
+

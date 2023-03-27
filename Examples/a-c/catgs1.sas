@@ -21,6 +21,7 @@ From: Stokes, Davis, and Koch (1995, 307-313).
 ----------------------------------------------------------------*/
 
 title 'WLS Analysis of Mean Response';
+
 data colds;
    input sex $ residence $ periods count @@;
    datalines;
@@ -29,10 +30,13 @@ female urban 0  80  female urban 1 104  female urban 2 116
 male   rural 0  84  male   rural 1 124  male   rural 2  82
 male   urban 0 106  male   urban 1 117  male   urban 2  87
 ;
+
 proc catmod data=colds;
    weight count;
    response means;
    model periods = sex residence sex*residence / design;
 run;
+
    model periods = sex residence / design;
 run;
+

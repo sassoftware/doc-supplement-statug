@@ -21,6 +21,7 @@ Gibson and Wolfinger (2004)
 ----------------------------------------------------------------*/
 
 title 'Adaptive Adjustments and ODS Graphics';
+
 data test;
    length Probe_Set_ID $9.;
    input Probe_Set_ID $ Probt @@;
@@ -57,17 +58,21 @@ data test;
 222113_s_ .000023  222208_s_ .100961  222303_at .049265  37226_at  .000749
 60474_at  .000423
 run;
+
 ods graphics on;
 proc multtest inpvalues(Probt)=test plots=all seed=518498000
               aholm ahoc afdr pfdr(positive) nopvalue;
    id Probe_Set_ID;
 run;
+
 proc multtest inpvalues(Probt)=test afdr nopvalue
    plots=Manhattan(label=obs vref=0.0001);
    id Probe_Set_ID;
 run;
+
 proc multtest inpvalues(Probt)=test plots(sigonly=0.001)=PByTest
               seed=518498000
               aholm ahoc afdr pfdr(positive) nopvalue;
 run;
 ods graphics off;
+

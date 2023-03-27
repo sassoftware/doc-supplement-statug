@@ -1,18 +1,15 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: CAGREX4                                             */
+/*    NAME: cagrex4                                             */
 /*   TITLE: Documentation Example 4 for PROC CAUSALGRAPH        */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: graphical causal models                             */
 /*   PROCS: CAUSALGRAPH                                         */
-/*    DATA:                                                     */
-/*                                                              */
-/*  UPDATE: July 03, 2018                                       */
-/*     REF: PROC CAUSALGRAPH, Example 4                         */
-/*    MISC: Special thanks to Noah Greifer                      */
+/*     REF: Thornley et al (2013), Rheumatology                 */
 /****************************************************************/
+
 
 proc causalgraph common;
    model "Thor12SimpleHDL"
@@ -26,15 +23,8 @@ proc causalgraph common;
       StatinUse ==> CurrentHDL,
       Urate ==> CVD Gout;
    model "Thor12AltHDL"
-      Ethnicity ==> Nutrition Smoking,
-      Gender ==> Nutrition Urate,
-      Gout ==> CVD,
-      Nutrition ==> PreviousHDL Urate,
-      CurrentHDL ==> CVD,
-      PreviousHDL ==> StatinUse,
-      Smoking ==> CVD,
-      StatinUse ==> CurrentHDL CVD,
-      Urate ==> CVD Gout;
+      StatinUse ==> CVD / refmodel="Thor12SimpleHDL";
    identify Urate ==> CVD;
    unmeasured Nutrition PreviousHDL;
 run;
+

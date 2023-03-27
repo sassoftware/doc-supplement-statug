@@ -43,3 +43,4 @@ run;
 proc pls data=data nfac=1 method=pls;
    model y = x1 x2;
 run;
+

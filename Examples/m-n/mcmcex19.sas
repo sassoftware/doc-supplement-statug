@@ -185,3 +185,4 @@ proc mcmc data=inputdata nmc=5000 monitor=(beta) outpost=hhout;
 
    model general(0);
 run;
+

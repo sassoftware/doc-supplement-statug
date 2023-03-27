@@ -42,3 +42,4 @@ proc transreg details data=yarn ss2
    model BoxCox(fail / convenient lambda=-2 to 2 by 0.05) =
          qpoint(length amplitude load);
 run;
+

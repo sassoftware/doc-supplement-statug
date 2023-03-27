@@ -23,3 +23,5 @@ proc mcmc data=sashelp.class outpost=classout nmc=10000 thin=2 seed=246810;
    model weight ~ n(mu, var = sigma2);
 run;
 ods graphics off;
+
+

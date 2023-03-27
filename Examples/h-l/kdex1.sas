@@ -13,6 +13,7 @@
 /*    MISC:                                                     */
 /*                                                              */
 /****************************************************************/
+
 data channel;
    input length @@;
    datalines;
@@ -140,12 +141,16 @@ data channel;
 2.13 2.05 1.90 2.07 2.15 1.96 2.15 1.89 2.15 2.04
 1.95 1.93 2.22 1.74 1.91
 ;
+
 ods graphics on;
 proc kde data=channel;
    univar length;
 run;
+
 /* Changing the Bandwidth (Univariate) */
+
 proc kde data=channel;
    univar length(bwm=2) length(bwm=0.25);
 run;
 ods graphics off;
+

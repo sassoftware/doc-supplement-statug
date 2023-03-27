@@ -1,20 +1,15 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVLGS                                               */
+/*    NAME: svlgs                                               */
 /*   TITLE: Getting Started Examples for PROC SURVEYLOGISTIC    */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: logistic regression, survey sampling                */
-/*    KEYS: link functions, stratification, clustering          */
-/*    KEYS: unequal weighting, categorical data analysis        */
+/*    KEYS: logistic regression, survey sampling,               */
+/*          link functions, stratification, clustering,         */
+/*          unequal weighting, categorical data analysis        */
 /*   PROCS: SURVEYLOGISTIC                                      */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYLOGISTIC, Getting Started                */
-/*                                                              */
-/*    MISC:                                                     */
 /*                                                              */
 /****************************************************************/
 
@@ -156,3 +151,4 @@ proc surveylogistic data=SampleStrata;
    model Rating (order=internal) = Usage;
    weight SamplingWeight;
 run;
+

@@ -16,6 +16,7 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data read;
    input score count @@;
    datalines;
@@ -26,6 +27,7 @@ data read;
 51 1   43 1   27 2   46 2   28 1
 49 1   31 1   28 1   54 1   45 1
 ;
+
 ods graphics on;
 
 proc ttest data=read h0=30;
@@ -34,3 +36,4 @@ proc ttest data=read h0=30;
 run;
 
 ods graphics off;
+

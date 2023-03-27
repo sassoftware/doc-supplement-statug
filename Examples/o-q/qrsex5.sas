@@ -9,7 +9,7 @@
  /*    KEYS: Quantile Process Regression                         */
  /*   PROCS: QUANTSELECT                                         */
  /*                                                              */
-  /****************************************************************/
+ /****************************************************************/
 
 
 %let seed=123;
@@ -160,3 +160,4 @@ proc kde data=probData;
    weight pProb;
    univar Obs1 Obs3001 Obs6001/ plots=densityoverlay;
 run;
+

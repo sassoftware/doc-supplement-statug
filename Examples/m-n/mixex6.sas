@@ -10,6 +10,7 @@
 /*   PROCS: MIXED                                               */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF:                                                     */
 /*    MISC: This job may require considerable CPU time.         */
 /*                                                              */
@@ -58,3 +59,4 @@ proc mixed;
    estimate 'B vs L x Linear Irrig' Cult*Irrig
             -5 -3 -1 1 3 5 5 3 1 -1 -3 -5;
 run;
+

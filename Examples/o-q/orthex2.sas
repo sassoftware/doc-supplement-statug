@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: ORTHOREX2                                           */
+/*    NAME: ORTHEX2                                             */
 /*   TITLE: Example 2 for PROC ORTHOREG                         */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -12,7 +12,9 @@
 /*     REF: PROC ORTHOREG, EXAMPLE 2.                           */
 /*    MISC:                                                     */
 /****************************************************************/
+
 /* Example 2: Wampler Data -------------------------------------*/
+
 data Wampler;
    do x=0 to 20;
       input e @@;
@@ -29,6 +31,7 @@ data Wampler;
 759 -2048 2048 -2048 2523 -2048 2048 -2048 1838 -2048 2048
 -2048 1838 -2048 2048 -2048 2523 -2048 2048 -2048 759
 ;
+
 %macro WTest;
    data ParmEst; if (0); run;
    %do i = 1 %to 5;
@@ -42,6 +45,7 @@ data Wampler;
    %end;
 %mend;
 %WTest;
+
 data ParmEst; set ParmEst;
    if      (Dep = 'y1') then
       _RMSE_ = _RMSE_ - 0.00000000000000;
@@ -70,8 +74,10 @@ data ParmEst; set ParmEst;
       Col5      = Col5      - 0.100000000000000e-4;
    end;
 run;
+
 proc print data=ParmEst label noobs;
    title 'Wampler data: Deviations from Certified Values';
    format _RMSE_ Intercept Col1-Col5 e9.;
    var Dep _RMSE_ Intercept Col1-Col5;
 run;
+

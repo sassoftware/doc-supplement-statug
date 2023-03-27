@@ -67,3 +67,4 @@ proc calis method=ml data=growth nostand noparmname;
       f_alpha f_beta;
    fitindex on(only)=[chisq df probchi];
 run;
+

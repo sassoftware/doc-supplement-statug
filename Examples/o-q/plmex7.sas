@@ -11,6 +11,7 @@
 /*   PROCS: GLIMMIX,PLM                                         */
 /*                                                              */
 /****************************************************************/
+
 data parms;
    length name $6;
    input Name$ Value;
@@ -22,6 +23,7 @@ alpha2 -3.0111
 beta2   0.3977
 gamma2 -2.4442
 ;
+
 data cov;
    input Parm row col1-col6;
    datalines;
@@ -32,6 +34,7 @@ data cov;
 1 5  0.000000  0.000000  0.000000 -0.009096  0.039487 -0.019996
 1 6  0.000000  0.000000  0.000000  0.015785 -0.019996  0.126172
 ;
+
 proc glimmix data=parms order=data;
    class Name;
    model Value = Name / noint ddfm=none s;
@@ -40,6 +43,7 @@ proc glimmix data=parms order=data;
    store ArtificialModel;
    title 'Linear Inference';
 run;
+
 proc plm restore=ArtificialModel;
    estimate
        'alpha1 = alpha2' Name 1  0  0 -1  0  0,
@@ -47,3 +51,4 @@ proc plm restore=ArtificialModel;
        'gamma1 = gamma2' Name 0  0  1  0  0 -1 /
                 adjust=bon stepdown ftest(label='Homogeneity');
 run;
+

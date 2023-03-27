@@ -1779,3 +1779,4 @@ proc causaltrt data=smokingweight method=IPWS;
    psmodel Quit = Sex Age Education Exercise Activity YearsSmoke PerDay;
    model Change;
 run;
+

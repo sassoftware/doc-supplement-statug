@@ -10,6 +10,7 @@
 /*   PROCS: HPMIXED                                             */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF: PROC HPMIXED, EXAMPLE 5                             */
 /*    MISC:                                                     */
 /*                                                              */
@@ -21,6 +22,7 @@
 | from Pothoff and Roy (1964) and are analyzed by   |
 | Jennrich and Schluchter (1986).                   |
 *---------------------------------------------------*;
+
 data pr;
    input Person Gender $ y1 y2 y3 y4;
    y=y1; Time=1; Age=8;  output;
@@ -57,14 +59,17 @@ data pr;
 26   M   23.0    24.5    26.0    30.0
 27   M   22.0    21.5    23.5    25.0
 ;
+
 proc hpmixed data=pr;
    class Person Gender Time;
    model y = Gender Age Gender*Age;
    test Gender Age Gender*Age;
    repeated Time / type=un subject=Person r;
 run;
+
 proc hpmixed data=pr;
    class Person Gender Time;
    model y = Gender Age Gender*Age;
    repeated Time / type=ar(1) sub=Person r;
 run;
+

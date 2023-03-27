@@ -94,3 +94,4 @@ proc causaltrt data=drugs method=aipw;
    psmodel Drug(ref='Drug_A') = Age Gender BMI;
    model Diabetes2(ref='No') = Age Gender BMI / dist = bin;
 run;
+

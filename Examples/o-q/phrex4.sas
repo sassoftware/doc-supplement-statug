@@ -99,3 +99,4 @@ proc phreg data=Myeloma2;
    model Time*Vstatus(0)=LogBUN HGB Contrived /
       firth risklimits=pl itprint;
 run;
+

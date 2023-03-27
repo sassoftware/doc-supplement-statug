@@ -13,6 +13,7 @@
 /*    MISC:                                                     */
 /*                                                              */
 /****************************************************************/
+
 data JobRat;
    input
       (Communication_Skills
@@ -135,6 +136,8 @@ data JobRat;
 99899899899899
 76656399567486
 ;
+
 proc varclus data=JobRat maxclusters=3;
    var Communication_Skills--Integrity;
 run;
+

@@ -10,6 +10,7 @@
 /*   PROCS: MIXED, PRINT                                        */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /*                                                              */
@@ -21,6 +22,7 @@
 | of measurements of two traits on three animals.   |
 | Both G and R are known.                           |
 *---------------------------------------------------*;
+
 data h;
    input Trait Animal Y;
    datalines;
@@ -31,6 +33,7 @@ data h;
 2 2 5
 2 3 .
 ;
+
 data g;
    input Row Col1-Col6;
    datalines;
@@ -41,6 +44,7 @@ data g;
 5  1  2 .5  1.5 3     .75
 6  1 .5  2  1.5  .75 3
 ;
+
 proc mixed data=h mmeq mmeqsol;
    class Trait Animal;
    model Y = Trait / noint s outp=predicted;
@@ -50,3 +54,4 @@ proc mixed data=h mmeq mmeqsol;
 run;
 proc print data=predicted;
 run;
+

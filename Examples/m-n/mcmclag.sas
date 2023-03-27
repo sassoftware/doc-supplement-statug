@@ -39,3 +39,4 @@ proc mcmc data=dlm outpost=dlmO nmc=20000 seed=23;
    random mu ~ n(mu.l1,var=var_mu) s=time icond=(alpha) monitor=(mu);
    model y~n(mu, var=var_y);
 run;
+

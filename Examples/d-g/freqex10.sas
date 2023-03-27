@@ -9,16 +9,16 @@
 /*    KEYS: measures of agreement, McNemar's test,              */
 /*    KEYS: kappa statistics, Cochran's Q                       */
 /*   PROCS: FREQ                                                */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC FREQ, Example 10                               */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Cochran's Q Test --------------------------------------------*/
+
 proc format;
    value $ResponseFmt 'F'='Favorable'
                       'U'='Unfavorable';
 run;
+
 data drugs;
    input Drug_A $ Drug_B $ Drug_C $ Count @@;
    datalines;
@@ -27,6 +27,7 @@ F F U 16   U F U  4
 F U F  2   U U F  6
 F U U  4   U U U  6
 ;
+
 proc freq data=Drugs;
    tables Drug_A Drug_B Drug_C / nocum;
    tables Drug_A*Drug_B*Drug_C / agree noprint;
@@ -34,3 +35,4 @@ proc freq data=Drugs;
    weight Count;
    title 'Study of Three Drug Treatments for a Chronic Disease';
 run;
+

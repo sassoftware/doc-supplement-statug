@@ -1,19 +1,15 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVMGS                                               */
+/*    NAME: svmgs                                               */
 /*   TITLE: Getting Started Examples for PROC SURVEYMEANS       */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: descriptive statistics, survey sampling             */
-/*    KEYS: stratification, clustering                          */
+/*    KEYS: stratification                                      */
 /*    KEYS: unequal weighting, categorical data analysis        */
 /*   PROCS: SURVEYMEANS                                         */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYMEANS, Getting Started                   */
-/*                                                              */
-/*    MISC:                                                     */
 /*                                                              */
 /****************************************************************/
 
@@ -105,3 +101,4 @@ run;
 title 'Stacking Structure in the Output Data Set';
 proc print data=stacking;
 run;
+

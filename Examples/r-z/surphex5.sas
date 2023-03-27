@@ -1,18 +1,19 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SURPHEX5                                            */
+/*    NAME: surphex5                                            */
 /*   TITLE: Documentation Example 5 for PROC SURVEYPHREG        */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: Time-Dependent covariates, proportional hazards     */
-/*    KEYS: assumption, programming statements                  */
-/*    KEYS: proportional hazards regression, censoring          */
+/*    KEYS: Time-Dependent covariates, proportional hazards,    */
+/*          assumption, programming statements,                 */
+/*          proportional hazards regression, censoring          */
 /*   PROCS: SURVEYPHREG                                         */
 /*    DATA: NHANES I Epidemiologic Followup Study (NHEFS).      */
 /*     REF: PROC SURVEYPHREG, Example 5                         */
-/*    MISC:                                                     */
+/*                                                              */
 /****************************************************************/
+
 data mortality;
    input ID VARSTRATA VARPSU SWEIGHT AGE VITALSTATUS POVARIND GENDER;
    datalines;
@@ -1908,6 +1909,7 @@ data mortality;
    1890  13  1  88939  59  1  2   1
    1891  13  1  59218  75  1  2   2
 ;
+
 proc surveyphreg data = mortality nomcar;
    class gender;
    strata varstrata;
@@ -1916,3 +1918,4 @@ proc surveyphreg data = mortality nomcar;
    model age*vitalstatus(1 4 5 6) = gender x;
    x = age*(gender=1);
 run;
+

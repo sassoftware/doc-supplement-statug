@@ -100,3 +100,4 @@ proc lifetest data=VALung rmst;
    time SurvTime*Censor(1);
    strata Cell / adj=sidak diff=control('small');
 run;
+

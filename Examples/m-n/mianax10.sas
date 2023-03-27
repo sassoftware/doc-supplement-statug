@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: MIANAEX10                                           */
+/*    NAME: MIANAX10                                            */
 /*   TITLE: Documentation Example 10 for PROC MIANALYZE         */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -56,3 +56,4 @@ proc mianalyze data=outreg edf=28;
    modeleffects Intercept RunTime RunPulse;
    test Intercept, RunTime=RunPulse / mult;
 run;
+

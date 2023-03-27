@@ -13,6 +13,7 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data growth;
    input country $ GDP LFG EQP NEQ GAP @@;
    datalines;
@@ -78,9 +79,11 @@ Venezuel  0.0120 0.0378 0.0340 0.0760 0.4974
 Zambia   -0.0110 0.0275 0.0702 0.2012 0.8695
 Zimbabwe  0.0110 0.0309 0.0843 0.1257 0.8875
 ;
+
 proc reg data=growth;
    model GDP  = LFG GAP EQP NEQ;
 run;
+
 ods graphics on;
 
 proc robustreg data=growth plots=all;
@@ -89,7 +92,9 @@ proc robustreg data=growth plots=all;
 run;
 
 ods graphics off;
+
 proc robustreg method=lts(h=33) fwls data=growth seed=100;
    model GDP  = LFG GAP EQP NEQ / diagnostics leverage;
    id country;
 run;
+

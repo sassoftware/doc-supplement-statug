@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: PLANEX2                                             */
+/*    NAME: planex2                                             */
 /*   TITLE: Example 2 for PROC PLAN                             */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -9,9 +9,11 @@
 /*   PROCS: PLAN                                                */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: sasrdt                                              */
 /*     REF: PROC PLAN, EXAMPLE 2.                               */
 /*    MISC:                                                     */
 /****************************************************************/
+
 
 /* A hierarchical design ---------------------------------------*/
 
@@ -23,3 +25,4 @@ run;
 
 proc print data=nested;
 run;
+

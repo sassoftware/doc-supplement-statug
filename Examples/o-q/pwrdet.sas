@@ -39,3 +39,4 @@ run;
 proc print noobs data=Power;
    var MeanDiff NominalNTotal NTotal Power Error Info;
 run;
+

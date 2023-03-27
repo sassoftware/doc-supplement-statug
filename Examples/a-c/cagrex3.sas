@@ -1,18 +1,15 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: CAGREX3                                             */
+/*    NAME: cagrex3                                             */
 /*   TITLE: Documentation Example 3 for PROC CAUSALGRAPH        */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: graphical causal models                             */
 /*   PROCS: CAUSALGRAPH                                         */
-/*    DATA:                                                     */
-/*                                                              */
-/*  UPDATE: July 03, 2018                                       */
-/*     REF: PROC CAUSALGRAPH, Example 3                         */
-/*    MISC: Special thanks to Noah Greifer                      */
+/*     REF: Thornley et al (2013), Rheumatology                 */
 /****************************************************************/
+
 
 proc causalgraph compact;
    model "Thor12"
@@ -87,3 +84,4 @@ proc causalgraph compact;
    testid Gender HbA1c Ethnicity Smoking
       CurrentHDL PreviousHDL Obesity;
 run;
+

@@ -16,8 +16,8 @@
 /****************************************************************/
 
 data multicenter;
-  input center group$ n sideeffect;
-  datalines;
+   input center group$ n sideeffect;
+   datalines;
  1  A  32  14
  1  B  33  18
  2  A  30   4
@@ -63,3 +63,4 @@ proc glimmix data=multicenter;
    random intercept / subject=center;
    lsmeans group / cl ilink;
 run;
+

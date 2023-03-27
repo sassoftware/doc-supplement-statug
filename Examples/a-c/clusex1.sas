@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -22,7 +21,7 @@ ods graphics on;
 
 title2 'Using METHOD=AVERAGE';
 proc cluster data=sashelp.mileages(type=distance) method=average pseudo;
-  id City;
+   id City;
 run;
 
 title2 'Using METHOD=CENTROID';
@@ -49,3 +48,4 @@ title2 'Using METHOD=WARD';
 proc cluster data=sashelp.mileages(type=distance) method=ward pseudo;
    id City;
 run;
+

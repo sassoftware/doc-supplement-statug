@@ -103,3 +103,4 @@ proc bglimm data=ShoulderData seed=8875 nmc=10000 thin=2 dic;
    format Trt $abc. Gender $xyz. ;
    estimate 'Active vs Placebo' Trt 1 -1  / exp;
 run;
+

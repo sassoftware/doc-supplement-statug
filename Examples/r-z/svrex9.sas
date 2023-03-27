@@ -5,14 +5,11 @@
 /*   TITLE: Documentation Example 9 for PROC SURVEYREG          */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: regression, survey sampling, resampling             */
-/*    KEYS: domain analysis, replication                        */
-/*    KEYS: unequal weighting, linear model                     */
+/*    KEYS: regression, survey sampling, resampling,            */
+/*          domain analysis, replication,                       */
+/*          unequal weighting, linear model                     */
 /*   PROCS: SURVEYREG                                           */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYREG, Example 9                           */
-/*                                                              */
 /*    MISC: Variance Estimate Using the Jackknife Method        */
 /*                                                              */
 /****************************************************************/
@@ -57,3 +54,4 @@ run;
 title 'The Jackknife Weights for the First 6 Obs';
 proc print data=JKWeights (obs=6);
 run;
+

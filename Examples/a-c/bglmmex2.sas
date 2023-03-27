@@ -176,3 +176,4 @@ proc sgplot data=nonMarg noborder;
   xaxis label="Probability";
   yaxis display=(nolabel noline noticks novalues);
 run;
+

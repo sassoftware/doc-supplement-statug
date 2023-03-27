@@ -15,6 +15,7 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data FerriteCores;
    do Temp = 1 to 4;
       do rep = 1 to 5; drop rep;
@@ -28,6 +29,7 @@ data FerriteCores;
 11.9 11.2 11.0 11.1 11.3
 11.4 10.7 10.9 11.3 11.7
 ;
+
 proc glimmix data=FerriteCores;
    class Temp;
    model MagneticForce = Temp;
@@ -38,3 +40,4 @@ proc glimmix data=FerriteCores;
         / adjust=simulate(seed=1) cl upper;
    ods select LSMestimates;
 run;
+

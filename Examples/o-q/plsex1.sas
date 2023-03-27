@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /*                                                              */
 /****************************************************************/
+
 /* Example 1: Examining Model Details */
+
 data pentaTrain;
    input obsnam $ S1 L1 P1 S2 L2 P2
                   S3 L3 P3 S4 L4 P4
@@ -66,23 +68,32 @@ VELAK    -2.6931 -2.5271 -1.2871  3.0777  0.3891 -0.0701
          -4.1921 -1.0285 -0.9801  0.0744 -1.7333  0.0902
           2.8369  1.4092 -3.1398                    0.59
 ;
+
 /* Fit the PLS model */
+
 proc pls data=pentaTrain;
    model log_RAI = S1-S5 L1-L5 P1-P5;
 run;
+
 /* Fit the PLS model and produce the default graphics */
+
 ods graphics on;
 
 proc pls data=pentaTrain;
    model log_RAI = S1-S5 L1-L5 P1-P5;
 run;
+
 /* Plot the X-scores versus the Y-scores */
+
 proc pls data=pentaTrain nfac=4 plot=XYScores;
    model log_RAI = S1-S5 L1-L5 P1-P5;
 run;
+
 /* Plot the parameter estimate profiles and the VIP */
+
 proc pls data=pentaTrain nfac=2 plot=(ParmProfiles VIP);
    model log_RAI = S1-S5 L1-L5 P1-P5;
 run;
 
 ods graphics off;
+

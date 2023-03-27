@@ -56,3 +56,4 @@ proc mi data=Fitness1 mu0=50 10 180;
    mcmc inest=miest;
    var Oxygen RunTime RunPulse;
 run;
+

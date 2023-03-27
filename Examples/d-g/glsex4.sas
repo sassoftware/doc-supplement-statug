@@ -259,6 +259,7 @@ proc reg data=designCamp;
 quit;
 
 ods graphics off;
+
 proc glmselect data=TennisCamp
      outdesign(fullmodel prefix=parm names)=designCampGeneric;
    class forehandCoach backhandCoach volleyCoach gender;
@@ -273,3 +274,4 @@ run;
 
 proc print data=designCampGeneric(obs=5);
 run;
+

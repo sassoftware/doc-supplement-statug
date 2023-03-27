@@ -19,6 +19,7 @@
 6 tissue sites examined at necropsy: 1=tumor, 0=no tumor.  Freq is
 the frequency, and the grouping variable Dose=CTRL, 4ppm, 8ppm,
 16ppm, 50ppm.
+
 Data from Brown and Fears (1981)
 ----------------------------------------------------------------*/
 
@@ -60,3 +61,4 @@ proc multtest data=a order=data notables out=p
 run;
 proc print data=p;
 run;
+

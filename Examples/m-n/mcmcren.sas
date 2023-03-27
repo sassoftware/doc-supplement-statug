@@ -27,3 +27,4 @@ ods select all;
 ods graphics on;
 %tadplot(data=classout, var=beta0 logpost);
 ods graphics off;
+

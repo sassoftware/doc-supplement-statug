@@ -82,3 +82,4 @@ proc logistic data=Data1 exactonly;
    model outcome(event='1')=Gall;
    exact Gall / estimate=both;
 run;
+

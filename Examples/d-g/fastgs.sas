@@ -12,6 +12,7 @@
 /*     REF: PROC FASTCLUS, Getting Started.                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 proc format;
    value specfmt
       1='Bream'
@@ -22,6 +23,7 @@ proc format;
       6='Pike'
       7='Smelt';
 run;
+
 data fish (drop=HtPct WidthPct);
    title 'Fish Measurement Data';
    input Species Weight Length1 Length2 Length3 HtPct WidthPct @@;
@@ -121,6 +123,7 @@ data fish (drop=HtPct WidthPct);
 7   13.4 11.7 12.4 13.5 18.0  9.4 7   12.2 12.1 13.0 13.8 16.5  9.1
 7   19.7 13.2 14.3 15.2 18.9 13.6 7   19.9 13.8 15.0 16.2 18.1 11.6
 ;
+
 proc stdize data=Fish out=Stand method=std;
    var Length1 logLengthRatio Height Width Weight3;
 run;
@@ -129,9 +132,11 @@ proc fastclus data=Stand out=Clust
               maxclusters=7 maxiter=100;
    var Length1 logLengthRatio Height Width Weight3;
 run;
+
 proc freq data=Clust;
    tables Species*Cluster;
 run;
+
 proc candisc data=Clust out=Can noprint;
    class Cluster;
    var Length1 logLengthRatio Height Width Weight3;
@@ -140,3 +145,4 @@ run;
 proc sgplot data=Can;
    scatter y=Can2 x=Can1 / group=Cluster;
 run;
+

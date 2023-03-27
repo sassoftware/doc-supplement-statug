@@ -1,16 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SEQDEX6                                             */
+/*    NAME: seqdex6                                             */
 /*   TITLE: Documentation Example 6 for PROC SEQDESIGN          */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: group sequential design                             */
 /*   PROCS: SEQDESIGN                                           */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC SEQDESIGN, EXAMPLE 6                           */
-/*    MISC:                                                     */
 /****************************************************************/
 
 ods graphics on;
@@ -23,3 +19,4 @@ proc seqdesign altref=0.2
    StopToReject:       design nstages=5 method=tri alt=upper stop=reject;
    StopToAccept:       design nstages=5 method=tri alt=upper stop=accept;
 run;
+

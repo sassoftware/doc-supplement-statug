@@ -73,3 +73,4 @@ proc icphreg data=hiv plot=cumhaz;
    model (Left, Right) = Stage / basehaz=splines;
    baseline covariates=cov;
 run;
+

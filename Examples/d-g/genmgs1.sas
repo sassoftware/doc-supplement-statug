@@ -14,6 +14,7 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 data insure;
    input n c car$ age;
    ln = log(n);
@@ -25,12 +26,14 @@ data insure;
 500   73  medium 2
 300   14  large  2
 ;
+
 proc genmod data=insure;
    class car age;
    model c = car age / dist   = poisson
                        link   = log
                        offset = ln;
 run;
+
 proc genmod data=insure;
    class car age;
    model c = car age / dist   = poisson
@@ -39,3 +42,4 @@ proc genmod data=insure;
                        type1
                        type3;
 run;
+

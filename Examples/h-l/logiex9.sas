@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -52,7 +51,6 @@ data One;
 23 63 31 70 67 100 70 104
 ;
 
-
 proc logistic data=One;
    freq F;
    model Y=A B A*B;
@@ -79,3 +77,4 @@ proc logistic data=One;
    freq F;
    model Y=A / scale=none aggregate=(A B);
 run;
+

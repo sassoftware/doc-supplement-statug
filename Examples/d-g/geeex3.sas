@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -13,7 +12,6 @@
 /*     REF: PROC GEE, EXAMPLE 3                                 */
 /*    MISC:                                                     */
 /****************************************************************/
-
 
 data Amenorrhea;
    input ID Dose Time Y@@;
@@ -4640,3 +4638,4 @@ proc gee data=Amenorrhea desc plots=histogram;
    model Y = Time Dose Time*Time Dose*Time Dose*Time*Time / dist=bin;
    repeated subject=ID / within=Ctime corr=cs;
 run;
+

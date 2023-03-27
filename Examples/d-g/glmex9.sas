@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Doubly Multivariate Repeated Measures Design Analysis -------*/
+
 options ls=96;
 data Trial;
    input Treatment $ Repetition PreY1 PostY1 FollowY1
@@ -38,13 +40,16 @@ Control  4 10   8  8  5  8 14
 Control  5 11  11 11  1  0 11
 Control  6  1  5  15  8  9 10
 ;
+
 proc glm data=Trial;
    class Treatment;
    model PreY1 PostY1 FollowY1
          PreY2 PostY2 FollowY2 = Treatment / nouni;
    repeated Response 2 identity, Time 3;
 run;
+
 /* Use MANOVA Statement to Test for Overall Main Effect of Time */
+
 proc glm data=Trial;
    class Treatment;
    model PreY1 PostY1 FollowY1
@@ -54,3 +59,4 @@ proc glm data=Trial;
                           prey2 - posty2,
                           prey2 - followy2 / summary;
 run;
+

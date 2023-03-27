@@ -73,3 +73,4 @@ ods select all;
 proc mianalyze parms=regparms;
    modeleffects Trt;
 run;
+

@@ -16,17 +16,17 @@
 /****************************************************************/
 
 data rats;
-  input trt $ m x @@;
-  if (trt='c') then do;
-     x1 = 1;
-     x2 = 0;
-  end;
-  else do;
-     x1 = 0;
-     x2 = 1;
-  end;
-  litter = _n_;
-  datalines;
+   input trt $ m x @@;
+   if (trt='c') then do;
+      x1 = 1;
+      x2 = 0;
+   end;
+   else do;
+      x1 = 0;
+      x2 = 1;
+   end;
+   litter = _n_;
+   datalines;
 c 13 13   c 12 12   c  9  9   c  9  9   c  8  8   c  8  8   c 13 12   c 12 11
 c 10  9   c 10  9   c  9  8   c 13 11   c  5  4   c  7  5   c 10  7   c 10  7
 t 12 12   t 11 11   t 10 10   t  9  9   t 11 10   t 10  9   t 10  9   t  9  8
@@ -42,3 +42,4 @@ proc nlmixed data=rats;
    estimate 'gamma2' t2/sqrt(1+s2*s2);
    predict p out=p;
 run;
+

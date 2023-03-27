@@ -43,3 +43,4 @@ run;
 proc calis data=sales meanstr;
    path   q1  ===>  q4;
 run;
+

@@ -62,3 +62,4 @@ proc glimmix data=test method = quad(qpoints=3 fastquad);
    random int /subject = school;
    random int /subject = class(school);
 run;
+

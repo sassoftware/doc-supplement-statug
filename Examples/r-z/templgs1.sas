@@ -109,3 +109,4 @@ proc glm plots=diagnostics(unpack) data=sashelp.class;
 run;
 
 %modtmplt(template=Stat.glm.graphics.residualhistogram, steps=d)
+

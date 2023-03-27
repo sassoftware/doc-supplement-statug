@@ -10,9 +10,11 @@
 /*   PROCS: SURVEYPHREG                                         */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Pushpal Mukhopadhyay  UPDATE: January 5, 2010       */
 /*     REF: PROC SURVEYPHREG, Getting Started                   */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data LibrarySurvey;
    input Branch         2.
          SamplingWeight 7.2
@@ -121,6 +123,7 @@ data LibrarySurvey;
 10 118.35 11DEC2008 13DEC2008 35
 10 118.35 21NOV2008 23NOV2008 46
 ;
+
 data LibrarySurvey;
    set LibrarySurvey;
    Returned = (CheckIn ^= .);
@@ -129,8 +132,10 @@ data LibrarySurvey;
    else
    lenBorrow = input('31Dec2008',date9.) - CheckOut;
 run;
+
 proc surveyphreg data = LibrarySurvey;
    weight SamplingWeight;
    strata Branch;
    model lenBorrow*Returned(0) = Age;
 run;
+

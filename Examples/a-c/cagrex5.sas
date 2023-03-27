@@ -1,18 +1,15 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: CAGREX5                                             */
+/*    NAME: cagrex5                                             */
 /*   TITLE: Documentation Example 5 for PROC CAUSALGRAPH        */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: graphical causal models                             */
 /*   PROCS: CAUSALGRAPH                                         */
-/*    DATA:                                                     */
-/*                                                              */
-/*  UPDATE: July 03, 2018                                       */
-/*     REF: PROC CAUSALGRAPH, Example 5                         */
-/*    MISC: Special thanks to Noah Greifer                      */
+/*     REF: Timmermann et al (2017), Reprod. Toxic.             */
 /****************************************************************/
+
 
 proc causalgraph method=iv;
    model "Timm17HealthBehavior"
@@ -42,3 +39,4 @@ proc causalgraph method=iv;
    unmeasured PrevBF HealthBehavior;
    testid "Minimal CIV" Age / conditional = (Education Parity);
 run;
+

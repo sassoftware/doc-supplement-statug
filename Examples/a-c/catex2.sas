@@ -60,3 +60,4 @@ proc catmod data=operate order=data ;
    model Severity=Treatment Hospital / freq oneway design;
    title2 'Main-Effects Model';
 quit;
+

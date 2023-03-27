@@ -1,17 +1,17 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: FACEX6                                              */
+/*    NAME: facex6                                              */
 /*   TITLE: Documentation Example 6 for PROC FACTOR             */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: factor analysis                                     */
 /*   PROCS: FACTOR                                              */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC FACTOR, Example 6                              */
-/*    MISC:                                                     */
 /****************************************************************/
+
+/*
+This example illustrates the creation and uses of path diagrams.
+*/
 
 options validvarname=any;
 data jobratings;
@@ -151,3 +151,4 @@ label
    'Dependability'n = 'Dependable';
 run;
 ods graphics off;
+

@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVREX4                                              */
+/*    NAME: svrex4                                              */
 /*   TITLE: Documentation Example 4 for PROC SURVEYREG          */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -9,10 +9,7 @@
 /*    KEYS: regression estimator                                */
 /*    KEYS: unequal weighting, linear model                     */
 /*   PROCS: SURVEYREG                                           */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYREG, Example 4                           */
-/*                                                              */
 /*    MISC: Stratified Sampling                                 */
 /*                                                              */
 /****************************************************************/
@@ -89,3 +86,4 @@ proc surveyreg data=FarmsByState total=StratumTotals;
    model CornYield = State FarmAreaIA FarmAreaNE / noint covB solution;
    weight Weight;
 run;
+

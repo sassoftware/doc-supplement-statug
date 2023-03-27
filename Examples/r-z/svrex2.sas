@@ -1,18 +1,14 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVREX2                                              */
+/*    NAME: svrex2                                              */
 /*   TITLE: Documentation Example 2 for PROC SURVEYREG          */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: regression, survey sampling, clustering             */
-/*    KEYS: unequal weighting, linear model                     */
+/*    KEYS: regression, survey sampling, clustering,            */
+/*          unequal weighting, linear model                     */
 /*   PROCS: SURVEYREG                                           */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYREG, Example 2                           */
-/*                                                              */
-/*    MISC: Cluster Sampling                                    */
 /*                                                              */
 /****************************************************************/
 
@@ -65,3 +61,4 @@ title2 'Simple Random Sampling';
 proc surveyreg data=Municipalities total=284;
    model Population85=Population75;
 run;
+

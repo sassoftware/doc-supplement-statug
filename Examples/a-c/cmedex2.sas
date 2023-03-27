@@ -350,3 +350,4 @@ proc causalmed data=Cognitive;
    evaluate 'Most Favorable Environment'  FamSize=-.5(SD) SocStatus=1(SD);
    evaluate 'Least Favorable Environment' FamSize=.5(SD) SocStatus=-1(SD);
 run;
+

@@ -5881,3 +5881,5 @@ proc bchoice data=MAMR seed=124 nthreads=8 nmc=20000 nthin=2 plots=none;
    random TrtScheme RespRate Time Status TrtLine Risk Cost
           / subject=ID remean;
 run;
+
+

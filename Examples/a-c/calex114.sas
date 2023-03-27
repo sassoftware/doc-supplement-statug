@@ -67,3 +67,4 @@ proc calis method=ml meanstr vardef=n data=scores;
       verbal = 1.,
       math   = 1.;
 run;
+

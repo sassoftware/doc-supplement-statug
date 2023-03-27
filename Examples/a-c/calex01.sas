@@ -57,3 +57,4 @@ proc calis nobs=932 data=Wheaton plots=residuals;
 run;
 
 ods graphics off;
+

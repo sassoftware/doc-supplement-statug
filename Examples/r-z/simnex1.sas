@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -13,7 +12,6 @@
 /*     REF: Examples, PROC SIMNORMAL.                           */
 /*    MISC:                                                     */
 /****************************************************************/
-
 
 data a ;
    input in1-in5 out1-out5 ;
@@ -120,11 +118,9 @@ data a ;
  8.9174     9.9623     9.5742     9.9713
 ;
 
-
 proc corr data=a cov nocorr outp=outcov ;
    var in1-in5 out1-out5 ;
 run ;
-
 
 data cond1 ;
    _TYPE_='COND' ;
@@ -146,7 +142,6 @@ data cond2 ;
    output ;
 run ;
 
-
 data outcov1 ;
    input=1 ;
    set outcov cond1 ;
@@ -157,14 +152,12 @@ data outcov2 ;
    set outcov cond2 ;
 run ;
 
-
 data outcov ;
    set outcov1 outcov2 ;
 run ;
 proc print data=outcov ;
    where (_type_ ne 'COV') ;
 run ;
-
 
 proc simnormal data=outcov(type=cov)
       out = osim
@@ -183,7 +176,6 @@ data b;
    else ff = (out1-out3)/denom ;
 run ;
 
-
 proc univariate data=b ;
    by input ;
    var ff ;
@@ -194,3 +186,4 @@ proc sgpanel data=b ;
    REFLINE 0 / axis= x ;
    density ff ;
 run ;
+

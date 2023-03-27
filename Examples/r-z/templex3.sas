@@ -123,3 +123,4 @@ quit;
 proc template;
    delete Stat.REG.Graphics.DiagnosticsPanel / store=sasuser.templat;
 run;
+

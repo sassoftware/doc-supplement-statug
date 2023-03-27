@@ -14,6 +14,7 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 data Surg;
    input Y X1 X2 X3;
    LogX1 = log10(X1);
@@ -73,8 +74,10 @@ data Surg;
 2.29670       6.40000   59     85
 2.49550       8.80000   78     72
 ;
+
 proc print data=Surg;
 run;
+
 ods graphics on;
 
 proc genmod data=Surg;
@@ -83,6 +86,7 @@ proc genmod data=Surg;
                      seed=603708000
                      crpanel;
 run;
+
 data sim;
    p = 1 / 91;
    sigma = 1;
@@ -221,8 +225,10 @@ run;
 
 proc sgrender data=B template=MisSpecification;
 run;
+
 proc genmod data=Surg;
    model Y = LogX1 X2 X3 / scale=Pearson;
    assess var=(LogX1) / resample=10000
                         seed=603708000;
 run;
+

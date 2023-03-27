@@ -50,5 +50,6 @@ proc glimmix data=diallel outdesign(z)=zmat;
 run;
 
 proc print data=zmat(where=(block=1) obs=10);
-  var p m time _z1-_z8;
+   var p m time _z1-_z8;
 run;
+

@@ -76,3 +76,4 @@ data transout;
    ld50 = (log(0.50 / 0.50) - alpha) / beta;
    ld95 = (log(0.95 / 0.05) - alpha) / beta;
 run;
+

@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: ORTHORIN1                                           */
+/*    NAME: ORTHIN1                                             */
 /*   TITLE: Getting Started Example for PROC ORTHOREG           */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -12,7 +12,9 @@
 /*     REF: PROC ORTHOREG, INTRODUCTORY EXAMPLE 1.              */
 /*    MISC:                                                     */
 /****************************************************************/
+
 /* Getting Started Example: Longley Data -----------------------*/
+
 title 'PROC ORTHOREG used with Longley data';
 data Longley;
    input Employment Prices GNP Jobless Military PopSize Year;
@@ -34,6 +36,7 @@ data Longley;
 69331 115.7 518173 4806 2572 127852 1961
 70551 116.9 554894 4007 2827 130081 1962
 ;
+
 proc orthoreg data=Longley;
    model Employment = Prices   Prices*Prices
                       GNP      GNP*GNP
@@ -42,6 +45,7 @@ proc orthoreg data=Longley;
                       PopSize  PopSize*PopSize
                       Year     Year*Year;
 run;
+
 proc glm data=Longley;
    model Employment = Prices   Prices*Prices
                       GNP      GNP*GNP
@@ -54,3 +58,4 @@ proc glm data=Longley;
               ParameterEstimates
               Notes;
 run;
+

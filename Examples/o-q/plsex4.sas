@@ -170,3 +170,4 @@ proc pls data=Wheat cv=random(seed=1) cvtest(seed=12345)
    effect splRow = spline(Row    / knotmethod=equal(14));
    model Yield = splCol|splRow;
 run;
+

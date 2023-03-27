@@ -21,12 +21,12 @@ proc print data=Sashelp.enso(obs=10);
 run;
 
 data tdata;
-  do covp1=0,0.0005,0.05,0.1,0.2,0.5,
-           1,2,3,4,5,6,8,10,15,20,50,
-           75,100,125,140,150,160,175,
-           200,225,250,275,300,350;
-     output;
-  end;
+   do covp1=0,0.0005,0.05,0.1,0.2,0.5,
+            1,2,3,4,5,6,8,10,15,20,50,
+            75,100,125,140,150,160,175,
+            200,225,250,275,300,350;
+      output;
+   end;
 run;
 
 ods select FitStatistics CovParms CovTests;
@@ -78,3 +78,4 @@ proc sgplot data=plotthis;
         name        = "pred3";
    keylegend "pred1" "pred2" "pred3" / across=2;
 run;
+

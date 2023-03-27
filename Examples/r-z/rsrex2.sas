@@ -56,3 +56,4 @@ proc rsreg data=Experiment plots=all;
    model Yield = d1-d3 Grade Time Temp Pressure / covar=4;
 run;
 ods graphics off;
+

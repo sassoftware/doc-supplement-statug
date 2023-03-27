@@ -9,7 +9,7 @@
 /*   PROCS: CLUSTER, TREE                                       */
 /*    DATA:                                                     */
 /*                                                              */
-/*     REF: PROC CLUSTER, Example 1.                            */
+/*     REF: PROC CLUSTER, Example 2.                            */
 /*    MISC:                                                     */
 /****************************************************************/
 
@@ -103,3 +103,4 @@ ods graphics on;
 %analyze(two k=10, 3)
 
 %analyze(two k=18, 2)
+

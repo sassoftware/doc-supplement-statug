@@ -8,12 +8,11 @@
 /*    KEYS: survey sampling, probability sampling,              */
 /*    KEYS: proportional allocation, stratified sampling        */
 /*   PROCS: SURVEYSELECT, SORT, PRINT                           */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYSELECT, Example 4                        */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Generate Sampling Frame -------------------------------------*/
+
 data Customer1;
    input CustomerID State$ Type$ Usage;
    format CustomerID SSN11.;
@@ -86,6 +85,7 @@ data Customer2;
       output;
    end;
 run;
+
 proc sort data=Customer2;
    by CustomerID;
 run;
@@ -94,15 +94,20 @@ data Customers; set Customer1 Customer2;
    format Usage 6.0;
    if Usage < 0 then Usage = 0;
 run;
+
 proc sort data=Customers;
    by State Type;
 run;
+
 /* Proportional Allocation Among Strata ------------------------*/
+
 title1 'Customer Satisfaction Survey';
 title2 'Proportional Allocation';
 proc surveyselect data=Customers n=1000
                   out=SampleSizes;
    strata State Type / alloc=prop nosample;
 run;
+
 proc print data=SampleSizes;
 run;
+

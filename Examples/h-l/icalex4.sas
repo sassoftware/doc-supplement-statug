@@ -172,3 +172,4 @@ proc calis data=aspire nobs=329;
    /* Fixed variances for Xi-variables */
    matrix _phi_ [1,1] = 6 * 1.0;
 run;
+

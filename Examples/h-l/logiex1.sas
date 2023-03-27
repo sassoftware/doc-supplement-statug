@@ -114,3 +114,4 @@ proc logistic data=Remission;
          / selection=backward fast slstay=0.2
            ctable pprob=(0 to 1 by 0.05);
 run;
+

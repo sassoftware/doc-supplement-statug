@@ -91,13 +91,16 @@ data seizures;
 236 1  12  1  4  3  2
 238 0  47 13 15 13 12
 ;
+
 proc glimmix data=seizures;
    model cnt = x1 trt x1*trt / dist=poisson offset=ltime
                                ddfm=none s;
 run;
+
 proc glimmix data=seizures empirical;
    class id;
    model cnt = x1 trt x1*trt / dist=poisson offset=ltime
                                ddfm=none covb s;
    random _residual_ / subject=id type=cs vcorr;
 run;
+

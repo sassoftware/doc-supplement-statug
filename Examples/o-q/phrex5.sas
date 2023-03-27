@@ -111,3 +111,4 @@ proc phreg data=LBW;
    model Time*Low(0)= LWT Smoke HT UI / ties=discrete;
    strata Age;
 run;
+

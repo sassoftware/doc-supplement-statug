@@ -7,10 +7,7 @@
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: standardized rates                                  */
 /*   PROCS: STDRATE                                             */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC STDRATE, GETTING STARTED EXAMPLE               */
-/*    MISC:                                                     */
 /****************************************************************/
 
 data Florida_C43;
@@ -53,3 +50,4 @@ proc stdrate data=Florida_C43 refdata=US_C43
    reference  event=Event total=PYear;
    strata Age / stats smr;
 run;
+

@@ -1134,3 +1134,4 @@ proc icphreg data=Tooth;
    model (Left, Right) = Sex Dmf / base=unspecified plvariance;
    hazardratio Sex;
 run;
+

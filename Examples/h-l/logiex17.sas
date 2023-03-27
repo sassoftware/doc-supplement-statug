@@ -83,3 +83,4 @@ proc logistic data=Neuralgia;
    model Pain= Treatment|Sex Age;
    slice Treatment*Sex / sliceby=Sex diff oddsratio cl adjust=bon;
 run;
+

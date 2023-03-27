@@ -10,6 +10,7 @@
 /*   PROCS: MIXED                                               */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /*                                                              */
@@ -31,11 +32,13 @@ data sp;
   4 2 1  35  4 2 2  30
   4 3 1  17  4 3 2  18
 ;
+
 proc mixed data=sp;
    class a b block;
    model y = a b a*b / LComponents e3;
    random block a*block;
 run;
+
 proc mixed data=sp;
    class a b block ;
    model y = a b a*b;
@@ -47,6 +50,7 @@ proc mixed data=sp;
    estimate 'a*b  2' a*b 0  0 1 -1 -1 1;
    ods select Estimates;
 run;
+
 data polynomial;
    do x=1 to 20; input y@@; output; end;
    datalines;
@@ -55,6 +59,8 @@ data polynomial;
 6.291   7.151   7.154   6.469   7.137
 6.374   5.860   4.866   4.155   2.711
 ;
+
 proc mixed data=polynomial;
    model y = x x*x x*x*x / s lcomponents htype=1,3;
 run;
+

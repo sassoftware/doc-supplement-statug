@@ -12,6 +12,7 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data Experiment;
    input Temperature Catalyst MeasuredYield;
    if ranuni(1) < 0.1
@@ -1290,6 +1291,7 @@ data Experiment;
 140    0.078     5.20562
 140    0.080     5.49371
 ;
+
 proc template;
    define statgraph gradientScatter;
       beginGraph;
@@ -1311,21 +1313,25 @@ run;
 
 proc sgrender data=Experiment template=gradientScatter;
 run;
+
 ods graphics on;
 
 proc loess data=Experiment;
    model MeasuredYield = Temperature Catalyst / scale=sd(0.1);
 run;
+
 proc loess data=Experiment;
    model CorruptedYield = Temperature Catalyst /
                  scale=sd(0.1) smooth=0.018;
 run;
+
 proc loess data=Experiment;
    model CorruptedYield = Temperature Catalyst /
                              scale  = sd(0.1)
                              smooth = 0.018
                              iterations=4;
 run;
+
 proc loess data=Experiment plots=contourFit(obs=none);
    model CorruptedYield = Temperature Catalyst /
                             scale  = sd(0.1)
@@ -1334,3 +1340,4 @@ proc loess data=Experiment plots=contourFit(obs=none);
 run;
 
 ods graphics off;
+

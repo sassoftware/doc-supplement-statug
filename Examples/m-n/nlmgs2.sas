@@ -16,8 +16,8 @@
 /****************************************************************/
 
 data infection;
-  input clinic t x n;
-  datalines;
+   input clinic t x n;
+   datalines;
 1 1 11 36
 1 0 10 37
 2 1 16 20
@@ -46,3 +46,4 @@ proc nlmixed data=infection;
    predict eta out=eta;
    estimate '1/beta1' 1/beta1;
 run;
+

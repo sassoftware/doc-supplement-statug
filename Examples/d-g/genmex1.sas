@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -14,6 +13,7 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 data drug;
    input drug$ x r n @@;
    datalines;
@@ -23,9 +23,11 @@ C  .04  0  10   C  .15  0  11   C  .56  1  12   C  .7   2  12
 D  .34  5  10   D  .6   5   9   D  .7   8  10
 E  .2  12  20   E  .34 15  20   E  .56 13  15   E  .8  17  20
 ;
+
 proc genmod data=drug;
    class drug;
    model r/n = x drug / dist = bin
                         link = logit
                         lrci;
 run;
+

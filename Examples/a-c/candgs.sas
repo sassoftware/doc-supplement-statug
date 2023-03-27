@@ -40,3 +40,4 @@ run;
 
 proc sgrender data=outcan template=scatter;
 run;
+

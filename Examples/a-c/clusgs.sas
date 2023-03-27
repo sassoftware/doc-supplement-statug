@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -68,7 +67,6 @@ data Poverty;
 41.7 10.3    66 Zimbabwe
 ;
 
-
 proc aceclus data=Poverty out=Ace p=.03 noprint;
    var Birth Death InfantDeath;
 run;
@@ -92,3 +90,4 @@ run;
 proc sgplot data=New;
    scatter y=can2 x=can1 / group=cluster;
 run;
+

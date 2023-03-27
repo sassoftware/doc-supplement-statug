@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -26,7 +25,6 @@ data twoway;
 3 3 31   3 3 26   3 3 33   3 3 29   3 3 25
 ;
 
-
 proc glm data=twoway;
    class Treatment Block;
    model y = Treatment | Block;
@@ -40,3 +38,4 @@ run;
 ods show;
 quit;
 ods show;
+

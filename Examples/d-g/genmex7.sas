@@ -17,6 +17,7 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 data thall;
    input id y visit trt bline age;
    datalines;
@@ -257,8 +258,10 @@ data thall;
 236 3 3 1 12 37
 236 2 4 1 12 37
 ;
+
 proc print data=thall (obs=14);
 run;
+
 data new;
    set thall;
    output;
@@ -281,12 +284,15 @@ data new;
       ltime=log(2);
    end;
 run;
+
 proc genmod data=new;
    class id;
    model y=x1 | trt / d=poisson offset=ltime;
 run;
+
 proc genmod data=new;
    class id;
    model y=x1 | trt / d=poisson offset=ltime;
    repeated subject=id / corrw covb type=exch;
 run;
+

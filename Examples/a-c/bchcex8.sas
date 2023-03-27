@@ -1042,3 +1042,5 @@ proc bchoice data=Sydney seed=1 nthreads=8 nmc=20000 thin=2 plots=none;
    model Choice =  / choiceset=(RespID Set) choicetype=maxdiff;
    random Index / subject=RespID remean type=un;
 run;
+
+

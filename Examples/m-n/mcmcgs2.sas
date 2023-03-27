@@ -55,3 +55,4 @@ proc freq data = postout;
    tables mudif /nocum;
    format mudif diffmt.;
 run;
+

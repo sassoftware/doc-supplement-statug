@@ -145,3 +145,4 @@ proc variogram data=gmout plot(only)=fit;
 run;
 
 ods graphics off;
+

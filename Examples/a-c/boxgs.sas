@@ -96,3 +96,4 @@ proc boxplot data=Turbine;
    plot KWatts*Day / boxstyle = schematic
                      outbox   = OilSchematic;
 run;
+

@@ -13,6 +13,7 @@
 /*    MISC:                                                     */
 /*                                                              */
 /****************************************************************/
+
 title 'PROC GLMMOD and PROC REG for Forward Selection Screening';
 data Screening;
    input a b c d e y;
@@ -34,13 +35,16 @@ data Screening;
  1  1  1 -1 -1   4.048
  1  1  1  1  1  15.248
 ;
+
 ods output DesignPoints = DesignMatrix;
 proc glmmod data=Screening;
    model y = a|b|c|d|e@2;
 run;
+
 proc reg data=DesignMatrix;
    model y = a--d_e;
    model y = a--d_e / selection = forward
                       details   = summary
                       slentry   = 0.05;
 run;
+

@@ -10,6 +10,7 @@
 /*   PROCS: MIXED                                               */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /*                                                              */
@@ -60,3 +61,4 @@ proc mixed data=rc;
    model Y = Month / s;
    random Int Month Monthc / sub=Batch s;
 run;
+

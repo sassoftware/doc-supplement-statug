@@ -87,3 +87,4 @@ proc print;
    var Incompatibility--Separation;
    by cluster;
 run;
+

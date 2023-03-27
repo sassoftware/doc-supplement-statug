@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -34,3 +33,4 @@ proc transreg data=sashelp.Gas solve ss2 short nomiss plots=all;
    model log(NOx) = pspline(EqRatio / deg=2) identity(CpRatio)
                     opscore(Fuel);
 run;
+

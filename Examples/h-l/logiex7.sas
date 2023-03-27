@@ -38,24 +38,26 @@ model-predicted probabilities.*/
 title 'Example 7: ROC Curve, R-Square, ...';
 
 data Data1;
-   input disease n age;
+   input disease n age id $;
    datalines;
- 0 14 25
- 0 20 35
- 0 19 45
- 7 18 55
- 6 12 65
-17 17 75
+ 0 14 25 a
+ 0 20 35 b
+ 0 19 45 c
+ 7 18 55 d
+ 6 12 65 e
+17 17 75 f
 ;
 
 ods graphics on;
 %let _ROC_XAXISOPTS_LABEL=False Positive Fraction;
 %let _ROC_YAXISOPTS_LABEL=True Positive Fraction;
-proc logistic data=Data1 plots(only)=roc(id=obs);
+proc logistic data=Data1 plots(only)=roc(id=id);
    model disease/n=age / scale=none
                          clparm=wald
                          clodds=pl
                          rsquare;
    units age=10;
+   id id;
    effectplot;
 run;
+

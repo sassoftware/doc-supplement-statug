@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -79,7 +78,6 @@ data seeds;
 20 56    12      1       1
 ;
 
-
 proc logistic data=seeds;
    model r/n=cult soil cult*soil/scale=none;
    title 'Full Model With SCALE=NONE';
@@ -94,3 +92,4 @@ proc logistic data=seeds;
    model r/n=soil / scale=williams(0.075941);
    title 'Reduced Model With SCALE=WILLIAMS(0.075941)';
 run;
+

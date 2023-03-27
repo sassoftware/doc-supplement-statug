@@ -13,8 +13,10 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Alternative Multiple Comparison Procedures
    for Pairwise Differences Between Bacteria Strains -----------*/
+
 
 title1 'Nitrogen Content of Red Clover Plants';
 data Clover;
@@ -29,7 +31,9 @@ COMPOS 17.3 COMPOS 19.4 COMPOS 19.1 COMPOS 16.9 COMPOS 20.8
 ;
 
 
+
 /* Use Tukey's Multiple Comparisons Test -----------------------*/
+
 
 proc anova data=Clover;
    class Strain;
@@ -38,13 +42,18 @@ proc anova data=Clover;
 run;
 
 
+
 /* Duncan's Multiple Range Test and Waller-Duncan k-Ratio t Test*/
+
 
    means Strain / duncan waller;
 run;
 
 
+
 /* Tukey and LSD Tests with Confidence Intervals for Both Tests */
+
 
    means Strain/ lsd tukey cldiff ;
 run;
+

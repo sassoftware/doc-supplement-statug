@@ -11,6 +11,7 @@
 /*                                                              */
 /****************************************************************/
 
+
 /****************************************************************/
 /*  Details Section: Class Variable Coding Example              */
 /****************************************************************/
@@ -30,12 +31,12 @@ data codingExample;
       output;
    end;
 run;
-
 proc glmselect data=codingExample;
    class c1(param=ref split) c2(param=ordinal order=data) /
           delimiter = ',' showcoding;
    model y = c1 c2 x1 x2/orderselect;
 run;
+
 
 /****************************************************************/
 /*  Details Section: Using Macro Variables                      */
@@ -60,6 +61,7 @@ data one(drop=i j);
    end;
 run;
 
+
 proc glmselect data=one;
    by     byVar;
    class  classVar;
@@ -81,12 +83,13 @@ run;
       run;quit;
    %end;
 %mend;
-
 %LSMeansAnalysis;
+
 
 /****************************************************************/
 /*  Details Section: Using a STORE statement                    */
 /****************************************************************/
+
 
 proc glmselect data=one;
    by     byVar;
@@ -142,3 +145,4 @@ proc glmselect data=sashelp.baseball plots=criteria(startstep=10 endstep=16);
 run;
 
 ods graphics off;
+

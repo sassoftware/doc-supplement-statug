@@ -498,3 +498,4 @@ proc bchoice data=Commuter outpost=Commupostsamp thin=10 nmc=100000 seed=123;
    class Mode(ref='1') Subject;
    model Choice = Cost Time Mode / choiceset=(Subject) type=probit;
 run;
+

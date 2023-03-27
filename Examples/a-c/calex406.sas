@@ -63,3 +63,4 @@ proc calis data=Mcdon method=ls nobs=100 corr;
    x22 = 1. - x18 * x18;
    x23 = 1. - x19 * x19;
 run;
+

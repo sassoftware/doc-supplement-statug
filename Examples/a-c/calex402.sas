@@ -72,3 +72,4 @@ proc calis data=Thurst nobs=213 corr nose;
       F2 = [f4],
       U1 = [e1-e9];
 run;
+

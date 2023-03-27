@@ -10,6 +10,7 @@
 /*   PROCS: REG                                                 */
 /*                                                              */
 /****************************************************************/
+
 data reaction;
    input FeedRate Catalyst AgitRate Temperature
          Concentration ReactionPercentage;
@@ -27,7 +28,9 @@ data reaction;
 12.5   1.5  110   160  4.5   38.7
 12.5   1.5  110   160  4.5   39.7
 ;
+
 proc reg data=reaction;
    model  ReactionPercentage=FeedRate Catalyst AgitRate
                              Temperature Concentration / lackfit;
 run;
+

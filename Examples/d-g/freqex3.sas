@@ -9,12 +9,11 @@
 /*    KEYS: chi-square goodness-of-fit test,                    */
 /*    KEYS: ODS Graphics, deviation plot, dot plot              */
 /*   PROCS: FREQ                                                */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC FREQ, Example 3                                */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Chi-Square Goodness-of-Fit Tests ----------------------------*/
+
 data Color;
    input Region Eyes $ Hair $ Count @@;
    label Eyes  ='Eye Color'
@@ -31,6 +30,7 @@ data Color;
 2 green dark   23  2 brown fair   56  2 brown red    42
 2 brown medium 53  2 brown dark   54  2 brown black  13
 ;
+
 proc sort data=Color;
    by Region;
 run;
@@ -44,3 +44,4 @@ proc freq data=Color order=data;
    title 'Hair Color of European Children';
 run;
 ods graphics off;
+

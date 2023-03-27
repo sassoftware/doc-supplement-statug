@@ -41,3 +41,4 @@ proc glmpower data=Exemplary;
       ntotal = 60
       power  = .;
 run;
+

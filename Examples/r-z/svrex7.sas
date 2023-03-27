@@ -1,20 +1,18 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVREX7                                              */
+/*    NAME: svrex7                                              */
 /*   TITLE: Documentation Example 7 for PROC SURVEYREG          */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: regression, survey sampling                         */
-/*    KEYS: domain analysis                                     */
-/*    KEYS: unequal weighting, linear model                     */
+/*    KEYS: regression, survey sampling,                        */
+/*          domain analysis,                                    */
+/*          unequal weighting, linear model                     */
 /*   PROCS: SURVEYREG                                           */
-/*    DATA: Data from 1987 NHEFS (NHANES Epidemiologic Follow-up*/
-/*          Study)                                              */
-/*       http://www.cdc.gov/nchs/about/major/nhefs/nhefspuf.htm */
-/*                                                              */
+/*    DATA: Data from 1987 NHEFS (NHANES Epidemiologic          */
+/*          Follow-up Study)                                    */
+/*          https://wwwn.cdc.gov/nchs/nhanes/nhefs/             */
 /*     REF: PROC SURVEYREG, Example 7                           */
-/*                                                              */
 /*    MISC: Domain Analysis                                     */
 /*                                                              */
 /****************************************************************/
@@ -1051,3 +1049,4 @@ proc surveyreg data=cancer plot=fit(weight=heatmap shape=hex);
    model bodyweight = age;
    domain cancer ('1');
 run;
+

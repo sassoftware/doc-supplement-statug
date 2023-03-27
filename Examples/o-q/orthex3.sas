@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: ORTHOREX3                                           */
+/*    NAME: ORTHEX3                                             */
 /*   TITLE: Example 3 for PROC ORTHOREG                         */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -12,7 +12,9 @@
 /*     REF: PROC ORTHOREG, EXAMPLE 3.                           */
 /*    MISC:                                                     */
 /****************************************************************/
+
 /* Example 3: Fitting Polynomials ------------------------------*/
+
 title 'Polynomial Data';
 data Polynomial;
    do i = 1 to 101;
@@ -24,6 +26,7 @@ data Polynomial;
       output;
    end;
 run;
+
 ods graphics on;
 
 proc orthoreg data=Polynomial;
@@ -34,6 +37,7 @@ proc orthoreg data=Polynomial;
 run;
 
 ods graphics off;
+
 data Zeros(keep=x);
    do j = 0 to 8;
       x = j/8;
@@ -47,10 +51,12 @@ run;
 
 proc print noobs;
 run;
+
 proc glm data=Polynomial;
    model y = x|x|x|x|x|x|x|x|x;
    store GStore;
 run;
+
 proc plm restore=GStore noprint;
    score data=Zeros out=GZeros pred=GPred;
 run;
@@ -61,3 +67,4 @@ run;
 
 proc print noobs;
 run;
+

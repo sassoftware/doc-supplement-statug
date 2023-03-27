@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -34,7 +33,6 @@ data contrived;
  2.5    1.2    7.5
 ;
 
-
 ods graphics on;
 proc nlin data=contrived bias hougaard
         NLINMEASURES plots(stats=all)=(diagnostics);
@@ -43,3 +41,4 @@ proc nlin data=contrived bias hougaard
    model y = alpha*x1 + exp(gamma*x2);
 run;
 ods graphics off;
+

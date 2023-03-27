@@ -114,3 +114,4 @@ proc causalmed data=RedDye ciratio=log poutcomemod pmedmod;
    covar Female;
    freq Freq;
 run;
+

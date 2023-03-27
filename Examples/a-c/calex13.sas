@@ -253,3 +253,4 @@ proc calis modification;
                  mean4=mean4_new;    /* constraint b */
    fitindex NoIndexType On(only)=[chisq df probchi rmsea aic caic sbc];
 run;
+

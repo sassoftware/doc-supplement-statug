@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -38,7 +37,6 @@ data circle; keep x y;
    end;
 run;
 
-
 proc modeclus data=circle m=1 r=1 to 3.5 by .25 join=20 short;
 run;
 
@@ -51,3 +49,4 @@ proc sgplot data=out noautolegend;
    scatter y=y x=x / group=cluster Markerchar=cluster;
    by _NJOIN_;
 run;
+

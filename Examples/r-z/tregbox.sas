@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -60,3 +59,4 @@ run;
 proc univariate noprint;
    histogram y ty;
 run;
+

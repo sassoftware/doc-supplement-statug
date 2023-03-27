@@ -143,3 +143,4 @@ proc glm data=OutEx4Grades;
    class music(ref='No') gender;
    model GPA= music gender absence / solution;
 run;
+

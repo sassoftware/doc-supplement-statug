@@ -918,3 +918,4 @@ proc gee data=Arthritis;
    model Rating= Visit Treatment Baseline / dist=multinomial;
    repeated subject=ID / within=Visit;
 run;
+

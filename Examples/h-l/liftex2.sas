@@ -52,3 +52,4 @@ proc lifetest data=Bmt2 plots=survival(cl cb=hw strata=panel);
 run;
 
 ods graphics off;
+

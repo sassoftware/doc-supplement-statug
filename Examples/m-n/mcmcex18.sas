@@ -90,3 +90,4 @@ proc mcmc data=coded outpost=bikesout ntu=3000 nmc=50000
           pwJapanese        * Japanese;
    model rank ~ normal(mean, prec=tau);
 run;
+

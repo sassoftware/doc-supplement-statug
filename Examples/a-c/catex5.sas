@@ -52,3 +52,4 @@ proc catmod data=Display;
    contrast 'Active,  U vs. V' Active  0 0 1 -1;
    title2 'Test Quasi-Independence for the Incomplete Table';
 quit;
+

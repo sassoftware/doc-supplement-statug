@@ -18,9 +18,9 @@
 /****************************************************************/
 
 data spline;
-  input group y @@;
-  x = _n_;
-  datalines;
+   input group y @@;
+   x = _n_;
+   datalines;
  1    -.020 1    0.199 2    -1.36 1    -.026
  2    -.397 1    0.065 2    -.861 1    0.251
  1    0.253 2    -.460 2    0.195 2    -.108
@@ -47,21 +47,25 @@ data spline;
  2    2.474 2    2.221 1    4.867 2    2.453
  1    5.253 2    3.024 2    2.403 1    5.498
 ;
+
 proc sgplot data=spline;
    scatter y=y x=x / group=group name="data";
    keylegend "data"  / title="Group";
 run;
+
 proc glimmix data=spline outdesign=x;
    class group;
    effect spl = spline(x);
    model y = group spl*group / s noint;
    output out=gmxout pred=p;
 run;
+
 proc sgplot data=gmxout;
    series  y=p x=x / group=group name="fit";
    scatter y=y x=x / group=group;
    keylegend "fit" / title="Group";
 run;
+
 proc glimmix data=spline;
    class group;
    effect spl = spline(x);
@@ -70,6 +74,7 @@ proc glimmix data=spline;
    estimate 'Group 2, x=20' group 0  1 group*spl [1,2 20];
    estimate 'Diff at x=20 ' group 1 -1 group*spl [1,1 20] [-1,2 20];
 run;
+
 ods select Estimates;
 proc glimmix data=spline;
    class group;
@@ -94,3 +99,4 @@ proc glimmix data=spline;
             'Diff at x=80' group 1 -1 group*spl [1,1 80] [-1,2 80] /
             adjust=sim(seed=1) stepdown;
 run;
+

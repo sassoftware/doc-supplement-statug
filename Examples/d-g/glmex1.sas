@@ -13,12 +13,14 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Balanced Data from Randomized Complete Block ----------------*/
 
 /* Snapdragon Experiment ---------------------------------------*/
 /* As reported by Stenstrom, 1940, an experiment was undertaken */
 /* to investigate how snapdragons grew in various soils. Each   */
 /* soil type was used in three blocks. -------------------------*/
+
 title 'Balanced Data from Randomized Complete Block';
 data plants;
    input Type $ @;
@@ -35,10 +37,12 @@ Compost  31.8 28.0 29.2
 Wabash   38.2 37.8 31.9
 Webster  32.5 31.1 29.7
 ;
+
 proc glm;
    class Block Type;
    model StemLength = Block Type;
 run;
+
 proc glm order=data;
    class Block Type;
    model StemLength = Block Type / solution;
@@ -54,3 +58,4 @@ run;
 
    means Type / waller regwq;
 run;
+

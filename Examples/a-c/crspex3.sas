@@ -1,16 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: CRSPEX3                                             */
+/*    NAME: crspex3                                             */
 /*   TITLE: Documentation Example 3 for PROC CORRESP            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: marketing research, categorical data analysis       */
 /*   PROCS: CORRESP                                             */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC CORRESP, EXAMPLE 3                             */
-/*    MISC:                                                     */
 /****************************************************************/
 
 proc corresp data=sashelp.heart short obs mca outc=c1;
@@ -241,3 +237,4 @@ run;
 %burt(data=z, vars=a k b d c e g f h j i)
 
 %check(data=z, vars=a k b d c e g f h j i)
+

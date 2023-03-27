@@ -97,3 +97,4 @@ proc variogram data=logAsData plots(only)=fit;
 run;
 
 ods graphics off;
+

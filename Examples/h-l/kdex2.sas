@@ -27,7 +27,6 @@ data bivnormal;
    drop seed;
 run;
 
-
 /* Changing the Bandwidth (Bivariate) */
 
 ods graphics on;
@@ -61,3 +60,4 @@ proc kde data=bivnormal;
    univar x y / plots=densityoverlay;
 run;
 ods graphics off;
+

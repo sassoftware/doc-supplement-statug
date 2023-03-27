@@ -20,8 +20,8 @@
 /****************************************************************/
 
 data hernio;
-  input patient age gender$ OKstatus leave los;
-  datalines;
+   input patient age gender$ OKstatus leave los;
+   datalines;
  1   78  m   1   0   9
  2   60  m   1   0   4
  3   68  m   1   1   7
@@ -95,3 +95,4 @@ proc glimmix data=hernio_uv;
                     noint s dist=byobs(dist);
    random _residual_ / subject=patient type=chol;
 run;
+

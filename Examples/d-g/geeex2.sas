@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -13,7 +12,6 @@
 /*     REF: PROC GEE, EXAMPLE 2                                 */
 /*    MISC:                                                     */
 /****************************************************************/
-
 
 data Seizure;
    input ID Count Visit  Trt Age Weeks;
@@ -328,9 +326,9 @@ data Seizure;
    end;
 run;
 
-
 proc gee data = Seizure;
    class ID Visit;
    model Count = X1 Trt X1*Trt / dist=poisson link=log offset= Ltime;
    repeated subject = ID / within = Visit type=unstr covb corrw;
 run;
+

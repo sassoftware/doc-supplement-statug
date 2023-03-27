@@ -46,3 +46,4 @@ proc calis covpattern=eqcovmat;
    group 2 / data=novice nobs=18 label="Novice";
    fitindex NoIndexType On(only)=[chisq df probchi];
 run;
+

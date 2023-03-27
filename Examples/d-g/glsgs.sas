@@ -28,3 +28,4 @@ proc glmselect data=sashelp.baseball plots=all;
                    / details=all stats=all;
 run;
 ods graphics off;
+

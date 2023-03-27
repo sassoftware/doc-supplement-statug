@@ -64,3 +64,4 @@ run;
 proc mianalyze data=outcov edf=30 wcov bcov tcov mult;
    modeleffects Oxygen RunTime RunPulse;
 run;
+

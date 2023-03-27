@@ -17,6 +17,7 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data pressure;
    input SBPbefore SBPafter @@;
    datalines;
@@ -24,6 +25,7 @@ data pressure;
 140 132   128 125   140 141   135 137
 126 118   130 132   126 129   127 135
 ;
+
 ods graphics on;
 
 proc ttest;
@@ -31,3 +33,4 @@ proc ttest;
 run;
 
 ods graphics off;
+

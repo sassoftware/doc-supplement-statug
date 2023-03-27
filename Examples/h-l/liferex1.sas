@@ -14,6 +14,7 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 title 'Motorette Failures With Operating Temperature as a Covariate';
 data motors;
    input time censor temp @@;
@@ -44,25 +45,31 @@ data motors;
  408 1 220  408 1 220  504 1 220  504 1 220  504 1 220
  528 0 220  528 0 220  528 0 220  528 0 220  528 0 220
 ;
+
 proc print data=motors;
 run;
+
 proc lifereg data=motors outest=modela covout;
    a: model time*censor(0)=z;
       output out=outa quantiles=.1 .5 .9 std=std p=predtime
          control=control;
 run;
+
 proc lifereg data=motors outest=modelb covout;
    b: model time*censor(0)=z / dist=lnormal;
       output out=outb quantiles=.1 .5 .9 std=std p=predtime
          control=control;
 run;
+
 data models;
    set modela modelb;
 run;
+
 proc print data=models;
    id _model_;
    title 'Fitted Models';
 run;
+
 data out;
    set outa outb;
 run;
@@ -74,8 +81,10 @@ data out1;
    upper=exp(ltime+1.64*stde);
    lower=exp(ltime-1.64*stde);
 run;
+
 title 'Quantile Estimates and Confidence Limits';
 proc print data=out1;
    id temp;
 run;
 title;
+

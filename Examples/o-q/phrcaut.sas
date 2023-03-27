@@ -194,3 +194,4 @@ proc print data=Outs;
    id Gender;
    var Age_exit Atrisk Event Probability;
 run;
+

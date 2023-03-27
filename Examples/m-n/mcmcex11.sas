@@ -976,3 +976,4 @@ proc mcmc data=dyspnea seed=17 outpost=dysp2 nmc=20000
                  phi9*y2 + phi10*y3);
    model r3 ~ binary(q3);
 run;
+

@@ -52,3 +52,4 @@ ods graphics off;
 proc glm data=iron;
    model loss=fe;
 run;
+

@@ -76,3 +76,4 @@ proc lifereg data=mice xdata=xrow2;
    inset;
 run;
 title;
+

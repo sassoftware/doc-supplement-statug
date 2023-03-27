@@ -6,13 +6,11 @@
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: nonparametric methods, categorical data analysis,   */
-/*    KEYS: Wilcoxon test, exact test                           */
+/*    KEYS: Wilcoxon test, exact tests                          */
 /*   PROCS: NPAR1WAY                                            */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC NPAR1WAY, Example 3                            */
-/*    MISC:                                                     */
 /****************************************************************/
+
 data React;
    input Stim Time @@;
    datalines;
@@ -20,8 +18,10 @@ data React;
 1 3.27   1 3.27   1 3.27   1 3.70   1 3.70   1 3.74
 2 3.27   2 3.27   2 3.27   2 3.70   2 3.70   2 3.74
 ;
+
 proc npar1way wilcoxon correct=no data=React;
    class Stim;
    var Time;
    exact wilcoxon;
 run;
+

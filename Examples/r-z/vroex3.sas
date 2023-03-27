@@ -131,3 +131,4 @@ proc variogram data=ozoneSet plot(only)=(semivar fit);
 run;
 
 ods graphics off;
+

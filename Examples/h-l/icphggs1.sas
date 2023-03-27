@@ -1,3 +1,4 @@
+
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -67,3 +68,4 @@ proc icphreg data=hiv;
    model (Left, Right) = Stage / basehaz=pch(intervals=(10));
    hazardratio Stage;
 run;
+

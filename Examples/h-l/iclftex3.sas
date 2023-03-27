@@ -65,3 +65,4 @@ proc iclifetest data=BCS plots=hazard(bandwidth=15) impute(seed=1234);
    strata trt;
    time (lTime, rTime);
 run;
+

@@ -107,3 +107,4 @@ run;
 proc print data=OutEx8a(obs=10);
    var PatientID Drug Gender Age BMI pscore _LPS _MatchWgt_ _MatchID;
 run;
+

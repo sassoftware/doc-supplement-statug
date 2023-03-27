@@ -1,18 +1,15 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: CAGREX7                                             */
+/*    NAME: cagrex7                                             */
 /*   TITLE: Documentation Example 7 for PROC CAUSALGRAPH        */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: graphical causal models                             */
 /*   PROCS: CAUSALGRAPH                                         */
-/*    DATA:                                                     */
-/*                                                              */
-/*  UPDATE: July 06, 2018                                       */
-/*     REF: PROC CAUSALGRAPH, Example 7                         */
-/*    MISC: Special thanks to Noah Greifer                      */
+/*     REF: Thornley et al (2013), Rheumatology                 */
 /****************************************************************/
+
 
 data CVDdata;
    drop ii Nutrition PreviousHDL;
@@ -189,3 +186,4 @@ proc print label;
           StratEff 10.6
           UnadjEff 10.6;
 run;
+

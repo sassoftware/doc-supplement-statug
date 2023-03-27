@@ -256,3 +256,4 @@ proc phreg data=Liver2 plots=roc rocoptions(at=2 to 10 by 2);
    model Time*Status(0)=Bilirubin Age Edema / roclabel='Bilirubin';
    roc 'logBilirubin' pred=Y;
 run;
+

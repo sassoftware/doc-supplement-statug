@@ -342,6 +342,7 @@ Zimbabwe75             .0320 6.860 .1450 .0170 .0080 .0450 3.833 .7156 .0337
 Zimbabwe85             -.011 7.180 .2200 .0650 .0060 .0400 3.944 .9296 .0520
                        .1559 .0518 .7862 .7161 -.024
 ;
+
 ods graphics on;
 
 proc quantreg data=growth ci=resampling
@@ -364,3 +365,4 @@ proc quantreg data=growth ci=resampling;
                gedy2 Iy2 gcony2 lblakp2 pol2 ttrad2
                / quantile=process plot=quantplot(lgdp2) seed=1268;
 run;
+

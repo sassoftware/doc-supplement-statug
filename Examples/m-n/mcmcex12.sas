@@ -84,3 +84,4 @@ proc sgplot data=all noautolegend;
    series x=x1 y=y1 / lineattrs = graphdata2;
    series x=value y=density / lineattrs = graphdata1;
 run;
+

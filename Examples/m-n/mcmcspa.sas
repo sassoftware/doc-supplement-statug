@@ -77,3 +77,4 @@ proc mcmc data=london seed=615926 nbi=10000 nmc=50000 thin=10
    mu=e*exp(alpha + beta*depriv + b + h);
    model o ~ poisson(mu);
 run;
+

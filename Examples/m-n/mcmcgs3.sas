@@ -42,3 +42,4 @@ proc mcmc data=input outpost=postout nmc=50000 seed=7893 plots=trace;
    model height ~ normal(mu, var = s2);
 run;
 ods graphics off;
+

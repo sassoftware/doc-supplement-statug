@@ -508,3 +508,4 @@ proc adaptivereg data=sashelp.gas plots=all details=bases;
    class fuel;
    model nox = eqratio | fuel;
 run;
+

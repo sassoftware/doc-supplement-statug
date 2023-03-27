@@ -1,18 +1,15 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: CAGREX1                                             */
+/*    NAME: cagrex1                                             */
 /*   TITLE: Documentation Example 1 for PROC CAUSALGRAPH        */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: graphical causal models                             */
 /*   PROCS: CAUSALGRAPH                                         */
-/*    DATA:                                                     */
-/*                                                              */
-/*  UPDATE: July 03, 2018                                       */
-/*     REF: PROC CAUSALGRAPH, Example 1                         */
-/*    MISC: Special thanks to Noah Greifer                      */
+/*     REF: Timmermann et al (2017), Reprod. Toxic.             */
 /****************************************************************/
+
 
 proc causalgraph;
    model "Timm17AllObs"
@@ -51,3 +48,4 @@ proc causalgraph minimal;
       BMI Alcohol Smoking ==> Duration;
    identify PFAS ==> Duration;
 run;
+

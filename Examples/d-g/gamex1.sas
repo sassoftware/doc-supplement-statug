@@ -64,6 +64,7 @@ proc gam data=kyphosis;
                                 spline(NumVert  ,df=3) /
                                     dist=binomial anodev=norefit;
 run;
+
 ods graphics on;
 
 proc gam data=kyphosis plots=components(clm commonaxes);
@@ -73,6 +74,7 @@ proc gam data=kyphosis plots=components(clm commonaxes);
 run;
 
 ods graphics off;
+
 title 'Comparing PROC GAM with PROC GENMOD';
 proc genmod data=kyphosis descending;
    model kyphosis = Age       Age      *Age
@@ -80,3 +82,4 @@ proc genmod data=kyphosis descending;
                     NumVert   NumVert  *NumVert /
                         link=logit  dist=binomial;
 run;
+

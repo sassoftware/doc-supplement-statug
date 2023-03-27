@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: LOGIINTR                                            */
+/*    NAME: LOGIGS                                              */
 /*   TITLE: Getting Started Example for PROC LOGISTIC           */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -85,3 +85,4 @@ proc logistic data=ingots;
    model NotReady(event='1') = Heat Soak;
    freq Freq;
 run;
+

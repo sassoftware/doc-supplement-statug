@@ -173,3 +173,4 @@ proc irt data=IrtMulti;
    factor  Factor1->item1-item4 item6,
            Factor2->item5 item7-item10;
 run;
+

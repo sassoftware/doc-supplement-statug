@@ -71,3 +71,4 @@ proc npar1way data=out scores=data;
    var score;
    exact scores=data / mc seed=1234;
 run;
+

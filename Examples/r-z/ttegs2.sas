@@ -14,12 +14,14 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data scores;
    input Gender $ Score @@;
    datalines;
 f 75  f 76  f 80  f 77  f 80  f 77  f 73
 m 82  m 80  m 85  m 85  m 78  m 87  m 82
 ;
+
 ods graphics on;
 
 proc ttest cochran ci=equal umpu;
@@ -28,3 +30,4 @@ proc ttest cochran ci=equal umpu;
 run;
 
 ods graphics off;
+

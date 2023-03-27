@@ -1,16 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SEQDX12                                             */
+/*    NAME: seqdx12                                             */
 /*   TITLE: Documentation Example 12 for PROC SEQDESIGN         */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: group sequential design                             */
 /*   PROCS: SEQDESIGN                                           */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC SEQDESIGN, EXAMPLE 12                          */
-/*    MISC:                                                     */
 /****************************************************************/
 
 ods graphics on;
@@ -29,3 +25,4 @@ TwoSidedAsymmetric: design nstages=4
                     beta=0.1
                     ;
 run;
+

@@ -19,6 +19,7 @@
 Each observation represents an animal.  S1 and S2 are two tumor
 types with 0=no tumor, 1=tumor.  Dose is the grouping variable,
 T is the time of death of the animal.
+
 Example provided by Keith Soper, Merck.
 ----------------------------------------------------------------*/
 
@@ -43,3 +44,4 @@ run;
 
 proc print data=res(obs=36);
 run;
+

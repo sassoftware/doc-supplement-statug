@@ -595,3 +595,4 @@ proc sgplot data=outbmi;
    scatter x=age y=bmi /markerattrs=(size=1);
    series  x=age y=pbmi/group=QUANTILE;
 run;
+

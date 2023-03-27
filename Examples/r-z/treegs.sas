@@ -61,3 +61,4 @@ proc tree data=Tree horizontal haxis=axis1;
    height _PROPOR_;
    label _name_ = 'Variable';
 run;
+

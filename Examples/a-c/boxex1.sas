@@ -58,3 +58,4 @@ proc boxplot data=Turbine;
    insetgroup min max /
       header = 'Extremes by Day';
 run;
+

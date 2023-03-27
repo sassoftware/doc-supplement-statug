@@ -14,6 +14,7 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 data Surg;
    input x1 x2 x3 x4 y logy;
    label x1 = 'Blood Clotting Score';
@@ -78,13 +79,16 @@ data Surg;
 6.4  59   85  2.33  198  2.2967
 8.8  78   72  3.20  313  2.4955
 ;
+
 proc print data=Surg (obs=20);
 run;
+
 
 proc genmod data=Surg;
    model y = Logx1 X2 X3 X4 / dist=normal;
    bayes seed=1 OutPost=PostSurg;
 run;
+
 
 data Prob;
    set PostSurg;
@@ -94,3 +98,4 @@ run;
 
 proc Means data = Prob(keep=Indicator) n mean;
 run;
+

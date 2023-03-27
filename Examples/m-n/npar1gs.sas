@@ -7,13 +7,12 @@
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: nonparametric methods, categorical data analysis,   */
 /*    KEYS: Wilcoxon test, Kruskal-Wallis test, exact tests,    */
-/*    KEYS: EDF, Kolmogorov-Smirnov statistics                  */
+/*    KEYS: EDF statistics, Kolmogorov-Smirnov statistics,      */
+/*    KEYS: Wilcoxon score box plot                             */
 /*   PROCS: NPAR1WAY                                            */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC NPAR1WAY, Getting Started                      */
-/*    MISC:                                                     */
 /****************************************************************/
+
 data Gossypol;
    input Dose n;
    do i=1 to n;
@@ -32,20 +31,26 @@ data Gossypol;
 .13 11
 154 130 130 118 118 104 112 134 98 100 104
 ;
+
 proc npar1way data=Gossypol;
    class Dose;
    var Gain;
 run;
+
 /* Box Plot of Wilcoxon Scores ---------------------------------*/
+
 ods graphics on;
 proc npar1way data=Gossypol plots(only)=wilcoxonboxplot;
    class Dose;
    var Gain;
 run;
 ods graphics off;
+
 /* Two-Sample Analysis -----------------------------------------*/
+
 proc npar1way data=Gossypol;
    where Dose <= .04;
    class Dose;
    var Gain;
 run;
+

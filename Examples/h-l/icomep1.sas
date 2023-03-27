@@ -54,3 +54,4 @@ proc orthoreg data=d;
    effectplot / obs(jitter(seed=39393));
 run;
 ods graphics off;
+

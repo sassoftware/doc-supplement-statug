@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Analysis of a Screening Design ------------------------------*/
+
 data HalfFraction;
    input power flow pressure gap rate;
    datalines;
@@ -26,22 +28,29 @@ data HalfFraction;
 1.2 550.0 125 275    1075
 1.2 550.0 200 325     729
 ;
+
 proc glm data=HalfFraction;
    class power flow pressure gap;
    model rate=power|flow|pressure|gap@2;
 run;
+
 /* Analyze Aliasing: First Make Aliasing Structure Interpretable*/
+
 data Coded; set HalfFraction;
    power    = -1*(power   =0.80) + 1*(power   =1.20);
    flow     = -1*(flow    =4.50) + 1*(flow    =550 );
    pressure = -1*(pressure=125 ) + 1*(pressure=200 );
    gap      = -1*(gap     =275 ) + 1*(gap     =325 );
 run;
+
 /* Then Reanalyze Coded Design --------------------------------*/
+
 proc glm data=Coded;
    model rate=power|flow|pressure|gap@2 / solution aliasing;
 run;
+
 /* Create Data Set for Remaining Runs of the Experiment --------*/
+
 data OtherHalf;
    input power flow pressure gap rate;
    datalines;
@@ -57,8 +66,11 @@ data OtherHalf;
 data FullRep;
    set HalfFraction OtherHalf;
 run;
+
 /* Perform Analysis of Variance Again --------------------------*/
+
 proc glm data=FullRep;
    class power flow pressure gap;
    model rate=power|flow|pressure|gap@2;
 run;
+

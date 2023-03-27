@@ -1,18 +1,15 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVMEX2                                              */
-/*   TITLE: Documentation Example 2 for PROC SURVEYMEANS        */
+/*    NAME: svmex2                                              */
+/*   TITLE: Example 2 in PROC SURVEYMEANS Documentation         */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: survey sampling, categorical data analysis          */
-/*    KEYS: stratification, clustering, domain analysis         */
-/*    KEYS: unequal weighting, descriptive statistics           */
+/*    KEYS: survey sampling, categorical data analysis,         */
+/*          stratification, clustering, domain analysis,        */
+/*          unequal weighting, descriptive statistics           */
 /*   PROCS: SURVEYMEANS                                         */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYMEANS, Example 2                         */
-/*                                                              */
 /*    MISC: Domain Analysis                                     */
 /*                                                              */
 /****************************************************************/
@@ -96,3 +93,4 @@ proc surveymeans data=Company total=800 mean sum;
    weight Weight;
    domain Type;
 run;
+

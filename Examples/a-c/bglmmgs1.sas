@@ -83,3 +83,4 @@ proc sgplot data=prob noautolegend;
    xaxis label="Difference of Probability in Treatment";
    density pDiff / type=kernel;
 run;
+

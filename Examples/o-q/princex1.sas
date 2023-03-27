@@ -1,17 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: PRINCEX1                                            */
+/*    NAME: princex1                                            */
 /*   TITLE: Documentation Example 1 for PROC PRINCOMP           */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: multivariate analysis                               */
 /*   PROCS: PRINCOMP                                            */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC PRINCOMP, Example 1                            */
-/*    MISC:                                                     */
-/*                                                              */
 /****************************************************************/
 
 data Temperature;
@@ -98,3 +93,4 @@ proc princomp data=Temperature cov plots=score(ellipse);
    var July January;
    id CityId;
 run;
+

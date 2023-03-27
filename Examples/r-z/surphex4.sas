@@ -1,20 +1,18 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SURPHEX4                                            */
+/*    NAME: surphex4                                            */
 /*   TITLE: Documentation Example 4 for PROC SURVEYPHREG        */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: replicate weights, jackknife coefficients,          */
-/*    KEYS: jackknife variance estimation,                      */
-/*    KEYS: proportional hazards regression, censoring          */
+/*          jackknife variance estimation,                      */
+/*          proportional hazards regression, censoring          */
 /*   PROCS: SURVEYPHREG, SURVEYMEANS                            */
-/*    DATA:                                                     */
-/*                                                              */
-/*                                                              */
 /*     REF: PROC SURVEYPHREG, Example 4                         */
-/*    MISC:                                                     */
+/*                                                              */
 /****************************************************************/
+
 data LibrarySurvey;
    input Branch         2.
          SamplingWeight 7.2
@@ -123,6 +121,7 @@ data LibrarySurvey;
 10 118.35 11DEC2008 13DEC2008 35
 10 118.35 21NOV2008 23NOV2008 46
 ;
+
 data LibrarySurvey;
    set LibrarySurvey;
    Returned = (CheckIn ^= .);
@@ -131,6 +130,7 @@ data LibrarySurvey;
    else
    lenBorrow = input('31Dec2008',date9.) - CheckOut;
 run;
+
 data LibrarySurvey;
    set LibrarySurvey;
    randomorder = ranuni(12345);
@@ -153,8 +153,10 @@ proc surveymeans data = LibrarySurvey varmethod = jk
    cluster GroupPSU;
    var Age;
 run;
+
 proc surveyphreg data = LibraryRepWeights varmethod = jk;
    weight SamplingWeight;
    repweights RepWt_: / jkcoefs = LibraryJKCOEF;
    model lenBorrow*Returned(0) = Age;
 run;
+

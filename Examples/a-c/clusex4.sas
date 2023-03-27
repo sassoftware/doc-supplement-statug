@@ -204,3 +204,4 @@ title3 'Standardized Data';
 
 /* ------ANALYZE THE 4-CLUSTER LEVEL------------------------ */
 %tabperm( &vlist, mammal, 9.1, 4, 10);
+

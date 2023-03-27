@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Savings in Computing by Using the ABSORB Statement ----------*/
+
 data a;
    do herd=1 to 40;
       do cow=1 to 30;
@@ -26,8 +28,10 @@ data a;
       end;
    end;
 run;
+
 proc glm data=a;
    absorb herd cow;
    class treatment;
    model y = treatment;
 run;
+

@@ -12,12 +12,11 @@
 /*    KEYS: equivalence test, equivalence margin,               */
 /*    KEYS: two one-sided tests (TOST)                          */
 /*   PROCS: FREQ                                                */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC FREQ, Example 4                                */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Binomial Proportions ----------------------------------------*/
+
 data Color;
    input Region Eyes $ Hair $ Count @@;
    label Eyes  ='Eye Color'
@@ -34,9 +33,11 @@ data Color;
 2 green dark   23  2 brown fair   56  2 brown red    42
 2 brown medium 53  2 brown dark   54  2 brown black  13
 ;
+
 proc freq data=Color order=freq;
    tables Eyes / binomial(ac wilson exact) alpha=.1;
    tables Hair / binomial(equiv p=.28 margin=.1);
    weight Count;
    title 'Hair and Eye Color of European Children';
 run;
+

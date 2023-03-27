@@ -1,16 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SEQTEX2                                             */
+/*    NAME: seqtex2                                             */
 /*   TITLE: Documentation Example 2 for PROC SEQTEST            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: group sequential test                               */
 /*   PROCS: SEQDESIGN, SEQTEST, REG                             */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC SEQTEST, EXAMPLE 2                             */
-/*    MISC:                                                     */
 /****************************************************************/
 
 ods graphics on;
@@ -186,3 +182,4 @@ proc seqtest Boundary=Test_Fit2
              ;
    ods output Test=Test_Fit3;
 run;
+

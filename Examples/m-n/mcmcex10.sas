@@ -105,3 +105,4 @@ proc mcmc data=air seed=1181 nmc=10000 monitor=(_parms_ orx1 orx2)
    p = logistic(beta0 + beta1*x1 + beta2*x2);
    model y ~ binary(p);
 run;
+

@@ -323,3 +323,4 @@ proc causalmed data=Cognitive decomp;
    mediator Motivation  = Encourage;
    covar    FamSize SocStatus;
 run;
+

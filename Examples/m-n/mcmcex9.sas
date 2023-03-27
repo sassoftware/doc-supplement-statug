@@ -60,3 +60,4 @@ proc mcmc data=rats nmc=10000 outpost=postout
    mu = alpha + beta * age;
    model weight ~ normal(mu, var=var_y);
 run;
+

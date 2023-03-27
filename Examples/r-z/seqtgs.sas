@@ -1,16 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SEQTGS                                              */
+/*    NAME: seqtgs                                              */
 /*   TITLE: Getting Started Example for PROC SEQTEST            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: group sequential test                               */
 /*   PROCS: SEQDESIGN, SEQTEST, REG                             */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC SEQTEST, GETTING STARTED EXAMPLE               */
-/*    MISC:                                                     */
 /****************************************************************/
 
 ods graphics on;
@@ -119,3 +115,4 @@ proc seqtest Boundary=Test_LDL2
              ;
    ods output Test=Test_LDL3;
 run;
+

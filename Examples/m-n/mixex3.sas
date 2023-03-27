@@ -10,6 +10,7 @@
 /*   PROCS: MIXED, PRINT, TEMPLATE, SGRENDER                    */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /*                                                              */
@@ -20,6 +21,7 @@
 | are used here to construct a data set containing  |
 | the likelihood surface.                           |
 *---------------------------------------------------*;
+
 data hh;
    input a b y @@;
    datalines;
@@ -30,6 +32,7 @@ data hh;
 3 1 186   3 1 183
 3 2 142   3 2 125    3 2 136
 ;
+
 ods output ParmSearch=parms;
 proc mixed data=hh asycov mmeq mmeqsol covtest;
    class a b;
@@ -40,6 +43,7 @@ proc mixed data=hh asycov mmeq mmeqsol covtest;
 run;
 proc print data=predicted;
 run;
+
 proc template;
    define statgraph surface;
       begingraph;
@@ -51,3 +55,4 @@ proc template;
 run;
 proc sgrender data=parms template=surface;
 run;
+

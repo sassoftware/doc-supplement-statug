@@ -88,3 +88,4 @@ run;
 proc adaptivereg data=artificial;
    model y=x1-x10;
 run;
+

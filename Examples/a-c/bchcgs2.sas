@@ -519,3 +519,4 @@ proc bchoice data=Trashcan seed=1 nmc=30000 thin=2 nthreads=4;
    model Choice = Touchless Steel AutoBag Price80 / choiceset=(ID Task);
    random Touchless Steel AutoBag Price80 / sub=ID monitor=(1 to 5) type=un;
 run;
+

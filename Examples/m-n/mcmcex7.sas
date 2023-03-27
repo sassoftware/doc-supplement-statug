@@ -37,3 +37,4 @@ proc mcmc data=seeds outpost=postout seed=332786 nmc=20000;
    pi = logistic(delta);
    model r ~ binomial(n = n, p = pi);
 run;
+

@@ -1,16 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SEQDEX1                                             */
+/*    NAME: seqdex1                                             */
 /*   TITLE: Documentation Example 1 for PROC SEQDESIGN          */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: group sequential design                             */
 /*   PROCS: SEQDESIGN                                           */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC SEQDESIGN, EXAMPLE 1                           */
-/*    MISC:                                                     */
 /****************************************************************/
 
 ods graphics on;
@@ -32,3 +28,4 @@ proc seqdesign altref=1.2
                                ;
    samplesize model=twosamplemean(stddev=2 weight=2);
 run;
+

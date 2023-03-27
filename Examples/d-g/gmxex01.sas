@@ -20,10 +20,10 @@
 /****************************************************************/
 
 data HessianFly;
-  label Y = 'No. of damaged plants'
-        n = 'No. of plants';
-  input block entry lat lng n Y @@;
-  datalines;
+   label Y = 'No. of damaged plants'
+         n = 'No. of plants';
+   input block entry lat lng n Y @@;
+   datalines;
   1 14 1 1  8 2    1 16 1 2  9 1
   1  7 1 3 13 9    1  6 1 4  9 9
   1 13 2 1  9 2    1 15 2 2 14 7
@@ -74,3 +74,4 @@ proc glimmix data=HessianFly;
    model y/n = entry / solution ddfm=contain;
    random _residual_ / subject=intercept type=sp(exp)(lng lat);
 run;
+

@@ -52,3 +52,4 @@ proc calis data=cognitive1 nobs=64 modification;
    cov
       Read_Factor Math_Factor Write_Factor /* = 3 * 0. */;
 run;
+

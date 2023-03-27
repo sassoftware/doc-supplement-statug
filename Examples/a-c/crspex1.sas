@@ -1,16 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: CRSPEX1                                             */
+/*    NAME: crspex1                                             */
 /*   TITLE: Documentation Example 1 for PROC CORRESP            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: marketing research, categorical data analysis       */
 /*   PROCS: CORRESP                                             */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC CORRESP, EXAMPLE 1                             */
-/*    MISC:                                                     */
 /****************************************************************/
 
 title1 'Automobile Owners and Auto Attributes';
@@ -98,3 +94,5 @@ proc corresp data=Cars binary;
    ods select RowCoors;
    tables Origin Size Type Income Home Marital Sex;
 run;
+
+

@@ -38,3 +38,4 @@ proc nlmixed data = nested;
    random aeffect ~ normal(0,vara) subject = A;
    random beffect ~ normal(0,varb_a) subject = B(A);
 run;
+

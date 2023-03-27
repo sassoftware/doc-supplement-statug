@@ -14,6 +14,7 @@
 /*   PROCS: GLMSELECT                                           */
 /*                                                              */
 /****************************************************************/
+
 %let random=12345;
 
 data DoJoBumps;
@@ -73,3 +74,5 @@ proc sgplot data=out1;
    series    x=x y=bumps;
    series    x=x y=pBumps / lineattrs=(color=red);
 run;
+
+

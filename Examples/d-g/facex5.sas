@@ -1,17 +1,19 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: FACEX5                                              */
+/*    NAME: facex5                                              */
 /*   TITLE: Documentation Example 5 for PROC FACTOR             */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: factor analysis                                     */
 /*   PROCS: FACTOR                                              */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC FACTOR, Example 5                              */
-/*    MISC:                                                     */
 /****************************************************************/
+
+/*
+This example illustrates how you can use the standard errors and
+confidence intervals to understand the pattern of factor loadings
+under the maximum likelihood estimation.
+*/
 
 data test(type=corr);
    title 'Quartimin-Rotated Factor Solution with Standard Errors';
@@ -33,3 +35,4 @@ title2 'A nine-variable-three-factor example';
 proc factor data=test method=ml reorder rotate=quartimin
    nobs=200 n=3 se cover=.45 alpha=.1;
 run;
+

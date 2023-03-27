@@ -13,6 +13,7 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data uis;
    input  ID Age Becktota Hercoc Ivhx Ndrugtx Race Treat Site Lot Time
    Censor;
@@ -651,6 +652,7 @@ data uis;
    627  35   17.0      1     3      2     0    0     1  184  379    1
    628  46   31.5      1     3     15     1    1     1    9  377    1
 ;
+
 ods graphics on;
 proc quantlife data=uis log seed=999 plots=(quantplot survival);
    class Race Site Treat;
@@ -660,3 +662,4 @@ proc quantlife data=uis log seed=999 plots=(quantplot survival);
    baseline out=Predsurvf;
 
 run;
+

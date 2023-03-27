@@ -9,12 +9,11 @@
 /*    KEYS: stratification, clustering, unequal weighting,      */
 /*    KEYS: multiway tables, domain analysis                    */
 /*   PROCS: SURVEYFREQ                                          */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYFREQ, Example 2                          */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Generate Data -----------------------------------------------*/
+
 proc format;
    value ResponseCode
       1 = 'Very Unsatisfied'
@@ -41,6 +40,7 @@ proc format;
       0 = 'Faculty'
       1 = 'Admin/Guidance';
 run;
+
 data SIS_Survey;
    format Response ResponseCode.;
    format NewUser UserCode.;
@@ -199,7 +199,9 @@ data SIS_Survey;
       output;
    end;
 run;
+
 /* Multiway Table (Domain Analysis) ----------------------------*/
+
 title 'Student Information System Survey';
 proc surveyfreq data=SIS_Survey;
    tables  Department * SchoolType * Response
@@ -208,3 +210,4 @@ proc surveyfreq data=SIS_Survey;
    cluster School;
    weight  SamplingWeight;
 run;
+

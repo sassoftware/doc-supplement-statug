@@ -36,3 +36,4 @@ proc calis data=sales;
    mstruct var=q1-q4;
    matrix _cov_ [1,1], [2,2], [3,3], [4,4];
 run;
+

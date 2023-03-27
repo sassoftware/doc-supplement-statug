@@ -1,17 +1,12 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: CRSPTAB1                                            */
+/*    NAME: crsptab1                                            */
 /*   TITLE: PROC CORRESP Tables Statement Illustrations         */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: marketing research, categorical data analysis       */
 /*   PROCS: CORRESP                                             */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC CORRESP, DETAILS, TABLES                       */
-/*    MISC:                                                     */
 /****************************************************************/
 
 title 'PROC CORRESP Table Construction';
@@ -33,7 +28,6 @@ Delafave   Old    Male   Tall  Brown
 Singer     Young  Male   Tall  Brown
 Igor       Old           Short
 ;
-
 
 proc corresp data=Neighbor dimens=1 observed short;
    title2 'Simple Crosstabulation';
@@ -114,7 +108,6 @@ data BrandChoice;
 1 0 0
 ;
 
-
 proc transreg data=BrandChoice design separators=': ';
    model class(a b c / zero=none);
    output out=Doubled(drop=_: Intercept);
@@ -140,14 +133,15 @@ data Neighbor3;
    if Sex = ' ' then do;
       Female = 0.5;
       Male   = 0.5;
-      end;
+   end;
    if Hair = ' ' then do;
       White = 1/3;
       Brown = 1/3;
       Blond = 1/3;
-      end;
+   end;
 run;
 
 proc print label noobs data=Neighbor3(drop=age--name);
    format _numeric_ best4.;
 run;
+

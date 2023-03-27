@@ -177,3 +177,4 @@ proc gee data=Resp descend;
                                   zrow =(z1-z6)
                                   ypair=(y1 y2);
 run;
+

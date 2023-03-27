@@ -11,9 +11,11 @@
 /*   PROCS: HPMIXED                                             */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data Sim;
    keep Species Farm Animal Yield;
    array AnimalEffect{3000};
@@ -33,6 +35,7 @@ data Sim;
       output;
    end;
 run;
+
 proc hpmixed data=Sim;
    class Species Farm Animal;
    model Yield = Species Species*Farm;
@@ -42,3 +45,4 @@ proc hpmixed data=Sim;
       Species 1 0 -1,
       Species 0 1 -1;
 run;
+

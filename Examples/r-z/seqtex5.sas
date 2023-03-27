@@ -1,16 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SEQTEX5                                             */
+/*    NAME: seqtex5                                             */
 /*   TITLE: Documentation Example 5 for PROC SEQTEST            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: group sequential test                               */
 /*   PROCS: SEQDESIGN, SEQTEST, LOGISTIC                        */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC SEQTEST, EXAMPLE 5                             */
-/*    MISC:                                                     */
 /****************************************************************/
 
 ods graphics on;
@@ -188,3 +184,4 @@ proc seqtest Boundary=Test_CSup4
              plots=rci
              ;
 run;
+

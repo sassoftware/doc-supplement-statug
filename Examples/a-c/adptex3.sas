@@ -56,3 +56,4 @@ proc adaptivereg data=sashelp.junkmail seed=10359;
    partition fraction(test=0.333);
    output out=spamout2 p(ilink);
 run;
+

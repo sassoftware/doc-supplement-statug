@@ -1,18 +1,15 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVREX3                                              */
+/*    NAME: svrex3                                              */
 /*   TITLE: Documentation Example 3 for PROC SURVEYREG          */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: regression, survey sampling                         */
-/*    KEYS: regression estimator                                */
-/*    KEYS: unequal weighting, linear model                     */
+/*    KEYS: regression, survey sampling,                        */
+/*          regression estimator,                               */
+/*          unequal weighting, linear model                     */
 /*   PROCS: SURVEYREG                                           */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYREG, Example 3                           */
-/*                                                              */
 /*    MISC: Regression Estimator for Simple Random Sample       */
 /*                                                              */
 /****************************************************************/
@@ -61,3 +58,4 @@ proc surveyreg data=Municipalities total=50;
    model Population85=Population75;
    estimate '1985 population' Intercept 284 Population75 8200;
 run;
+

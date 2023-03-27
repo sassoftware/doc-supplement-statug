@@ -104,3 +104,4 @@ proc lifereg data=Myeloma;
    model Time*VStatus(0)=LogBUN HGB;
    store aft;
 run;
+

@@ -72,3 +72,4 @@ proc plm restore=logimodel;
    effectplot contour(plotby=Treatment) / at(Sex=all);
 run;
 ods graphics off;
+

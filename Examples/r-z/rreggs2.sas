@@ -13,6 +13,7 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data hbk;
    input index $ x1 x2 x3 y @@;
    datalines;
@@ -55,7 +56,9 @@ data hbk;
 73   0.3   1.7   2.2   0.4         74   0.0   2.2   1.6  -0.9
 75   0.3   0.4   2.6   0.2
 ;
+
 proc robustreg data=hbk fwls method=lts;
    model y = x1 x2 x3 / diagnostics leverage;
    id index;
 run;
+

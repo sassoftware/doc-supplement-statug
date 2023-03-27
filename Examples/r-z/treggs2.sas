@@ -1,8 +1,7 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: TREGIN2                                             */
+/*    NAME: TREGGS2                                             */
 /*   TITLE: Getting Started Example 2 for PROC TRANSREG         */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -33,7 +32,6 @@ data a;
 2 c b
 ;
 
-
 * Fit a main-effects ANOVA model with 1, 0, -1 coding;
 proc transreg ss2;
    model identity(y) = class(x1 x2 / effects);
@@ -44,3 +42,4 @@ run;
 proc print label;
    format intercept -- x2a 5.2;
 run;
+

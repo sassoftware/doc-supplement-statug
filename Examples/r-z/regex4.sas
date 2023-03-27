@@ -12,7 +12,6 @@
 /****************************************************************/
 
 title 'Regression with Quantitative and Qualitative Variables';
-
 data insurance;
    input time size type @@;
    sizetype=size*type;
@@ -38,3 +37,4 @@ run;
 proc sgplot data=out;
    scatter x=size y=p / markerchar=type group=type;
 run;
+

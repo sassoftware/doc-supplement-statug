@@ -1773,3 +1773,4 @@ proc causaltrt data=smokingweight method=AIPW nthreads=4;
    model Change = Sex Age Exercise Activity BaseWeight;
    bootstrap bootci(all) plot=hist seed=1234;
 run;
+

@@ -76,3 +76,4 @@ proc glmselect data=ex7Data;
    model y = x: c:/
          selection=lasso(screen=sis(keepnum=15));
 run;
+

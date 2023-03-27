@@ -73,3 +73,4 @@ proc mianalyze parms=mixparms edf=28
                covb(effectvar=rowcol)=mixcovb;
    modeleffects Intercept RunTime RunPulse RunTime*RunPulse;
 run;
+

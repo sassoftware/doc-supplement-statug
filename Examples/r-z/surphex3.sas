@@ -1,20 +1,20 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SURPHEX3                                            */
+/*    NAME: surphex3                                            */
 /*   TITLE: Documentation Example 3 for PROC SURVEYPHREG        */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: survey sampling, proportional hazards regression,   */
-/*    KEYS: domain estimates, missing values                    */
+/*          domain estimates, missing values                    */
 /*   PROCS: SURVEYPHREG                                         */
-/*    DATA: Data from 1992 NHEFS (NHANES Epidemiologic Follow-up*/
-/*          Study) vital and tracing status.                    */
-/*       http://www.cdc.gov/nchs/about/major/nhefs/nhefspuf.htm */
-/*                                                              */
+/*    DATA: Data from 1992 NHEFS (NHANES Epidemiologic          */
+/*          Follow-up Study) vital and tracing status.          */
+/*          https://wwwn.cdc.gov/nchs/nhanes/nhefs/             */
 /*     REF: PROC SURVEYPHREG, Example 3                         */
-/*    MISC:                                                     */
+/*                                                              */
 /****************************************************************/
+
 data mortality;
    input ID VARSTRATA VARPSU SWEIGHT AGE VITALSTATUS POVARIND GENDER;
    datalines;
@@ -1910,6 +1910,7 @@ data mortality;
    1890  13  1  88939  59  1  2   1
    1891  13  1  59218  75  1  2   2
 ;
+
 proc surveyphreg data = mortality nomcar;
    class povarind;
    strata varstrata;
@@ -1918,3 +1919,4 @@ proc surveyphreg data = mortality nomcar;
    model age*vitalstatus(1 4 5 6) = povarind;
    domain gender;
 run;
+

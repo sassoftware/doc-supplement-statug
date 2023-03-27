@@ -74,3 +74,4 @@ run;
 proc logistic data=remiss;
    model remiss = cell li temp / link=probit technique=newton;
 run;
+

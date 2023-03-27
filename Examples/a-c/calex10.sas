@@ -133,3 +133,4 @@ proc calis meanstr modification;
       AvailabilityDiff = G2_intercept06  - G1_intercept06;
       QualityDiff      = G2_intercept07  - G1_intercept07;
 run;
+

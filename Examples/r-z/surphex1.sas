@@ -1,19 +1,18 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SURPHEX1                                            */
+/*    NAME: surphex1                                            */
 /*   TITLE: Documentation Example 1 for PROC SURVEYPHREG        */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: clustered data, proportional hazards regression,    */
-/*    KEYS: censoring                                           */
+/*          censoring                                           */
 /*   PROCS: SURVEYPHREG                                         */
 /*    DATA: Lin, D. Y. (1994), "Cox Regression Analysis of      */
 /*          Multivariate Failure Time Data: The Marginal        */
 /*          Approach," Statistics in Medicine, 13, pp. 2233-2247*/
-/*                                                              */
 /*     REF: PROC SURVEYPHREG, Example 1                         */
-/*    MISC:                                                     */
+/*                                                              */
 /****************************************************************/
 
 proc format;
@@ -133,3 +132,4 @@ proc surveyphreg data=Blind;
    cluster ID;
    hazardratio Treatment;
 run;
+

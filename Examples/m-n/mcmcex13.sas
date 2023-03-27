@@ -282,3 +282,4 @@ run;
 proc compare data=expsurvout compare=expsurvout1;
    var beta0 beta1;
 run;
+

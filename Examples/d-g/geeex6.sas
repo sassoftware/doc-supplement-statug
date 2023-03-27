@@ -1478,3 +1478,4 @@ proc gee data=Housing;
    model Housing=Sec / dist=multinomial;
    repeated subject=ID / within=Time;
 run;
+

@@ -44,3 +44,4 @@ proc power;
       npairs        = 100
       power         = .;
 run;
+

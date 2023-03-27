@@ -11,20 +11,24 @@
 /*   PROCS: TPSPLINE                                            */
 /*                                                              */
 /****************************************************************/
+
 data large;
    do x=-5 to 5 by 0.02;
       y=5*sin(3*x)+1*rannor(57391);
       output;
    end;
 run;
+
 proc tpspline data=large;
    model y  =(x) /lognlambda=(-5 to -1 by 0.2) alpha=0.01;
    output out=fit1 pred lclm uclm;
 run;
+
 proc tpspline data=large;
    model y  =(x) /lognlambda=(-5 to -1 by 0.2) d=0.05 alpha=0.01;
    output out=fit2 pred lclm uclm;
 run;
+
 data fit2;
    set fit2;
    P1_y     = P_y;
@@ -64,3 +68,4 @@ proc sgplot data=comp;
                       lineattrs=graphfit(thickness=1px color=red);
    discretelegend "range" "P_y" "P1_y";
 run;
+

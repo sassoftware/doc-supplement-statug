@@ -108,3 +108,4 @@ proc logistic data=Neuralgia plots(only)=(oddsratio(range=clip));
    effectplot / at(Sex=all) noobs;
    effectplot slicefit(sliceby=Sex plotby=Treatment) / noobs;
 run;
+

@@ -1,16 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SEQDEX5                                             */
+/*    NAME: seqdex5                                             */
 /*   TITLE: Documentation Example 5 for PROC SEQDESIGN          */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: group sequential design                             */
 /*   PROCS: SEQDESIGN                                           */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC SEQDESIGN, EXAMPLE 5                           */
-/*    MISC:                                                     */
 /****************************************************************/
 
 ods graphics on;
@@ -37,3 +33,4 @@ proc seqdesign altref=0.25
                  boundarykey=none
                  ;
 run;
+

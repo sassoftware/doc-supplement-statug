@@ -11,6 +11,7 @@
 /*   PROCS: TPSPLINE                                            */
 /*                                                              */
 /****************************************************************/
+
 data Measure;
    input x1 x2 y @@;
    datalines;
@@ -40,6 +41,7 @@ data Measure;
   .5  1.0   18.56884576     .5  1.0    18.61010439
  1.0  1.0   15.86586951    1.0  1.0    15.90136745
 ;
+
 data Measure1;
    set Measure;
 run;
@@ -52,13 +54,16 @@ data Measure1;
    set Measure1;
    if mod(_N_, 2) = 0 then x1=x1+0.001;
 run;
+
 proc g3d data=Measure1;
    scatter x2*x1=y /size=.5
                     zmin=9 zmax=21
                     zticknum=4;
    title "Raw Data";
 run;
+
 ods graphics on;
+
 proc tpspline data=Measure;
    model y=(x1 x2) /lognlambda=(-4 to -2.5 by 0.1);
    output out=estimate pred uclm lclm;
@@ -66,6 +71,7 @@ run;
 
 proc print data=estimate;
 run;
+
 data pred;
    do x1=-1 to 1 by 0.1;
       do x2=-1 to 1 by 0.1;
@@ -96,3 +102,5 @@ proc sgrender data=predy template=surface;
    dynamic _X='x1' _Y='x2' _Z='P_y'
            _T='Plot of Fitted Surface on a Fine Grid';
 run;
+
+

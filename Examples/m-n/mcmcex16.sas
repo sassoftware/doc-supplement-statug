@@ -194,3 +194,4 @@ proc mcmc data=inputdata nmc=10000 outpost=postout seed=12351
    idt = exp(bZ) * lambda;
    model dN ~ poisson(idt);
 run;
+

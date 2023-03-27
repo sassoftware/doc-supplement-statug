@@ -11,6 +11,7 @@
 /*   PROCS: REG                                                 */
 /*                                                              */
 /****************************************************************/
+
 *------------Data on Age, Weight, and Height of Children-------*
 | Age (months), height (inches), and weight (pounds) were      |
 | recorded for a group of school children.                     |
@@ -81,6 +82,7 @@ m 153 57.8  79.5 m 155 57.3  80.5 m 178 63.5 102.5 m 142 55.0  76.0
 m 164 66.5 112.0 m 189 65.0 114.0 m 164 61.5 140.0 m 167 62.0 107.5
 m 151 59.3  87.0
 ;
+
 proc reg outest=est1 outsscp=sscp1 rsquare;
    by sex;
    eq1: model  weight=height;
@@ -94,3 +96,4 @@ run;
 proc print data=est1;
    title2 'EST type data set';
 run;
+

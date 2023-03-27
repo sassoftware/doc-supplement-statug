@@ -27,9 +27,9 @@ data bivnormal;
    drop seed;
 run;
 
-
 ods graphics on;
 proc kde data=bivnormal;
    bivar x y / plots=(contour surface);
 run;
 ods graphics off;
+

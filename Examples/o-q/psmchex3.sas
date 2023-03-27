@@ -97,3 +97,4 @@ run;
 proc print data=OutEx3a(obs=10);
    var PatientID Drug Gender Age BMI _PS_ _MATCHWGT_ _MatchID;
 run;
+

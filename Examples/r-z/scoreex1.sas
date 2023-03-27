@@ -9,7 +9,7 @@
 /*   PROCS: SCORE, FACTOR, REG, PRINT                           */
 /*    DATA:                                                     */
 /*                                                              */
-/*     REF: PROC SCORE, Example 1, 2 and 3                      */
+/*     REF: PROC SCORE, Example 1                               */
 /*    MISC:                                                     */
 /*                                                              */
 /****************************************************************/
@@ -45,76 +45,3 @@ proc print data=FScore;
    title2 'Data Set from PROC SCORE';
 run;
 
-proc reg data=Fitness outest=RegOut;
-   OxyHat: model Oxygen=Age Weight RunTime RunPulse RestPulse;
-   title 'Regression Scoring Example';
-run;
-
-proc print data=RegOut;
-   title2 'OUTEST= Data Set from PROC REG';
-run;
-
-proc score data=Fitness score=RegOut out=RScoreP type=parms;
-   var Age Weight RunTime RunPulse RestPulse;
-run;
-
-proc print data=RScoreP;
-   title2 'Predicted Scores for Regression';
-run;
-
-proc score data=Fitness score=RegOut out=RScoreR type=parms;
-   var Oxygen Age Weight RunTime RunPulse RestPulse;
-run;
-
-proc print data=RScoreR;
-   title2 'Negative Residual Scores for Regression';
-run;
-
-   /* The FITNESS2 data set contains observations 13-16 from */
-   /* the FITNESS data set used in EXAMPLE 2 in the PROC REG */
-   /* chapter.                                               */
-data Fitness2;
-   input Age Weight Oxygen RunTime RestPulse RunPulse;
-   datalines;
-45  66.45  44.754  11.12  51  176
-47  79.15  47.273  10.60  47  162
-54  83.12  51.855  10.33  50  166
-49  81.42  49.156   8.95  44  180
-;
-
-proc print data=Fitness2;
-   title 'Regression Scoring Example';
-   title2 'New Raw Data Set to be Scored';
-run;
-
-proc score data=Fitness2 score=RegOut out=NewPred type=parms
-           nostd predict;
-   var Oxygen Age Weight RunTime RunPulse RestPulse;
-run;
-
-proc print data=NewPred;
-   title2 'Predicted Scores for Regression';
-   title3 'for Additional Data from FITNESS2';
-run;
-
-data A;
-   input _type_ $ _name_ $
-         Age Weight RunTime RunPulse RestPulse;
-   datalines;
-SCORE  AGE_WGT  1 -1  0  0  0
-SCORE  RUN_RST  0  0  0  1 -1
-SCORE  TOTAL    1  1  1  1  1
-;
-
-proc print data=A;
-   title 'Constructed Scoring Example';
-   title2 'Scoring Coefficients';
-run;
-
-proc score data=Fitness score=A out=B;
-   var Age Weight RunTime RunPulse RestPulse;
-run;
-
-proc print data=B;
-   title2 'Scored Data';
-run;

@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -83,7 +82,6 @@ data Results;
 133379775526267493
 ;
 
-
 * Create an Object by Subject Data Matrix;
 proc transpose data=Results out=Results(drop=_name_) prefix=Subj;
 run;
@@ -143,3 +141,4 @@ run;
 proc print label;
    title2 'Utilities';
 run;
+

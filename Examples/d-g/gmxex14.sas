@@ -99,6 +99,7 @@ proc glimmix data=counts method=quad;
       end;
    end;
 run;
+
 proc glimmix data=counts method=quad;
    class sub;
    model y = x / link=log s;
@@ -117,3 +118,4 @@ proc glimmix data=counts method=quad;
    end;
    covtest 'H:phi = 0' . 0 / est;
 run;
+

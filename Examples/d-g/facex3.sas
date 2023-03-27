@@ -1,17 +1,19 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: FACEX3                                              */
+/*    NAME: facex3                                              */
 /*   TITLE: Documentation Example 3 for PROC FACTOR             */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: factor analysis                                     */
 /*   PROCS: FACTOR                                              */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC FACTOR, Example 3                              */
-/*    MISC:                                                     */
+/*     REF: Harman (1976), Modern Factor Analysis, 3rd Ed.      */
 /****************************************************************/
+
+/*
+This example demonstrates methods you can use to determine the
+number factors to retain.
+*/
 
 data SocioEconomics;
    input Population School Employment Services HouseValue;
@@ -36,3 +38,4 @@ proc factor data=SocioEconomics
    parallel(alpha=0.01 nsims=10000 seed=20170229) map
    plots=(parallel map);
 run;
+

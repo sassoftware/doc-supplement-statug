@@ -238,7 +238,7 @@ proc quantlife data=pbc log method=na plot=(quantplot survival) seed=1268;
                         /quantile=(.1 .2 .3 .4 .5 .6 .75);
 run;
 
-
 proc lifereg data=pbc;
    model Time*Status(0)=logBilirubin logProtime logAlbumin Age Edema;
 run;
+

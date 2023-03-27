@@ -16,8 +16,8 @@
 /****************************************************************/
 
 data tree;
-  input tree day y;
-  datalines;
+   input tree day y;
+   datalines;
 1  118   30
 1  484   58
 1  664   87
@@ -63,3 +63,4 @@ proc nlmixed data=tree;
    model y ~ normal(num/den,s2e);
    random u1 ~ normal(0,s2u) subject=tree;
 run;
+

@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -19,3 +18,4 @@ title 'Fish Measurement Data';
 proc stepdisc data=sashelp.fish;
    class Species;
 run;
+

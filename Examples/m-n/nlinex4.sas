@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -30,7 +29,6 @@ data logistic;
 0.50     7.46
 ;
 
-
 proc sgplot data=logistic;
    scatter y=y x=dose;
    xaxis type=log logstyle=linear;
@@ -60,3 +58,4 @@ proc nlin data=logistic bias hougaard nlinmeasures;
    model y = delta + (alpha - delta)*Switch;
    output out=nlinout pred=p lcl=lcl ucl=ucl;
 run;
+

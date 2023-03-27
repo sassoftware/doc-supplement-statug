@@ -108,3 +108,4 @@ proc lifetest data=bmt plots=cif(test );
    format Disease diseaseLabel. Gender genderLabel.;
 run;
 ods graphics off;
+

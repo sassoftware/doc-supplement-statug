@@ -1,16 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SEQTEX7                                             */
+/*    NAME: seqtex7                                             */
 /*   TITLE: Documentation Example 7 for PROC SEQTEST            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: group sequential test                               */
 /*   PROCS: SEQDESIGN, SEQTEST, PHREG                           */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC SEQTEST, EXAMPLE 7                             */
-/*    MISC:                                                     */
 /****************************************************************/
 
 ods graphics on;
@@ -177,3 +173,4 @@ proc seqtest Boundary=Test_Time3
              order=lr
              ;
 run;
+

@@ -85,3 +85,4 @@ run;
 proc print data=Out2(where=(Disease=1));
    title 'CIF Estimates and 95% Confidence limits for the ALL Group';
 run;
+

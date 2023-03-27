@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -15,31 +14,31 @@
 
 %macro makeRegressorData(nObs=100,nVars=8,rho=0.5,seed=1);
    data varCorr;
-     drop i j;
-     array x{&nVars};
-     length  _NAME_ $8   _TYPE_ $8;
-     _NAME_ = '';
+      drop i j;
+      array x{&nVars};
+      length  _NAME_ $8   _TYPE_ $8;
+      _NAME_ = '';
 
-     _TYPE_ = 'MEAN';
-     do j=1 to &nVars; x{j}=0; end;
-     output;
+      _TYPE_ = 'MEAN';
+      do j=1 to &nVars; x{j}=0; end;
+      output;
 
-     _TYPE_ = 'STD';
-     do j=1 to &nVars; x{j}=1;end;
-     output;
+      _TYPE_ = 'STD';
+      do j=1 to &nVars; x{j}=1;end;
+      output;
 
-     _TYPE_ = 'N';
-     do j=1 to &nVars; x{j}=10000;end;
-     output;
+      _TYPE_ = 'N';
+      do j=1 to &nVars; x{j}=10000;end;
+      output;
 
-     _TYPE_ = 'CORR';
-     do i=1 to &nVars;
-        _NAME_="x" || trim(left(i));
-        do j= 1 to &nVars;
-           x{j}=&rho**(abs(i-j));
-        end;
-        output;
-     end;
+      _TYPE_ = 'CORR';
+      do i=1 to &nVars;
+         _NAME_="x" || trim(left(i));
+         do j= 1 to &nVars;
+            x{j}=&rho**(abs(i-j));
+         end;
+         output;
+      end;
    run;
 
    proc simnormal data=varCorr(type=corr) out=Regressors
@@ -51,9 +50,9 @@
 %makeRegressorData(nObs=100,nVars=10,rho=0.5);
 
 data simData;
-    set regressors;
-    yTrue = 3*x1 + 1.5*x2 + 2*x5;
-    y     = yTrue + 3*rannor(2);
+   set regressors;
+   yTrue = 3*x1 + 1.5*x2 + 2*x5;
+   y     = yTrue + 3*rannor(2);
 run;
 
 proc glmselect data=simData;
@@ -84,3 +83,4 @@ proc glmselect data=simData seed=3 plots=(ParmDistribution);
 run;
 
 ods graphics off;
+

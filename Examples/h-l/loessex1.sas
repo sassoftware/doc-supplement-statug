@@ -12,6 +12,7 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data Gas;
    input NOx E @@;
    format NOx f3.1;
@@ -30,9 +31,11 @@ data Gas;
 4.937  0.98    1.561  0.665
 ;
 
+
 proc sgplot data=Gas;
    scatter x=E y=NOx;
 run;
+
 ods graphics on;
 
 proc loess data=Gas;
@@ -43,6 +46,7 @@ proc loess data=Gas;
 run;
 
 ods graphics off;
+
 data h0 h1;
    set Summary(keep=SmoothingParameter Label1 nValue1
                where=(Label1 in ('Residual Sum of Squares','Delta1',
@@ -85,3 +89,4 @@ proc print data=ftest label;
    var nu rho Numerator Denominator FValue PValue;
    format nu rho FValue 7.2 PValue 6.4;
 run;
+

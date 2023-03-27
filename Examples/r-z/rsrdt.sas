@@ -1,8 +1,7 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: RSRGS                                               */
+/*    NAME: RSRDT                                               */
 /*   TITLE: Details Example for PROC RSREG                      */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -41,7 +40,6 @@ data a;
  0      -1.4142    5.7 0.099  5.4346
 ;
 
-
 data b;
    set a end=eof;
    output;
@@ -56,7 +54,6 @@ data b;
       end;
    end;
 run;
-
 
 proc rsreg data=b out=c;
    model y1 y2 y3=x1 x2 / predict;
@@ -81,3 +78,4 @@ proc rsreg data=a plots=surface(overlaypairs);
    model y1 y2=x1 x2;
 run;
 ods graphics off;
+

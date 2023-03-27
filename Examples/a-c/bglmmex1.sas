@@ -457,7 +457,7 @@ proc bglimm data=Fev nmc=10000 seed=44672057
    class Drug Patient Hour;
    model FEV = BaseVal Drug Hour;
    random int / subject=Patient;
-   estimate "A vs B" Drug 1 -1;
+   estimate "A vs C" Drug 1 -1;
 run;
 
 proc bglimm data=Fev nmc=10000 seed=44672057
@@ -578,3 +578,4 @@ proc sgpanel data=Comb_pred noautolegend;
    scatter x=Hour y=mean / group=Patient;
    series x=Hour y=mean / group=Patient;
 run;
+

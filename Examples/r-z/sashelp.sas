@@ -9,6 +9,7 @@
 /*   PROCS: REG, PRINT, FREQ, CONTENTS                          */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: saswfk                UPDATE: July 25, 2016         */
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
@@ -277,3 +278,4 @@ run;
 title 'The First Five Observations Out of 3,107';
 proc print data=sashelp.vote1980(obs=5);
 run;
+

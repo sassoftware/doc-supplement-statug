@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: ODSGRAF                                             */
+/*    NAME: ODSGREX4                                            */
 /*   TITLE: Documentation Example 4 for ODS Graphics            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -76,3 +76,4 @@ ods listing;
 proc document name=QQDoc;
    list / levels=all;
 quit;
+

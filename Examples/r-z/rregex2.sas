@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -24,10 +23,9 @@ data recover;
 1 1 35.0  1 1 33.9  1 1 38.3  1 1 39.9
 ;
 
-
 proc glm data=recover;
-    class T1 T2;
-    model time = T1 T2 T1*T2;
+   class T1 T2;
+   model time = T1 T2 T1*T2;
 run;
 
 proc robustreg data=recover;
@@ -36,3 +34,4 @@ proc robustreg data=recover;
    T1_T2: test T1*T2;
    output out=robout r=resid sr=stdres;
 run;
+

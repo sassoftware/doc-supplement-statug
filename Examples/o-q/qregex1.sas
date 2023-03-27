@@ -37,3 +37,4 @@ run;
 proc quantreg algorithm=smooth(rratio=.5) ci=none data=a;
    model y = x1 x2 / itprint nosummary;
 run;
+

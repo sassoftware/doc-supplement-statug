@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -13,7 +12,6 @@
 /*     REF: PROC GEE, EXAMPLE 1                                 */
 /*    MISC:                                                     */
 /****************************************************************/
-
 
 data Resp;
    input Center ID Treatment $ Sex $ Age Baseline Visit1-Visit4;
@@ -152,3 +150,4 @@ proc glimmix data=Resp;
          dist=binary solution;
    random ID(Center);
 run;
+

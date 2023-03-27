@@ -129,3 +129,4 @@ proc calis cov data=Wheaton nobs=932 nose;
           Gamma = [f_SES e1 e3 e5 e2 e4 e6 d1 d2],
           Phi   = Gamma;
 run;
+

@@ -234,3 +234,4 @@ proc power plotonly;
 run;
 
 ods graphics off;
+

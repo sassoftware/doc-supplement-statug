@@ -10,6 +10,7 @@
 /*   PROCS: REG                                                 */
 /*                                                              */
 /****************************************************************/
+
 data acetyl;
    input x1-x4 @@;
    x1x2 = x1 * x2;
@@ -28,6 +29,7 @@ data acetyl;
 1100  5.3 .084 15   1100  7.5 .098  17   1100 11 .092  20.5
 1100 17   .086 29.5
 ;
+
 ods graphics on;
 
 proc reg data=acetyl outvif
@@ -36,9 +38,11 @@ proc reg data=acetyl outvif
 run;
 proc print data=b;
 run;
+
 proc reg data=acetyl plots(only)=ridge(unpack VIFaxis=log)
          outest=b ridge=0 to 0.02 by .002;
    model x4=x1 x2 x3 x1x2 x1x1;
 run;
 
 ods graphics off;
+

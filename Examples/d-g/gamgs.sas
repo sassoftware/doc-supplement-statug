@@ -38,3 +38,4 @@ ods graphics on;
 proc gam data=diabetes;
    model logCP = spline(Age) spline(BaseDeficit);
 run;
+

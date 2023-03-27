@@ -33,3 +33,4 @@ proc transreg data=sashelp.enso;
    model identity(pressure) = pbspline(year / sbc lambda=.1 .5 1 5
                                        10 50 100 500 to 2500 by 500);
 run;
+

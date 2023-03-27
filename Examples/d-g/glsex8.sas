@@ -66,3 +66,4 @@ proc glmselect data=traindata plots=coefficients;
   model y = s1 s2 x5 c:/
         selection=grouplasso(steps=20 choose=sbc rho=0.8);
 run;
+

@@ -34,3 +34,4 @@ proc adaptivereg data=Mixture details=bases;
    class c1;
    model y=c1 x1;
 run;
+

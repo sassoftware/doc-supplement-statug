@@ -95,3 +95,4 @@ proc sgplot data=Can;
    scatter y=Can2 x=Can1 / group=Cluster;
    title2 'Plot of Canonical Variables Identified by Cluster';
 run;
+

@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Three-Way Analysis of Variance with Contrasts ---------------*/
+
 data muscles;
    do Rep=1 to 2;
       do Time=1 to 4;
@@ -35,6 +37,7 @@ data muscles;
 53 50 61 56 57 56 56 56 71 56 58 69
 46 55 64 56 55 57 64 66 62 59 58 88
 ;
+
 proc glm outstat=summary;
    class Rep Current Time Number;
    model MuscleWeight = Rep Current|Time|Number;
@@ -45,5 +48,7 @@ proc glm outstat=summary;
    contrast 'Current 1 versus 2' Current 1 -1;
    lsmeans Current*Time / slice=Current;
 run;
+
 proc print data=summary;
 run;
+

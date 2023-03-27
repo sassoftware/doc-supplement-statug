@@ -17,6 +17,7 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data auc;
    input TestAUC RefAUC @@;
    datalines;
@@ -24,8 +25,10 @@ data auc;
 69.48 58.21  72.17 101.3  74.37 79.84  84.44 96.06
 96.74 89.30  94.26 97.22  48.52 61.62  95.68 85.80
 ;
+
 proc print data=auc;
 run;
+
 ods graphics on;
 
 proc ttest data=auc dist=lognormal tost(0.8, 1.25);
@@ -33,3 +36,4 @@ proc ttest data=auc dist=lognormal tost(0.8, 1.25);
 run;
 
 ods graphics off;
+

@@ -14,6 +14,7 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 data Liver;
    input X1-X6 Y;
    datalines;
@@ -154,17 +155,21 @@ data Liver;
 19.1327    65.3425      2.571      1        0       0       1
 17.3010    51.4493      4.429      1        0       0       6
 ;
+
 proc genmod data=Liver;
    model Y = X1-X6 / dist=Poisson link=log;
    bayes seed=1 coeffprior=normal;
 run;
+
 data NormalPrior;
    input _type_ $ Intercept X1-X6;
    datalines;
 Var  1e6   0.0005      1e6      1e6      1e6      1e6      1e6
 Mean 0.0   0.1385      0.0      0.0      0.0      0.0      0.0
 ;
+
 proc genmod data=Liver;
    model Y = X1-X6 / dist=Poisson link=log;
    bayes seed=1 plots=none coeffprior=normal(input=NormalPrior);
 run;
+

@@ -9,9 +9,11 @@
 /*   PROCS: VARCOMP                                             */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data Cure;
    input Lab Temp Batch $ Cure @@;
    datalines;
@@ -43,8 +45,10 @@ data Cure;
 3 165 B  5.7   3 165 B  5.5   3 165 B  4.6   3 165 B  5.4
 3 165 C  6.6   3 165 C  6.5   3 165 C  5.9   3 165 C  5.8
 ;
+
 title 'Analyzing the Cure Rate of Rubber';
 proc varcomp method=reml data=cure;
    class temp lab batch;
    model cure=temp|lab batch(lab temp) / fixed=1;
 run;
+

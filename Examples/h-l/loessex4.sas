@@ -12,22 +12,29 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
+
 proc sgplot data=sashelp.ENSO;
    scatter y=Pressure x=Month;
 run;
+
 ods graphics on;
 
 proc loess data=sashelp.ENSO plots=residuals(smooth);
    model Pressure=Month;
 run;
+
 proc loess data=sashelp.ENSO;
    model Pressure=Month/select=AICC(global);
 run;
+
 proc loess data=sashelp.ENSO;
    model Pressure=Month/select=AICC(range(0.03,0.2));
 run;
+
 proc loess data=sashelp.ENSO plots=residuals(smooth);
    model Pressure=Month/select=AICC(presearch);
 run;
 
 ods graphics off;
+

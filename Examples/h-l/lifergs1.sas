@@ -14,6 +14,7 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 data Headache;
    input Minutes Group Censor @@;
    datalines;
@@ -28,14 +29,18 @@ data Headache;
 26  2  1   32  2  1   30  2  1   30  2  0
 32  2  1   20  2  1
 ;
+
 proc print data=headache (obs=5);
 run;
+
 proc lifereg data=Headache;
    class Group;
    model Minutes*Censor(1)=Group;
    output out=New cdf=Prob;
 run;
+
 proc sgplot data=New;
    scatter x=Minutes y=Prob / group=Group;
    discretelegend;
 run;
+

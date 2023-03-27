@@ -85,3 +85,4 @@ run;
 proc template;
    delete Stat.GLM.Tests / store=sasuser.templat;
 run;
+

@@ -1,18 +1,12 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: PRINCGS                                             */
+/*    NAME: princgs                                             */
 /*   TITLE: Getting Started Example for PROC PRINCOMP           */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: multivariate analysis                               */
 /*   PROCS: PRINCOMP                                            */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC PRINCOMP, Getting Started Example              */
-/*    MISC:                                                     */
-/*                                                              */
 /****************************************************************/
 
 title 'Crime Rates per 100,000 Population by State';
@@ -73,9 +67,9 @@ Wisconsin       2.8 12.9  52.2  63.7  846.9 2614.2 220.7
 Wyoming         5.4 21.9  39.7 173.9  811.6 2772.2 282.0
 ;
 
-
 ods graphics on;
 
 proc princomp out=Crime_Components plots= score(ellipse ncomp=3);
    id State;
 run;
+

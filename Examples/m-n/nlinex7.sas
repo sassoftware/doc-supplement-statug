@@ -46,3 +46,4 @@ proc nlin data=clarke1987a plots(stats=none)=diagnostics;
    model y = theta3 + theta2*exp(theta1*x);
 run;
 ods graphics off;
+

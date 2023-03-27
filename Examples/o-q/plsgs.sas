@@ -123,3 +123,4 @@ run;
 proc pls data=sample nfac=3 plot=corrload(nfac=3);
    model ls ha dt = v1-v27;
 run;
+

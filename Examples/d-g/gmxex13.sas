@@ -22,6 +22,7 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data Clinical;
    do Center =   1,  2;
       do Gender = 'F','M';
@@ -66,6 +67,7 @@ data Clinical;
     22 36 24334  18 38 43000  35 42 32222  44 43 21000
      6 45 34212  46 48 44000  31 52 23434  42 66 33344
 ;
+
 %macro Contrast(from,to,byA,byT);
    %let nCmp = 0;
    %do age = &from %to &to %by &byA;
@@ -85,6 +87,7 @@ data Clinical;
       %end;
    %end;
 %mend;
+
 proc glimmix data=clinical;
    t = (t3+t4)/2;
    class drug;
@@ -94,12 +97,14 @@ proc glimmix data=clinical;
                 stepdown(type=logical);
    ods output Estimates=EstStepDown;
 run;
+
 proc sort data=EstStepDown;
    by Probt;
 run;
 proc print data=EstStepDown(obs=20);
    var Label Estimate StdErr Probt AdjP;
 run;
+
 proc glimmix data=clinical;
    t = (t3+t4)/2;
    class drug;
@@ -115,11 +120,13 @@ proc glimmix data=clinical;
    estimate %contrast(10,70,3,1);
    ods output Estimates=EstUnAdjust;
 run;
+
 data clinical_uv;
    set clinical;
    array time{2} t3-t4;
    do i=1 to 2; rating = time{i}; output; end;
 run;
+
 proc glimmix data=clinical_uv method=laplace;
    class center id drug;
    model rating = drug t0 age drug*age drug*t0 /
@@ -131,9 +138,11 @@ proc glimmix data=clinical_uv method=laplace;
                 stepdown(type=logical);
    ods output Estimates=EstStepDownMulti;
 run;
+
 proc sort data=EstStepDownMulti;
    by Probt;
 run;
 proc print data=EstStepDownMulti(obs=20);
    var Label Estimate StdErr Probt AdjP;
 run;
+

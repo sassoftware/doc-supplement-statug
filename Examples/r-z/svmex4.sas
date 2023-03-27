@@ -1,17 +1,14 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVMEX4                                              */
-/*   TITLE: Documentation Example 4 for PROC SURVEYMEANS        */
+/*    NAME: svmex4                                              */
+/*   TITLE: Example 4 in PROC SURVEYMEANS Documentation         */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: survey sampling, categorical data analysis          */
-/*    KEYS: stratification, clustering, missing values          */
-/*    KEYS: unequal weighting, descriptive statistics           */
+/*    KEYS: survey sampling, categorical data analysis,         */
+/*          stratification, clustering, missing values,         */
+/*          unequal weighting, descriptive statistics           */
 /*   PROCS: SURVEYMEANS                                         */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYMEANS, Example 4                         */
 /*                                                              */
 /*    MISC: Analyzing Survey Data with Missing Values           */
@@ -39,10 +36,10 @@ data StudentTotals;
 9 1151
 ;
 
-
 title 'Analysis of Ice Cream Spending';
 proc surveymeans data=IceCream total=StudentTotals nomcar mean sum;
    strata Grade;
    var Spending;
    weight Weight;
 run;
+

@@ -10,6 +10,7 @@
 /*   PROCS: HPMIXED                                             */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF: PROC HPMIXED, EXAMPLE 1.                            */
 /*    MISC:                                                     */
 /****************************************************************/
@@ -152,3 +153,4 @@ proc sgplot data=Times;
    loess y=Time x=NX / group=PROC nomarkers
                        interpolation=cubic smooth=0.5;
 run;
+

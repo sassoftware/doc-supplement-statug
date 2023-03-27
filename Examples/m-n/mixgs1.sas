@@ -9,10 +9,12 @@
 /*   PROCS: MIXED                                               */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /*                                                              */
 /****************************************************************/
+
 data heights;
    input Family Gender$ Height @@;
    datalines;
@@ -20,12 +22,15 @@ data heights;
 2 F 63   2 F 67   2 M 69   2 M 68   2 M 70   3 F 63
 3 M 64   4 F 67   4 F 66   4 M 67   4 M 67   4 M 69
 ;
+
 proc mixed data=heights;
    class Family Gender;
    model Height = Gender Family Family*Gender;
 run;
+
 proc mixed;
    class Family Gender;
    model Height = Gender;
    random Family Family*Gender;
 run;
+

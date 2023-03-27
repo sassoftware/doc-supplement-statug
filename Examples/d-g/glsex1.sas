@@ -72,3 +72,4 @@ proc glmselect data=sashelp.baseball plot=CriterionPanel ;
 run;
 
 ods graphics off;
+

@@ -169,3 +169,4 @@ proc quantselect data=Mortality seed=800 plots=all;
 run;
 
 proc print data=OutData(obs=10); run;
+

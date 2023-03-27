@@ -255,3 +255,4 @@ proc bglimm data=pr seed=475193 outpost=pr_out;
    estimate 'Girl at Age 11' Gender 1 0 Gender*Age 11 0;
    estimate 'Boy  at Age 11' Gender 0 1 Gender*Age 0 11;
 run;
+

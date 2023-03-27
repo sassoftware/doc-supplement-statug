@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: PSMCHEX6                                            */
+/*    NAME: PSMCHEX7                                            */
 /*   TITLE: Documentation Example 7 for PROC PSMATCH            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -96,3 +96,4 @@ run;
 proc print data=OutEx7a(obs=8);
     var PatientID Drug Gender Age BMI _ps_ _MatchWgt_ _MatchID;
 run;
+

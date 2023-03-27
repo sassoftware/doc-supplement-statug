@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Repeated Measures Analysis of Variance ----------------------*/
+
 data dogs;
    input Drug $12. Depleted $ Histamine0 Histamine1
          Histamine3 Histamine5;
@@ -39,9 +41,11 @@ Trimethaphan  Y  .08  .09  .09  .10
 Trimethaphan  Y  .13  .10  .12  .12
 Trimethaphan  Y  .06  .05  .05  .05
 ;
+
 proc glm;
    class Drug Depleted;
    model LogHistamine0--LogHistamine5 =
          Drug Depleted Drug*Depleted / nouni;
    repeated Time 4 (0 1 3 5) polynomial / summary printe;
 run;
+

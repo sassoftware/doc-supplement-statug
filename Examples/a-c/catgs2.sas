@@ -16,10 +16,12 @@
 
 /*----------------------------------------------------------------
  Getting Started Example: Generalized Logits Model
+
  From: Stokes, Davis, and Koch (1995, 235-240).
 ----------------------------------------------------------------*/
 
 title 'Generalized Logits Model';
+
 data school;
    length Program $ 9;
    input School Program $ Style $ Count @@;
@@ -31,9 +33,12 @@ data school;
 3 regular   self 15  3 regular   team 15  3 regular   class 16
 3 afternoon self 12  3 afternoon team 12  3 afternoon class 20
 ;
+
 proc catmod order=data;
    weight Count;
    model Style=School Program School*Program;
 run;
+
    model Style=School Program;
 run;
+

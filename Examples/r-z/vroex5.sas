@@ -64,3 +64,4 @@ proc sgplot data=sqroot;
    title "Box Plot of the Square Root Difference Cloud";
    vbox sqr_diff / category=lag_class;
 run;
+

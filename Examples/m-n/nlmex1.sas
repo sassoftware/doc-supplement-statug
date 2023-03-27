@@ -16,8 +16,8 @@
 /****************************************************************/
 
 data theoph;
-  input subject time conc dose wt;
-  datalines;
+   input subject time conc dose wt;
+   datalines;
  1  0.00  0.74 4.02 79.6
  1  0.25  2.84 4.02 79.6
  1  0.57  6.57 4.02 79.6
@@ -180,3 +180,4 @@ proc nlmixed data=theoph;
    model conc   ~ normal(pred,s2);
    random b1 b2 ~ normal([0,0],[s2b1,cb12,s2b2]) subject=subject;
 run;
+

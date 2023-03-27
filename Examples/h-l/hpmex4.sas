@@ -12,9 +12,11 @@
 /*   PROCS: HPMIXED                                             */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF: PROC HPMIXED, EXAMPLE 4.                            */
 /*    MISC:                                                     */
 /****************************************************************/
+
 %let narray  = 6;
 %let ndye    = 2;
 %let nrow    = 4;
@@ -107,9 +109,11 @@ data microarray;
       end;
    end;
 run;
+
 proc hpmixed data=microarray;
    class marray dye trt gene pin dip;
    model log2i = dye trt gene dye*gene trt*gene pin;
    random marray marray*gene dip(marray) pin*marray;
    test trt;
 run;
+

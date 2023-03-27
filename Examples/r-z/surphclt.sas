@@ -8,6 +8,7 @@
 /*    KEYS: Time Variable, CLASS Variable, Time-Dependent       */
 /*   PROCS: SURVEYPHREG                                         */
 /*    DATA:                                                     */
+/* SUPPORT: pumukh                                              */
 /*     REF: PROC SURVEYPHREG, Time and CLASS                    */
 /*    MISC:                                                     */
 /****************************************************************/
@@ -61,3 +62,4 @@ proc surveyphreg data=Test;
    X1= T*(A=1);
    X2= T*(A=2);
 run;
+

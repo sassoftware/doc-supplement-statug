@@ -14,6 +14,7 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 data nor;
    input x y;
    datalines;
@@ -35,6 +36,7 @@ data nor;
 5 30
 ;
 
+
 proc genmod data=nor;
    model y = x / dist = normal
                  link = log;
@@ -48,5 +50,7 @@ proc genmod data=nor;
           reslik    = Reslik;
 run;
 
+
 proc print data=Residuals;
 run;
+

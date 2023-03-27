@@ -93,3 +93,4 @@ proc phreg data=Myeloma;
                          / selection=stepwise slentry=0.25
                            slstay=0.15 details;
 run;
+

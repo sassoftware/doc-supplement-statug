@@ -120,3 +120,4 @@ proc calis corr data=Thurst method=max nobs=213 nose nostand;
    X8g = p3 * X83;
    X9g = p3 * X93;
 run;
+

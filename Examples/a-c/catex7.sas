@@ -43,3 +43,4 @@ proc catmod data=vision;
    repeated Side 2;
    title2 'Test of Marginal Homogeneity';
 quit;
+

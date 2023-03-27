@@ -51,3 +51,4 @@ run;
 proc mi data=outex10 seed=15541 nimpute=0;
    var Oxygen RunTime RunPulse;
 run;
+

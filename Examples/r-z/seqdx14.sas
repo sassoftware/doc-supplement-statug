@@ -1,16 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SEQDX14                                             */
+/*    NAME: seqdx14                                             */
 /*   TITLE: Documentation Example 14 for PROC SEQDESIGN         */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: group sequential design                             */
 /*   PROCS: SEQDESIGN                                           */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC SEQDESIGN, EXAMPLE 14                          */
-/*    MISC:                                                     */
 /****************************************************************/
 
 proc seqdesign;
@@ -38,3 +34,4 @@ proc seqdesign;
                      accrual=uniform accrate=15 acctime=18
                      ceiling=n);
 run;
+

@@ -6,12 +6,10 @@
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: nonparametric methods, categorical data analysis,   */
-/*    KEYS: Empirical Distribution Function (EDF) Statistics    */
+/*    KEYS: empirical distribution function (EDF) statistics,   */
+/*    KEYS: Kolmogorov-Smirnov test, EDF plot                   */
 /*   PROCS: NPAR1WAY                                            */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC NPAR1WAY, Example 2                            */
-/*    MISC:                                                     */
 /****************************************************************/
 
 data Arthritis;
@@ -28,3 +26,4 @@ proc npar1way edf plots=edfplot data=Arthritis;
    freq Freq;
 run;
 ods graphics off;
+

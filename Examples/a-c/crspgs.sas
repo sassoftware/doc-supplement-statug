@@ -1,16 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: CRSPGS                                              */
+/*    NAME: crspgs                                              */
 /*   TITLE: Getting Started Example for PROC CORRESP            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: marketing research, categorical data analysis       */
 /*   PROCS: CORRESP                                             */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC CORRESP, GETTING STARTED EXAMPLE               */
-/*    MISC:                                                     */
 /****************************************************************/
 
 title "Number of Ph.D.'s Awarded from 1973 to 1978";
@@ -38,3 +34,4 @@ proc corresp data=PhD out=Results short chi2p;
    var y1973-y1978;
    id Science;
 run;
+

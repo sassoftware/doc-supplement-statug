@@ -14,7 +14,9 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Analysis of Covariance --------------------------------------*/
+
 data DrugTest;
    input Drug $ PreTreatment PostTreatment @@;
    datalines;
@@ -25,14 +27,18 @@ D  8  4   D 19 14   D  8  9   D  5  1   D 15  9
 F 16 13   F 13 10   F 11 18   F  9  5   F 21 23
 F 16 12   F 12  5   F 12 16   F  7  1   F 12 20
 ;
+
 proc glm data=DrugTest;
    class Drug;
    model PostTreatment = Drug PreTreatment / solution;
    lsmeans Drug / stderr pdiff cov out=adjmeans;
 run;
+
 proc print data=adjmeans;
 run;
+
 /* Visualize the Fitted Analysis of Covariance Model -----------*/
+
 ods graphics on;
 
 proc glm data=DrugTest plot=meanplot(cl);
@@ -42,3 +48,4 @@ proc glm data=DrugTest plot=meanplot(cl);
 run;
 
 ods graphics off;
+

@@ -67,3 +67,4 @@ proc plm restore=cowgmd;
     / plots=boxplot(orient=horizontal);
 run;
 ods graphics off;
+

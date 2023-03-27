@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Split Plot Design -------------------------------------------*/
+
 
 title1 'Split Plot Design';
 data Split;
@@ -37,11 +39,14 @@ data Split;
 232 42.8
 ;
 
+
 /* Include Independent Effects Block, A, Block*A, B, and A*B.
    Ask for F test of the A Effect with Block*A as Error Term ---*/
+
 
 proc anova data=Split;
    class Block A B;
    model Response = Block A Block*A B A*B;
    test h=A e=Block*A;
 run;
+

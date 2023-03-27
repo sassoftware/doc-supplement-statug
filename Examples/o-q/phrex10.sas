@@ -212,3 +212,4 @@ proc phreg data=Bladder covs(aggregate);
    id ID;
    TREATMENT: test trt1,trt2,trt3,trt4/average e;
 run;
+

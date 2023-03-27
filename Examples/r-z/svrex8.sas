@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVREX8                                              */
+/*    NAME: svrex8                                              */
 /*   TITLE: Documentation Example 8 for PROC SURVEYREG          */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -9,10 +9,7 @@
 /*    KEYS: domain analysis, domain mean comparison             */
 /*    KEYS: unequal weighting, linear model                     */
 /*   PROCS: SURVEYREG                                           */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYREG, Example 8                           */
-/*                                                              */
 /*    MISC: Domain Mean Comparison                              */
 /*                                                              */
 /****************************************************************/
@@ -77,3 +74,4 @@ proc surveyreg data=IceCreamDataDomain total=StudentTotals;
    lsmeans Grade / diff plots=(diff meanplot(cl));
    weight Weight;
 run;
+

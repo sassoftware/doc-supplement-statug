@@ -78,3 +78,4 @@ run;
 proc print data=score;
    var Diagnosis Friendships P_Event;
 run;
+

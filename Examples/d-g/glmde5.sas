@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Simple Effects ----------------------------------------------*/
+
 data twoway;
    input A B Y @@;
    datalines;
@@ -27,9 +29,12 @@ data twoway;
 3 2  1.5   3 2  0.2   3 2 -1.5   3 2  1.3
 3 3  0.2   3 3  0.4   3 3 -0.4   3 3 -2.2
 ;
+
 proc glm data=twoway;
    class A B;
    model Y = A B A*B;
 run;
+
    lsmeans A*B / slice=B;
 run;
+

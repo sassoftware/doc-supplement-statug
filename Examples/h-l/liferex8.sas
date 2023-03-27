@@ -1,3 +1,4 @@
+
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -140,3 +141,4 @@ proc lifereg data=Larynx order=data;
                      'Stage 2 vs 1' 0 0 1 -1
                         / cl plots=boxplot(orient=horizontal);
 run;
+

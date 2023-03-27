@@ -28,3 +28,4 @@ proc iclifetest data=temp method=turnbull plots=survival(failure)
                 impute(seed=1234);
    time (c1,c2);
 run;
+

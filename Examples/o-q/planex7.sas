@@ -1,25 +1,27 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: PLANEX6                                             */
+/*    NAME: planex7                                             */
 /*   TITLE: Example 7 for PROC PLAN                             */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: crossover design                                    */
 /*   PROCS: PLAN                                                */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC PLAN, EXAMPLE 7.                               */
-/*    MISC:                                                     */
+/*                                                              */
 /****************************************************************/
 
+
 /* Crossover designs -------------------------------------------*/
+
 proc plan;
    factors Run=6 ordered Period=6 ordered;
    treatments Treatment=6 cyclic (1 2 6 3 5 4);
 run;
 
+
 /* Generate treatments cyclically ------------------------------*/
+
 proc plan seed=136149876;
    factors Run=6 ordered Period=6 ordered / noprint;
    treatments Treatment=6 cyclic (1 2 6 3 5 4);
@@ -28,6 +30,7 @@ proc plan seed=136149876;
       Treatment random
       ;
 run;
+
 /*
 / Relabel Period to obtain the same design as in Cox (1992).
 /------------------------------------------------------------------*/
@@ -36,7 +39,9 @@ data RandomizedDesign;
    Period = mod(Period+2,6)+1;
 run;
 
+
 /* Prepare to print the design in a standard form --------------*/
+
 proc sort data=RandomizedDesign;
    by Run Period;
 run;
@@ -51,7 +56,9 @@ run;
 proc print data=tDesign noobs;
 run;
 
+
 /* Generate carryover variable for preceding period treatment */
+
 proc sort data=RandomizedDesign;
    by Run Period;
 run;
@@ -72,6 +79,7 @@ data tDesign;
 run;
 proc print data=tDesign noobs;
 run;
+
 data Responses;
    input Response @@;
    datalines;
@@ -86,7 +94,9 @@ data Mills;
    merge RandomizedDesign Responses;
 run;
 
+
 /* Incorporate the carryover variable in the analysis ----------*/
+
 proc orthoreg data=Mills;
    class Run Period Treatment;
    effect CarryOver = lag(Treatment / period=Period within=Run);
@@ -95,3 +105,4 @@ proc orthoreg data=Mills;
    lsmeans Treatment CarryOver / diff=anom;
    ods select Tests1 LSMeans Diffs;
 run;
+

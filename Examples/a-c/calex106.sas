@@ -43,3 +43,4 @@ run;
 
 proc calis data=sales covpattern=sigsqi chicorrect=0;
 run;
+

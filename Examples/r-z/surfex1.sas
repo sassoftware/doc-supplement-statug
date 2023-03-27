@@ -9,12 +9,11 @@
 /*    KEYS: stratification, clustering, unequal weighting,      */
 /*    KEYS: crosstabulation tables, Wald chi-square test        */
 /*   PROCS: SURVEYFREQ                                          */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYFREQ, Example 1                          */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Generate Data -----------------------------------------------*/
+
 proc format;
    value ResponseCode
       1 = 'Very Unsatisfied'
@@ -41,6 +40,7 @@ proc format;
       0 = 'Faculty'
       1 = 'Admin/Guidance';
 run;
+
 data SIS_Survey;
    format Response ResponseCode.;
    format NewUser UserCode.;
@@ -199,9 +199,11 @@ data SIS_Survey;
       output;
    end;
 run;
+
 /* Two-Way Table
       Stratum Information Table
       CVs and Design Effects    --------------------------------*/
+
 title 'Student Information System Survey';
 proc surveyfreq data=SIS_Survey;
    tables  Department * Response / cv deff nowt nostd nototal;
@@ -209,12 +211,15 @@ proc surveyfreq data=SIS_Survey;
    cluster School;
    weight  SamplingWeight;
 run;
+
 /* Two-Way Table
       Row Percentages
       Wald Chi-Square Test -------------------------------------*/
+
 proc surveyfreq data=SIS_Survey nosummary;
    tables  Department * Response / row nowt wchisq;
    strata  State NewUser;
    cluster School;
    weight  SamplingWeight;
 run;
+

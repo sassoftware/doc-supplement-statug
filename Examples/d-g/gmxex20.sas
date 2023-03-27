@@ -123,3 +123,4 @@ proc glimmix data=multicenter;
    margins trt/ diff;
    margins trt*marker/ sliceby=marker slicediff;
 run;
+

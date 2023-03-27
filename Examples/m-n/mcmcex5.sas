@@ -50,3 +50,4 @@ proc genmod data=insure;
    model c = car age / dist=poisson link=log offset=ln;
    bayes seed=17 nmc=5000 coeffprior=normal;
 run;
+

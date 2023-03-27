@@ -10,9 +10,11 @@
 /*   PROCS: HPMIXED                                             */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF: PROC HPMIXED, EXAMPLE 2.                            */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data heights;
    input Family Gender$ Height @@;
    datalines;
@@ -20,14 +22,17 @@ data heights;
 2 F 63   2 F 67   2 M 69   2 M 68   2 M 70   3 F 63
 3 M 64   4 F 67   4 F 66   4 M 67   4 M 67   4 M 69
 ;
+
 proc mixed;
    class Family Gender;
    model Height = Gender / s;
    random Family Family*Gender / s;
 run;
+
 proc hpmixed;
    class Family Gender;
    model Height = Gender / s;
    random Family Family*Gender / s;
    test gender;
 run;
+

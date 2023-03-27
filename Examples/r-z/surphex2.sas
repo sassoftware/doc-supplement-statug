@@ -1,21 +1,21 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SURPHEX2                                            */
+/*    NAME: surphex2                                            */
 /*   TITLE: Documentation Example 2 for PROC SURVEYPHREG        */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: survey sampling, stratification, clustering,        */
-/*    KEYS: unequal weighting, longitudinal survey,             */
-/*    KEYS: proportional hazards regression, contrasts          */
+/*          unequal weighting, longitudinal survey,             */
+/*          proportional hazards regression, contrasts          */
 /*   PROCS: SURVEYPHREG                                         */
-/*    DATA: Data from 1987 NHEFS (NHANES Epidemiologic Follow-up*/
-/*          Study)                                              */
-/*       http://www.cdc.gov/nchs/about/major/nhefs/nhefspuf.htm */
-/*                                                              */
+/*    DATA: Data from 1987 NHEFS (NHANES Epidemiologic          */
+/*          Follow-up Study)                                    */
+/*          https://wwwn.cdc.gov/nchs/nhanes/nhefs/             */
 /*     REF: PROC SURVEYPHREG, Example 2                         */
-/*    MISC:                                                     */
+/*                                                              */
 /****************************************************************/
+
 data cancer;
    input ObsNo Strata PSU AnalysisWt ObservationWt Smoke
          Age Cancer BodyWeight;
@@ -1039,6 +1039,7 @@ data cancer;
 1017  4  092   0.35298  45888   2  52  0  166
 1018  4  035   0.03344   4347  -1  58  0  156
 ;
+
 proc surveyphreg data = cancer;
    strata strata;
    cluster psu;
@@ -1049,3 +1050,4 @@ proc surveyphreg data = cancer;
    estimate smoke 0.5 0.5 -0.5 -0.5 / exp;
    test ;
 run;
+

@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -13,7 +12,6 @@
 /*     REF: PROC GEE, INTRODUCTORY EXAMPLE 1.                   */
 /*    MISC:                                                     */
 /****************************************************************/
-
 
 data Children;
    input ID City$ @@;
@@ -55,3 +53,5 @@ proc gee data=Children descending;
    model Symptom = City Age Smoke / dist=bin link=logit;
    repeated subject=ID / type=exch covb corrw;
 run;
+
+

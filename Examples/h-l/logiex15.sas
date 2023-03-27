@@ -50,7 +50,7 @@ contribute 13 observations.
 A new data set DAYS that contains the beetle-day observations is created from
 the data set BEETLES. In addition to the variables SEX, CONC and FREQ, the
 data set contains an outcome variable Y and the variable DAY taking the
-values 1,...,13.  Y has a value of 1 if the observation corresponds to the
+values 1,\ldots,13.  Y has a value of 1 if the observation corresponds to the
 day that the beetle died and has a value of 0 otherwise.
 
 PROC LOGISTIC is invoked to fit a complementary log-log model for binary data
@@ -58,7 +58,7 @@ with response variable Y and explanatory variables DAY, SEX, and CONC. Since
 the values of Y are coded 0 and 1, specifying the DESCENDING option ensures
 that the event (y=1) probability is modeled. The DAY variable is specified
 with the GLM coding, which adds a parameter to the model for each of
-DAY=1,...,13.  The coefficients of these 13 DAY parameters can be used to
+DAY=1,\ldots,13.  The coefficients of these 13 DAY parameters can be used to
 estimate the baseline survival function. The NOINT option is specified to
 prevent any redundancy in estimating the coefficients of the DAY effects. The
 Newton-Raphson algorithm is used for the maximum likelihood estimation of the
@@ -158,3 +158,4 @@ run;
 
 ods listing close;
 ods listing;
+

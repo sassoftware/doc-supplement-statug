@@ -18,6 +18,7 @@
 /*----------------------------------------------------------------
 Each observation represents an animal.  S1 and S2 are two tumor
 types with 0=no tumor, 1=tumor.  Dose is the grouping variable.
+
 Example provided by Keith Soper, Merck.
 ----------------------------------------------------------------*/
 
@@ -41,3 +42,4 @@ proc multtest data=a permutation nsample=10000 seed=36607 outperm=pmt;
 run;
 proc print data=pmt;
 run;
+

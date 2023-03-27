@@ -38,3 +38,4 @@ proc inbreed data=Population covar average init=0.25;
    class Generation;
    gender Sex;
 run;
+

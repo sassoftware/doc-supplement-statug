@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -21,3 +20,4 @@ ods graphics on;
 proc mds data=sashelp.mileages level=absolute;
    id city;
 run;
+

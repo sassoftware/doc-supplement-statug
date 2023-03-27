@@ -99,3 +99,4 @@ run;
 proc print data=outgs1(obs=10);
    var PatientID Drug Gender Age BMI _PS_ _LPS _MatchWgt_ _MatchID;
 run;
+

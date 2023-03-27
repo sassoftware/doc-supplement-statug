@@ -44,3 +44,4 @@ run;
 proc transreg data=Gas ss2 plots=transformation lprefix=0;
    model identity(nox) = class(Fuel / zero=none) * pbspline(EqRatio);
 run;
+

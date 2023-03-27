@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Strip-Split Plot Design -------------------------------------*/
+
 
 title1 'Strip-split Plot';
 data Barley;
@@ -42,9 +44,11 @@ data Barley;
 5.13 4.90 4.88 5.18 5.45 5.80 5.12 4.42
 ;
 
+
 /* Four Fertilizer Treatments in Vertical Strips with Subplots of
    Different Calcium Levels. Soil Type Stripped Across the Split
    Plot Experiment. Entire Experiment Replicated Three Times ---*/
+
 
 proc anova data=Barley;
    class Rep Soil Calcium Fertilizer;
@@ -64,3 +68,4 @@ proc anova data=Barley;
           Soil*Fertilizer*Calcium    e=Soil*Calcium*Rep(Fertilizer);
    means Fertilizer Calcium Soil Calcium*Fertilizer;
 run;
+

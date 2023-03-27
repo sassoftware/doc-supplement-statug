@@ -91,3 +91,4 @@ proc sgpanel data = average;
    series x = sample y = weibull_mean;
    series x = sample y = weibull_gamma_mean;
 run;
+

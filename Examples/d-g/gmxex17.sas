@@ -17,9 +17,9 @@
 /****************************************************************/
 
 data theop;
-  input time dose conc @@;
-  if (dose = 4) then group=1; else group=2;
-  datalines;
+   input time dose conc @@;
+   if (dose = 4) then group=1; else group=2;
+   datalines;
  0.00   4  0.1633  0.25   4   2.045
  0.27   4     4.4  0.30   4    7.37
  0.35   4    1.89  0.37   4    2.89
@@ -89,12 +89,12 @@ proc nlin data=theop outest=cov;
 run;
 
 data covb;
-    set cov(where=(_type_='COVB'));
-    rename beta1_1=col1 beta2_1=col2 beta3_1=col3
-           beta1_2=col4 beta2_2=col5 beta3_2=col6;
-    row = _n_;
-    Parm = 1;
-    keep parm row beta:;
+   set cov(where=(_type_='COVB'));
+   rename beta1_1=col1 beta2_1=col2 beta3_1=col3
+          beta1_2=col4 beta2_2=col5 beta3_2=col6;
+   row = _n_;
+   Parm = 1;
+   keep parm row beta:;
 run;
 
 proc print data=covb;
@@ -112,3 +112,4 @@ proc glimmix data=ests order=data;
                'beta3 eq. across groups' 0 0 1  0  0  -1 /
                adjust=bon stepdown ftest(label='Homogeneity');
 run;
+

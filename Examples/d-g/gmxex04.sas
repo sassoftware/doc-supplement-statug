@@ -21,14 +21,14 @@
 /****************************************************************/
 
 data blotch;
-  array p{9} pct1-pct9;
-  input variety pct1-pct9;
-  do site = 1 to 9;
-     prop = p{site}/100;
-     output;
-  end;
-  drop pct1-pct9;
-  datalines;
+   array p{9} pct1-pct9;
+   input variety pct1-pct9;
+   do site = 1 to 9;
+      prop = p{site}/100;
+      output;
+   end;
+   drop pct1-pct9;
+   datalines;
 1  0.05  0.00  1.25  2.50  5.50  1.00  5.00  5.00 17.50
 2  0.00  0.05  1.25  0.50  1.00  5.00  0.10 10.00 25.00
 3  0.00  0.05  2.50  0.01  6.00  5.00  5.00  5.00 42.50
@@ -42,27 +42,28 @@ data blotch;
 ;
 
 proc glimmix data=blotch;
-  class site variety;
-  model prop = site variety / link=logit dist=binomial;
-  random _residual_;
-  lsmeans variety / diff=control('1');
+   class site variety;
+   model prop = site variety / link=logit dist=binomial;
+   random _residual_;
+   lsmeans variety / diff=control('1');
 run;
 
 ods graphics on;
 ods select PearsonPanel;
 proc glimmix data=blotch plots=pearsonpanel;
-  class site variety;
-  model prop = site variety / link=logit dist=binomial;
-  random _residual_;
+   class site variety;
+   model prop = site variety / link=logit dist=binomial;
+   random _residual_;
 run;
 ods graphics off;
 
 ods graphics on;
 ods select ModelInfo FitStatistics LSMeans Diffs PearsonPanel;
 proc glimmix data=blotch plots=pearsonpanel;
-  class site variety;
-  _variance_ = _mu_**2 * (1-_mu_)**2;
-  model prop = site variety / link=logit;
-  lsmeans variety / diff=control('1');
+   class site variety;
+   _variance_ = _mu_**2 * (1-_mu_)**2;
+   model prop = site variety / link=logit;
+   lsmeans variety / diff=control('1');
 run;
 ods graphics off;
+

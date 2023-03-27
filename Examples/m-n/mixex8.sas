@@ -10,6 +10,7 @@
 /*   PROCS: MIXED, PRINT                                        */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF:                                                     */
 /*    MISC: Influence diagnostics                               */
 /*                                                              */
@@ -56,6 +57,7 @@ data pr;
   26   M   23.0    24.5    26.0    30.0
   27   M   22.0    21.5    23.5    25.0
 ;
+
 proc mixed data=pr method=ml;
    class person gender;
    model y = gender age gender*age /
@@ -63,6 +65,7 @@ proc mixed data=pr method=ml;
    repeated / type=un subject=person;
    ods select influence;
 run;
+
 ods graphics on;
 
 proc mixed data=pr method=ml;
@@ -71,6 +74,7 @@ proc mixed data=pr method=ml;
                     influence(effect=person iter=5);
    repeated / type=un subject=person;
 run;
+
 proc mixed data=pr method=ml
            plots(only)=InfluenceEstPlot;
    class person gender;
@@ -78,6 +82,7 @@ proc mixed data=pr method=ml
          influence(iter=5 effect=person est);
    random intercept age / type=un subject=person;
 run;
+
 ods graphics on;
 proc mixed data=pr method=ml
        plot=boxplot(observed marginal conditional subject);
@@ -86,3 +91,4 @@ proc mixed data=pr method=ml
    random intercept age / type=un subject=person;
 run;
 ods graphics off;
+

@@ -151,3 +151,4 @@ proc genmod data=resp;
    model outcome(event='1')=treatment center sex age baseline / dist=bin;
    repeated subject=id(center) / corr=unstr corrw;
 run;
+

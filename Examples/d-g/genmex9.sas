@@ -14,6 +14,7 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 data cd4;
    input Id Y Time Time2 TrtTime TrtTime2;
    Time3 = Time2 * Time;
@@ -4348,6 +4349,7 @@ data cd4;
 711     488.00224       12.14286      147.44898       12.14286      147.44898
 711     240.00026       18.14286      329.16327       18.14286      329.16327
 ;
+
 ods graphics on;
 
 proc genmod data=cd4;
@@ -4357,6 +4359,7 @@ proc genmod data=cd4;
    assess var=(Time) / resample
                        seed=603708000;
 run;
+
 proc genmod data=cd4;
    class Id;
    model Y = Time Time2 Time3 TrtTime TrtTime2 TrtTime3;
@@ -4364,3 +4367,4 @@ proc genmod data=cd4;
    assess var=(Time) / resample
                        seed=603708000;
 run;
+

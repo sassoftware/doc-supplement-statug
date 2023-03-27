@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: TREGGS1                                             */
+/*    NAME: LATGS1                                              */
 /*   TITLE: Getting Started Example for PROC LATTICE            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -13,6 +13,7 @@
 /*          DESIGNS", 2ND EDITION, NEW YORK: JOHN WILEY & SONS. */
 /*    MISC:                                                     */
 /****************************************************************/
+
 title 'Examining the Growth Rate of Pigs';
 
 data Pigs;
@@ -27,6 +28,8 @@ data Pigs;
 4 1 1 1.77  4 1 6 1.57  4 1 8 1.43  4 2 2 1.50  4 2 4 1.60
 4 2 9 1.42  4 3 3 2.04  4 3 5 0.93  4 3 7 1.78
 ;
+
 proc lattice data=Pigs;
    var Weight;
 run;
+

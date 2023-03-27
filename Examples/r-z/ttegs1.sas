@@ -16,12 +16,14 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data time;
    input time @@;
    datalines;
  43  90  84  87  116   95  86   99   93  92
 121  71  66  98   79  102  60  112  105  98
 ;
+
 ods graphics on;
 
 proc ttest h0=80 plots(showh0) sides=u alpha=0.1;
@@ -29,3 +31,4 @@ proc ttest h0=80 plots(showh0) sides=u alpha=0.1;
 run;
 
 ods graphics off;
+

@@ -37,3 +37,4 @@ proc robustreg data=children plots=ddplot(label=none);
    model i = x y/leverage(mcdinfo opc);
 run;
 ods graphics off;
+

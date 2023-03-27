@@ -1,18 +1,15 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVREX6                                              */
+/*    NAME: svrex6                                              */
 /*   TITLE: Documentation Example 6 for PROC SURVEYREG          */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: regression, survey sampling                         */
-/*    KEYS: stratification, regression estimator                */
-/*    KEYS: unequal weighting, linear model                     */
+/*    KEYS: regression, survey sampling,                        */
+/*          stratification, regression estimator,               */
+/*          unequal weighting, linear model                     */
 /*   PROCS: SURVEYREG                                           */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYREG, Example 6                           */
-/*                                                              */
 /*    MISC: Stratum Collapse                                    */
 /*                                                              */
 /****************************************************************/
@@ -58,3 +55,4 @@ proc surveyreg data=Sample total=StratumTotals;
    model Y = X;
    weight W;
 run;
+

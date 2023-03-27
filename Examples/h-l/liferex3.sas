@@ -51,3 +51,4 @@ proc lifereg data=raw inest=in outest=outest;
    model x*censor(1) = c1 / itprint distribution = weibull;
    output out=out xbeta=xbeta;
 run;
+

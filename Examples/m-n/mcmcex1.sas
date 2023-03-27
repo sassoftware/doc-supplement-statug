@@ -135,3 +135,4 @@ proc sgplot data=den;
    series y=true x=alpha / legendlabel = "True Density";
    discretelegend;
 run;
+

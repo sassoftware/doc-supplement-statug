@@ -44,3 +44,4 @@ proc catmod data=bartlett;
    loglin Length|Time|Status @ 2;
    title2 'Model with No 3-Variable Interaction';
 quit;
+

@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: KRI2DEX2                                            */
+/*    NAME: KRI2DEX3                                            */
 /*   TITLE: Documentation Example 3 for PROC KRIGE2D            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -62,3 +62,4 @@ proc krige2d data=thick outest=predictions
 run;
 
 ods graphics off;
+

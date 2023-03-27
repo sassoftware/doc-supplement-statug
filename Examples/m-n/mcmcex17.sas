@@ -58,3 +58,4 @@ proc mcmc data=cosmetic outpost=postout seed=117207154
 
    model t ~ normal(mu, sd=sigma, clower=tl, cupper=tr);
 run;
+

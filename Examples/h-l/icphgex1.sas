@@ -67,3 +67,4 @@ proc lifereg data=hiv;
    class Stage;
    model (Left, Right) = Stage;
 run;
+

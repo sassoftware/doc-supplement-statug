@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: ODSGRAF                                             */
+/*    NAME: ODSGREX5                                            */
 /*   TITLE: Documentation Example 5 for ODS Graphics            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -114,3 +114,4 @@ proc mixed data=pr method=ml plots=boxplot;
 run;
 *
 ods html close;
+

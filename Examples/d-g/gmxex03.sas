@@ -83,6 +83,7 @@ data lipcancer;
 55  0  4.2 16   0.0
 56  0  1.8 10   0.0
 ;
+
 proc glimmix data=lipcancer;
    class county;
    x    = employment / 10;
@@ -94,8 +95,10 @@ proc glimmix data=lipcancer;
    id employment SMR SMR_pred;
    output out=glimmixout;
 run;
+
 ods graphics on;
 ods select StudentPanel;
+
 proc glimmix data=lipcancer plots=studentpanel;
    class county;
    x    = employment / 10;
@@ -103,24 +106,27 @@ proc glimmix data=lipcancer plots=studentpanel;
    model observed = x / dist=poisson offset=logn s ddfm=none;
    random county;
 run;
+
 ods graphics off;
+
 proc template;
    define statgraph scatter;
-   BeginGraph;
-     layout overlayequated / yaxisopts=(label='Predicted SMR')
-                             xaxisopts=(label='Observed SMR')
-                             equatetype=square;
-        lineparm y=0 slope=1 x=0 /
-               lineattrs = GraphFit(pattern=dash)
-               extend    = true;
-        scatterplot y=SMR_pred x=SMR /
-                markercharacter = employment;
-     endlayout;
-   EndGraph;
+      BeginGraph;
+         layout overlayequated / yaxisopts=(label='Predicted SMR')
+                                 xaxisopts=(label='Observed SMR')
+                                 equatetype=square;
+            lineparm y=0 slope=1 x=0 /
+                   lineattrs = GraphFit(pattern=dash)
+                   extend    = true;
+            scatterplot y=SMR_pred x=SMR /
+                    markercharacter = employment;
+         endlayout;
+      EndGraph;
    end;
 run;
 proc sgrender data=glimmixout template=scatter;
 run;
+
 proc glimmix data=lipcancer;
    x    = employment / 10;
    logn = log(expCount);
@@ -130,3 +136,4 @@ proc glimmix data=lipcancer;
    id employment SMR SMR_pred;
    output out=glimmixout;
 run;
+

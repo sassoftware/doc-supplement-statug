@@ -15,9 +15,9 @@
 /****************************************************************/
 
 data headache;
-  input minutes group censor @@;
-  patient = _n_;
-  datalines;
+   input minutes group censor @@;
+   patient = _n_;
+   datalines;
 11  1  0    12  1  0    19  1  0    19  1  0
 19  1  0    19  1  0    21  1  0    20  1  0
 21  1  0    21  1  0    20  1  0    21  1  0
@@ -31,14 +31,14 @@ data headache;
 ;
 
 proc nlmixed data=headache;
-    bounds gamma > 0;
-    linp  = b0 - b1*(group-2);
-    alpha = exp(-linp);
-    G_t   = exp(-(alpha*minutes)**gamma);
-    g     = gamma*alpha*((alpha*minutes)**(gamma-1))*G_t;
-    ll    = (censor=0)*log(g) + (censor=1)*log(G_t);
-    model minutes ~ general(ll);
-    predict 1-G_t out=cdf;
+   bounds gamma > 0;
+   linp  = b0 - b1*(group-2);
+   alpha = exp(-linp);
+   G_t   = exp(-(alpha*minutes)**gamma);
+   g     = gamma*alpha*((alpha*minutes)**(gamma-1))*G_t;
+   ll    = (censor=0)*log(g) + (censor=1)*log(G_t);
+   model minutes ~ general(ll);
+   predict 1-G_t out=cdf;
 run;
 
 proc print data=cdf;
@@ -47,15 +47,15 @@ run;
 
 ods output ParameterEstimates=est;
 proc nlmixed data=headache;
-    bounds gamma > 0;
-    linp  = b0 - b1*(group-2) + z;
-    alpha = exp(-linp);
-    G_t   = exp(-(alpha*minutes)**gamma);
-    g     = gamma*alpha*((alpha*minutes)**(gamma-1))*G_t;
-    ll = (censor=0)*log(g) + (censor=1)*log(G_t);
-    model minutes ~ general(ll);
-    random z ~ normal(0,exp(2*logsig)) subject=patient out=EB;
-    predict 1-G_t out=cdf;
+   bounds gamma > 0;
+   linp  = b0 - b1*(group-2) + z;
+   alpha = exp(-linp);
+   G_t   = exp(-(alpha*minutes)**gamma);
+   g     = gamma*alpha*((alpha*minutes)**(gamma-1))*G_t;
+   ll = (censor=0)*log(g) + (censor=1)*log(G_t);
+   model minutes ~ general(ll);
+   random z ~ normal(0,exp(2*logsig)) subject=patient out=EB;
+   predict 1-G_t out=cdf;
 run;
 
 proc print data=eb;
@@ -68,15 +68,15 @@ run;
 
 data pred;
    merge eb(keep=estimate) headache(keep=patient group);
-    array pp{2} pred1-pred2;
-    if _n_ = 1 then set trest(keep=gamma b0 b1);
-    do time=11 to 32;
+   array pp{2} pred1-pred2;
+   if _n_ = 1 then set trest(keep=gamma b0 b1);
+   do time=11 to 32;
       linp      = b0 - b1*(group-2) + estimate;
       pp{group} = 1-exp(- (exp(-linp)*time)**gamma);
       symbolid  = patient+1;
       output;
-    end;
-    keep pred1 pred2 time patient;
+   end;
+   keep pred1 pred2 time patient;
 run;
 
 data pred;
@@ -104,3 +104,4 @@ proc sgplot data=pred noautolegend;
    scatter x=minutes2 y=pcdf2  /
            markerattrs=(symbol=Circle       size=9);
 run;
+

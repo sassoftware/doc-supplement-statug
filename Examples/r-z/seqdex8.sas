@@ -1,16 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SEQDEX8                                             */
+/*    NAME: seqdex8                                             */
 /*   TITLE: Documentation Example 8 for PROC SEQDESIGN          */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: group sequential design                             */
 /*   PROCS: SEQDESIGN                                           */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC SEQDESIGN, EXAMPLE 8                           */
-/*    MISC:                                                     */
 /****************************************************************/
 
 ods graphics on;
@@ -26,3 +22,4 @@ proc seqdesign altref=0.2  errspend
                           alpha=0.025
                           ;
 run;
+

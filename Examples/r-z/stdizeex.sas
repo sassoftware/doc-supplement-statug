@@ -27,7 +27,6 @@ data Fish;
    LogLengthRatio = log(Length3 / Length1);
 run;
 
-
 /*--- macro for standardization ---*/
 
 %macro Std(mtd);
@@ -130,3 +129,4 @@ proc aceclus data=fish out=ace p=.02 noprint;
    var Length1 logLengthRatio Height Width Weight3;
 run;
 %FastFreq(ace);
+

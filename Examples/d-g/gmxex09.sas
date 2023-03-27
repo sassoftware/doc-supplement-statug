@@ -32,7 +32,6 @@ data iris_univ;
    drop SepalLength SepalWidth PetalLength PetalWidth:;
 run;
 
-
 ods select FitStatistics CovParms CovTests;
 proc glimmix data=iris_univ;
    class species var id;
@@ -40,6 +39,7 @@ proc glimmix data=iris_univ;
    random _residual_ / type=un group=species subject=id;
    covtest homogeneity;
 run;
+
 
 ods select FitStatistics CovParms CovTests;
 proc glimmix data=iris_univ;
@@ -79,3 +79,4 @@ proc glimmix data=iris_univ;
         0  0  0  0  0  0  0  0  0  0
         0  0  0  0  0  0  0  0  0 -1 / estimates;
 run;
+

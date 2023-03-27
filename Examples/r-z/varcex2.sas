@@ -11,9 +11,11 @@
 /*   PROCS: VARCOMP                                             */
 /*    DATA:                                                     */
 /*                                                              */
+/* SUPPORT: Tianlin Wang                                        */
 /*     REF: PROC VARCOMP, EXAMPLE 2.                            */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data Houf;
    input a b y @@;
    datalines;
@@ -48,11 +50,14 @@ data Houf;
 10 2 35   10  2 35   10 2 34
 10 3 35   10  3 34   10 3 35
 ;
+
 proc varcomp data=Houf method=grr (speclimits=(18,58) ratio);
    class a b;
    model y=a|b/cl;
 run;
+
 proc varcomp data=Houf method=grr (speclimits=(18,58) ratio) seed=104;
    class a b;
    model y=a|b/cl=gcl;
 run;
+

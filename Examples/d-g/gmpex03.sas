@@ -46,3 +46,4 @@ proc glmpower data=Pain;
       vary (linestyle by stddev, symbol by dependent source);
 run;
 ods graphics off;
+

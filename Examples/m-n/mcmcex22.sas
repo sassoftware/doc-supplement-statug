@@ -213,3 +213,4 @@ proc mcmc data=theoph nmc=10000 seed=22 outpost=theophC;
    pred = dose*ke*ka*(exp(-ke*time)-exp(-ka*time))/cl/(ka-ke);
    model conc ~ normal(pred,var=s2y);
 run;
+

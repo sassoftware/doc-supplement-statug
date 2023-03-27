@@ -1,19 +1,15 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVMEX5                                              */
-/*   TITLE: Documentation Example 5 for PROC SURVEYMEANS        */
+/*    NAME: svmex5                                              */
+/*   TITLE: Example 5 in PROC SURVEYMEANS Documentation         */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: survey sampling, categorical data analysis          */
-/*    KEYS: stratification, clustering, replication             */
-/*    KEYS: unequal weighting, descriptive statistics           */
+/*    KEYS: survey sampling, categorical data analysis,         */
+/*          stratification, clustering, replication,            */
+/*          unequal weighting, descriptive statistics           */
 /*   PROCS: SURVEYMEANS                                         */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYMEANS, Example 5                         */
-/*                                                              */
 /*    MISC: Variance Estimation Using Replication Methods       */
 /*                                                              */
 /****************************************************************/
@@ -64,12 +60,12 @@ run;
 
 data j1;
    line='J'; vehicle=1;
-      do passenger=1 to 101;
-         waittime=rantbl(2,0.06,0.003,0.04,0.05,0.10,0.09,0.13,
-                         0.12,0.12,0.03,0.04,0.05,0.05,0.055,0.03,
-                         0.04,0.05,0.001,0.004,0.025,0.002)-1;
-         output;
-      end;
+   do passenger=1 to 101;
+      waittime=rantbl(2,0.06,0.003,0.04,0.05,0.10,0.09,0.13,
+                      0.12,0.12,0.03,0.04,0.05,0.05,0.055,0.03,
+                      0.04,0.05,0.001,0.004,0.025,0.002)-1;
+      output;
+   end;
 run;
 
 data j2;
@@ -191,7 +187,6 @@ data MUNIsurvey;
    format line $line.;
 run;
 
-
 title 'MUNI Subway Passenger Waiting Time Survey Data';
 proc print data=MUNIsurvey (obs=10);
 run;
@@ -211,3 +206,4 @@ proc surveymeans data=MUNIsurvey mean varmethod=jackknife mean clm;
    var waittime;
    weight weight;
 run;
+

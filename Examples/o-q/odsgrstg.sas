@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: ODSGRAF                                             */
+/*    NAME: ODSGRSTG                                            */
 /*   TITLE: ODS Graphics Statistical Graphics Procedures        */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -228,3 +228,4 @@ run;
 
 proc sgrender data=sashelp.class template=panel;
 run;
+

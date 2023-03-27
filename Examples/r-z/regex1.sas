@@ -61,3 +61,4 @@ proc reg data=baseball plots=none;
 run;
 
 %marginal(dependent=logSalary, predicted=p, independents=&ind)
+

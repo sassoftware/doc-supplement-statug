@@ -15,10 +15,10 @@
 /****************************************************************/
 
 data pump;
-  input y t group;
-  pump = _n_;
-  logtstd = log(t) - 2.4564900;
-  datalines;
+   input y t group;
+   pump = _n_;
+   logtstd = log(t) - 2.4564900;
+   datalines;
  5  94.320 1
  1  15.720 2
  5  62.880 1
@@ -41,3 +41,4 @@ proc nlmixed data=pump;
    estimate 'alpha1-alpha2' alpha1-alpha2;
    estimate 'beta1-beta2' beta1-beta2;
 run;
+

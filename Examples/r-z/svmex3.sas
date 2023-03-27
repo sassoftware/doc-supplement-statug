@@ -1,19 +1,15 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVMEX3                                              */
-/*   TITLE: Documentation Example 3 for PROC SURVEYMEANS        */
+/*    NAME: svmex3                                              */
+/*   TITLE: Example 3 in PROC SURVEYMEANS Documentation         */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: survey sampling, categorical data analysis          */
-/*    KEYS: stratification, clustering, ratio analysis          */
-/*    KEYS: unequal weighting, descriptive statistics           */
+/*    KEYS: survey sampling, categorical data analysis,         */
+/*          stratification, clustering, ratio analysis,         */
+/*          unequal weighting, descriptive statistics           */
 /*   PROCS: SURVEYMEANS                                         */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYMEANS, Example 3                         */
-/*                                                              */
 /*    MISC: Ratio Analysis                                      */
 /*                                                              */
 /****************************************************************/
@@ -90,10 +86,10 @@ Retail           2834.4  2884.6   458.2    41.2   49.8   9.8
 Retail           2621.1  6173.8  1992.7   183.7  115.1   9.2
 ;
 
-
 title 'Ratio Analysis in Top Companies Profile Study';
 proc surveymeans data=Company total=800 ratio;
    var Profit Sale Employee;
    weight Weight;
    ratio Profit Sale / Employee;
 run;
+

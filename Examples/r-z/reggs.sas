@@ -46,3 +46,4 @@ proc reg data=USPopulation plots=predictions(X=Year);
 quit;
 
 ods graphics off;
+

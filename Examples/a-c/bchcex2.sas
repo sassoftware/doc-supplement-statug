@@ -63,3 +63,4 @@ proc bchoice data=Travel2 seed=124 nmc=20000 nthin=2 dic;
    class Mode Subject / param=ref order=data;
    model Choice = Mode TravTime / choiceset=(Subject);
 run;
+

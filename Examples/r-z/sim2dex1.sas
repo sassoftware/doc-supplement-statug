@@ -108,3 +108,4 @@ data thick;
 
 /* Execute macro for fine grid and more simulations ------------*/
 %area_sim(seed=655311,nr=500,ginc=1);
+

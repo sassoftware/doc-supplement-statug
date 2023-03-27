@@ -9,12 +9,11 @@
 /*    KEYS: stratification, clustering, unequal weighting,      */
 /*    KEYS: frequency tables, output data sets                  */
 /*   PROCS: SURVEYFREQ, PRINT                                   */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYFREQ, Example 3                          */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Generate Data -----------------------------------------------*/
+
 proc format;
    value ResponseCode
       1 = 'Very Unsatisfied'
@@ -41,6 +40,7 @@ proc format;
       0 = 'Faculty'
       1 = 'Admin/Guidance';
 run;
+
 data SIS_Survey;
    format Response ResponseCode.;
    format NewUser UserCode.;
@@ -199,9 +199,11 @@ data SIS_Survey;
       output;
    end;
 run;
+
 /* One-Way Frequency Table
       Confidence Limits for Percentages
       Output Data Set                   ------------------------*/
+
 proc surveyfreq data=SIS_Survey;
    tables  Response / cl nowt;
    ods output OneWay=ResponseTable;
@@ -209,11 +211,14 @@ proc surveyfreq data=SIS_Survey;
    cluster School;
    weight  SamplingWeight;
 run;
+
 proc print data=ResponseTable;
    var Table Response Frequency Percent StdErr LowerCL UpperCL;
 run;
+
 /* One-Way Frequency Table
       Table Summary Output Data Set ----------------------------*/
+
 proc surveyfreq data=SIS_Survey;
    tables  Response / cl nowt;
    ods output TableSummary=ResponseSummary;
@@ -221,5 +226,7 @@ proc surveyfreq data=SIS_Survey;
    cluster School;
    weight  SamplingWeight;
 run;
+
 proc print data=ResponseSummary split='*';
 run;
+

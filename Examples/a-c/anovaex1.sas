@@ -13,9 +13,11 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Randomized Complete Block With Factorial Treatment Structure */
 
 /* Blocking Var: PainLevel, Treatment Fctrs: Codeine Acupuncture*/
+
 
 title1 'Randomized Complete Block With Two Factors';
 data PainRelief;
@@ -31,9 +33,12 @@ data PainRelief;
 8 1 1 1.2  8 2 1 1.7  8 1 2 1.6  8 2 2 2.4
 ;
 
+
 /* Bar Adds Factors Main Effect and Interaction to the Model ---*/
+
 
 proc anova data=PainRelief;
    class PainLevel Codeine Acupuncture;
    model Relief = PainLevel Codeine|Acupuncture;
 run;
+

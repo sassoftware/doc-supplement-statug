@@ -13,6 +13,7 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data Melanoma;
    input  Year Incidences @@;
    format Year d4.0;
@@ -28,32 +29,41 @@ data Melanoma;
 1968    4.7   1969   4.4  1970   4.8  1971   4.8
 1972    4.8
 ;
+
+
 proc sgplot data=Melanoma;
    scatter y=Incidences x=Year;
 run;
+
 ods graphics on;
 
 proc loess data=Melanoma;
    model Incidences=Year;
 run;
+
 proc loess data=Melanoma;
    model Incidences=Year / details(ModelSummary OutputStatistics);
 run;
+
 proc loess data=Melanoma;
    model Incidences=Year/smooth=0.1 0.25 0.4 0.6 residual;
    ods output OutputStatistics=Results;
 run;
 
 
+
 proc print data=Results(obs=5);
    id obs;
 run;
 
+
 proc loess data=Melanoma plots=ResidualsBySmooth(smooth);
    model Incidences=Year/smooth=0.1 0.25 0.4 0.6;
 run;
+
 proc loess data=Melanoma;
    model Incidences=Year/clm alpha=0.1;
 run;
 
 ods graphics off;
+

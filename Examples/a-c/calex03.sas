@@ -57,3 +57,4 @@ proc calis nobs=932 data=Wheaton psummary;
                 [4, ] = theta1 theta3 theta1;
    fitindex on(only)=[chisq df probchi];
 run;
+

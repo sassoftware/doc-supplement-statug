@@ -67,3 +67,4 @@ proc icphreg data=hyper plot(timerange=(0,125))=surv;
    strata Nephrectomy;
    model (Left, Right) = Age / basehaz=splines(df=1);
 run;
+

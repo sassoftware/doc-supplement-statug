@@ -1,34 +1,35 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: FACGS1                                              */
+/*    NAME: facgs1                                              */
 /*   TITLE: Getting Started Example 1 for PROC FACTOR           */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: factor analysis                                     */
 /*   PROCS: FACTOR                                              */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC FACTOR, Getting Started Example 1              */
-/*    MISC:                                                     */
 /****************************************************************/
+
+/*
+This example demonstrates how you can use the FACTOR
+procedure to perform common factor analysis and factor rotation.
+*/
 
 options validvarname=any;
 data jobratings;
    input ('Communication Skills'n
-          'Problem Solving'n
-          'Learning Ability'n
-          'Judgment under Pressure'n
-          'Observational Skills'n
-          'Willingness to Confront Problems'n
-          'Interest in People'n
-          'Interpersonal Sensitivity'n
-          'Desire for Self-Improvement'n
-          'Appearance'n
-          'Dependability'n
-          'Physical Ability'n
-          'Integrity'n
-          'Overall Rating'n) (1.);
+      'Problem Solving'n
+      'Learning Ability'n
+      'Judgment under Pressure'n
+      'Observational Skills'n
+      'Willingness to Confront Problems'n
+      'Interest in People'n
+      'Interpersonal Sensitivity'n
+      'Desire for Self-Improvement'n
+      'Appearance'n
+      'Dependability'n
+      'Physical Ability'n
+      'Integrity'n
+      'Overall Rating'n) (1.);
    datalines;
 26838853879867
 74758876857667
@@ -138,3 +139,4 @@ data jobratings;
 proc factor data=jobratings(drop='Overall Rating'n) priors=smc
    rotate=varimax;
 run;
+

@@ -81,3 +81,4 @@ run;
 proc fmm data=ossi;
    model y/m = x1-x3 / dist=betabinomial;
 run;
+

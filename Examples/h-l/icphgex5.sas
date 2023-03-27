@@ -2642,3 +2642,4 @@ proc icphreg data=Retinopathy;
    id id;
    hazardratio CurrentHbA;
 run;
+

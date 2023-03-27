@@ -45,3 +45,4 @@ run;
 proc glmselect data=analysisData;
    model y= x1-x3 / selection=forward(select=sbc stop=sbc choose=sbc);
 run;
+

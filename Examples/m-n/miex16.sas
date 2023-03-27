@@ -52,3 +52,4 @@ proc print data=outex16(obs=10);
    var _Imputation_ Trt y0 y1 y2;
    title 'First 10 Observations of the Imputed Data Set';
 run;
+

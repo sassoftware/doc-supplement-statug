@@ -77,3 +77,4 @@ proc genmod data=vaso descending;
    model resp = lvol lrate / d=bin link=logit;
    bayes seed=17 coeffprior=jeffreys nmc=20000 thin=2;
 run;
+

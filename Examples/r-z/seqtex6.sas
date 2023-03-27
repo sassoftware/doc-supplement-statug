@@ -1,16 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SEQTEX6                                             */
+/*    NAME: seqtex6                                             */
 /*   TITLE: Documentation Example 6 for PROC SEQTEST            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: group sequential test                               */
 /*   PROCS: SEQDESIGN, SEQTEST, LIFETEST                        */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC SEQTEST, EXAMPLE 6                             */
-/*    MISC:                                                     */
 /****************************************************************/
 
 ods graphics on;
@@ -171,3 +167,4 @@ proc seqtest Boundary=Test_Surv1
              ;
    ods output Test=Test_Surv2;
 run;
+

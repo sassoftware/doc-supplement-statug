@@ -1,18 +1,15 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: CAGRGS1                                             */
+/*    NAME: cagrgs1                                             */
 /*   TITLE: Getting Started Example 1 for PROC CAUSALGRAPH      */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: graphical causal model, adjustment set              */
 /*   PROCS: CAUSALGRAPH                                         */
-/*    DATA:                                                     */
-/*                                                              */
-/*  UPDATE: July 03, 2018                                       */
-/*     REF: PROC CAUSALGRAPH, Getting Started Example 1         */
-/*    MISC: Special thanks to Noah Greifer                      */
+/*     REF: Timmermann et al (2017), Reprod. Toxic.             */
 /****************************************************************/
+
 
 proc causalgraph;
    model "Timm17TwoLatent"
@@ -26,3 +23,4 @@ proc causalgraph;
    identify PFAS ==> Duration;
    unmeasured Alcohol Smoking;
 run;
+

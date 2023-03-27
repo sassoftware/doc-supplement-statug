@@ -182,3 +182,4 @@ proc irt data=IrtGroup;
    equality item1-item4/parm=[intercept] between_gp=[1 2],
             _allgr_/parm=[slope] within_gp=[1];
 run;
+

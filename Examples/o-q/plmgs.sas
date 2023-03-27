@@ -54,3 +54,4 @@ proc plm restore=sasuser.BlockAnalysis;
    slice a*b / sliceby(b='1') diff;
 run;
 ods graphics off;
+

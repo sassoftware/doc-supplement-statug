@@ -14,6 +14,7 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 data Icecream;
    input count brand$ taste$;
    datalines;
@@ -33,6 +34,7 @@ data Icecream;
 52  ice3 b
 50  ice3 vb
 ;
+
 proc genmod data=Icecream rorder=data;
    freq count;
    class brand;
@@ -44,3 +46,4 @@ proc genmod data=Icecream rorder=data;
    estimate 'LogOR13' brand 1  0  -1 / exp;
    estimate 'LogOR23' brand 0  1  -1 / exp;
 run;
+

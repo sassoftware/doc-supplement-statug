@@ -82,3 +82,4 @@ proc calis data=scores plots=pathdiagram;
       math   ===> y1-y3   = 1. ;
 run;
 ods graphics off;
+

@@ -143,3 +143,4 @@ proc rmstreg data=hiv tau=48;
    model Time*Status(0) = Drug Age / link=linear method=ipcw(strata=Drug);
    lsmeans Drug;
 run;
+

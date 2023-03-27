@@ -53,6 +53,6 @@ run;
 data testout;
    set testout(drop=x1-x&nVars);
 run;
-
 proc print data=testout;
 run;
+

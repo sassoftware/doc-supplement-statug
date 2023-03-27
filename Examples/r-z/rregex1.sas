@@ -13,6 +13,7 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data a (drop=i);
    do i=1 to 1000;
       x1=rannor(1234);
@@ -23,21 +24,27 @@ data a (drop=i);
       output;
    end;
 run;
+
 proc reg data=a;
    model y = x1 x2;
 run;
+
 proc robustreg data=a method=m;
    model y = x1 x2;
 run;
+
 proc robustreg data=a method=mm seed=100;
    model y = x1 x2;
 run;
+
 proc robustreg data=a method=s seed=100;
    model y = x1 x2;
 run;
+
 proc robustreg data=a method=lts seed=100;
    model y = x1 x2;
 run;
+
 data b (drop=i);
    do i=1 to 1000;
       x1=rannor(1234);
@@ -48,18 +55,23 @@ data b (drop=i);
       output;
    end;
 run;
+
 proc robustreg data=b method=m;
    model y = x1 x2;
 run;
+
 proc robustreg data=b method=mm;
    model y = x1 x2;
 run;
+
 proc robustreg data=b method=m(wf=bisquare(c=2));
    model y = x1 x2;
 run;
+
 proc robustreg data=b method=mm(inith=502 k0=1.8);
    model y = x1 x2;
 run;
+
 data c (drop=i);
    do i=1 to 1000;
       x1=rannor(1234);
@@ -73,12 +85,16 @@ data c (drop=i);
       output;
    end;
 run;
+
 proc robustreg data=c method=mm(inith=502 k0=1.8) seed=100;
    model y = x1 x2;
 run;
+
 proc robustreg data=c method=s(k0=1.8) seed=100;
    model y = x1 x2;
 run;
+
 proc robustreg data=c method=lts(h=502) seed=100;
    model y = x1 x2;
 run;
+

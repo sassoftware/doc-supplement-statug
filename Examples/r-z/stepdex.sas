@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -29,3 +28,4 @@ proc discrim data=sashelp.iris;
    class Species;
    var &_stdvar;
 run;
+

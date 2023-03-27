@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -69,7 +68,6 @@ data poverty;
 41.7 10.3    66 Zimbabwe
 ;
 
-
 proc sgplot data=poverty;
    scatter y=Death x=Birth;
 run;
@@ -97,3 +95,4 @@ proc sgplot data=new;
    scatter y=can2 x=can1 / group=cluster;
    keylegend / title="Cluster Membership";
 run;
+

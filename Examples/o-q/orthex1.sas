@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: ORTHOREX1                                           */
+/*    NAME: ORTHEX1                                             */
 /*   TITLE: Example 1 for PROC ORTHOREG                         */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -85,3 +85,4 @@ data _null_;
    if (inFitStat) then      put "Root MSE: " RootMSE e20.;
    if (inFitStat) then   put "R-Square: " RSquare best20.;
 run;
+

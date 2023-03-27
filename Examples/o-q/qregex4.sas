@@ -137,3 +137,4 @@ proc quantreg data=ozone algorithm=smooth ci=none plot=fitplot(nodata);
           (90 182 272 365 455 547 637 730 820 912 1002) );
    model ozone = sp / quantile = 0.5 0.75 0.90 0.95 seed=1268;
 run;
+

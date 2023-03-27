@@ -238,3 +238,4 @@ proc rmstreg data=liver tau=5;
    class Edema;
    model Time*Status(0) = Age Bilirubin Edema / link=linear method=pv;
 run;
+

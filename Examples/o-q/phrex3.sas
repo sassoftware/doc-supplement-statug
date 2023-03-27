@@ -119,3 +119,4 @@ proc phreg data=VALung;
    contrast 'C3' Prior 0 Therapy 1  Prior*Therapy 0,
                  Prior 0 Therapy 1  Prior*Therapy 1  / estimate=exp;
 run;
+

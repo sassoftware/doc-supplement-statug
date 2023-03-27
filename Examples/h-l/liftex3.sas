@@ -40,3 +40,5 @@ proc lifetest data=Males  method=lt intervals=(0 to 15 by 1)
    freq Freq;
 run;
 ods graphics off;
+
+

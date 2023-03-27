@@ -54,3 +54,4 @@ proc variogram data=sashelp.thick outv=outv;
 run;
 
 ods graphics off;
+

@@ -92,3 +92,4 @@ proc phreg data=Myeloma;
                          Frac LogPBM Protein SCalc
                          / selection=score best=3;
 run;
+

@@ -1023,3 +1023,4 @@ ods graphics on;
 proc irt data=IrtQls plots=(IIC TIC);
    var item1-item14;
 run;
+

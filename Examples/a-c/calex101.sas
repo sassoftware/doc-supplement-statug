@@ -39,3 +39,4 @@ run;
 proc calis data=sales nose;
    mstruct var=q1-q4;
 run;
+

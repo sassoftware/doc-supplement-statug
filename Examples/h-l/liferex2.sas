@@ -14,6 +14,7 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 data subset;
    input Hours Yrs_Ed Yrs_Exp @@;
    if Hours eq 0
@@ -25,10 +26,12 @@ data subset;
 3686 14 11 1920 14 38 0 15 14 1728 16 3
 1568 16 19 1316 17 7 0 17 15
 ;
+
 proc lifereg data=subset outest=OUTEST(keep=_scale_);
    model (lower, hours) = yrs_ed yrs_exp / d=normal;
    output out=OUT xbeta=Xbeta;
 run;
+
 data predict;
    drop lambda _scale_ _prob_;
    set out;
@@ -40,6 +43,8 @@ data predict;
    label Xbeta='MEAN OF UNCENSORED VARIABLE'
          Predict = 'MEAN OF CENSORED VARIABLE';
 run;
+
 proc print data=predict noobs label;
    var hours lower yrs: xbeta predict;
 run;
+

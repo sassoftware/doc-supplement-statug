@@ -17,6 +17,7 @@
 /*     REF                                                      */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data times;
    input time1-time23;
    datalines;
@@ -115,6 +116,7 @@ data cows;
          5.371  5.394  5.46   5.576  5.652  5.617  5.687  5.67
          5.72   5.784  5.784  5.784  5.829  5.814  5.844
 ;
+
 proc glimmix data=cows;
    t2 = tpoint / 100;
    class cow iron infection;
@@ -124,6 +126,7 @@ proc glimmix data=cows;
    output out=gmxout pred(blup)=pred;
    nloptions tech=newrap;
 run;
+
 data plot;
    set gmxout;
    length group $26;
@@ -142,6 +145,7 @@ proc sgpanel data=plot noautolegend;
    scatter x=tpoint y=weight;
    series  x=tpoint y=pred / group=cow lineattrs=GraphFit;
 run;
+
 ods select OptInfo FitStatistics CovParms;
 proc glimmix data=cows;
    t2 = tpoint / 100;
@@ -153,6 +157,7 @@ proc glimmix data=cows;
                knotmethod=kdtree(bucket=100);
    nloptions tech=newrap;
 run;
+
 ods select FitStatistics CovParms;
 proc glimmix data=cows;
    t2 = tpoint / 100;
@@ -165,6 +170,7 @@ proc glimmix data=cows;
    output out=gmxout pred(blup)=pred;
    nloptions tech=newrap;
 run;
+
 data plot;
    set gmxout;
    length group $26;
@@ -183,3 +189,4 @@ proc sgpanel data=plot noautolegend;
    scatter x=tpoint y=weight;
    series  x=tpoint y=pred / group=cow lineattrs=GraphFit;
 run;
+

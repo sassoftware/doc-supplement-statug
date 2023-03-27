@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Means Versus LS-Means ---------------------------------------*/
+
 data twoway;
    input Treatment Block y @@;
    datalines;
@@ -27,6 +29,7 @@ data twoway;
 3 2 46
 3 3 26   3 3 31   3 3 26   3 3 33   3 3 29   3 3 25
 ;
+
 title "Unbalanced Two-way Design";
 ods select ModelANOVA Means LSMeans;
 
@@ -38,3 +41,4 @@ proc glm data=twoway;
 run;
 
 ods select all;
+

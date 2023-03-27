@@ -9,12 +9,11 @@
 /*    KEYS: replicated sampling, sequential random sampling,    */
 /*    KEYS: control sorting                                     */
 /*   PROCS: SURVEYSELECT, SORT, PRINT                           */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYSELECT, Example 1                        */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Generate Sampling Frame -------------------------------------*/
+
 data Customer1;
    input CustomerID State$ Type$ Usage;
    format CustomerID SSN11.;
@@ -87,6 +86,7 @@ data Customer2;
       output;
    end;
 run;
+
 proc sort data=Customer2;
    by CustomerID;
 run;
@@ -95,7 +95,9 @@ data Customers; set Customer1 Customer2;
    format Usage 6.0;
    if Usage < 0 then Usage = 0;
 run;
+
 /* Replicated Sampling -----------------------------------------*/
+
 title1 'Customer Satisfaction Survey';
 title2 'Replicated Sampling';
 proc surveyselect data=Customers method=seq n=(8 12 20 10)
@@ -103,8 +105,10 @@ proc surveyselect data=Customers method=seq n=(8 12 20 10)
    strata State;
    control Type Usage;
 run;
+
 title2 'Sample Selected by Replicated Design';
 title3 '(First Stratum)';
 proc print data=SampleRep;
    where State = 'AL';
 run;
+

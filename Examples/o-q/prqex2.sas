@@ -93,7 +93,7 @@ data bball;
    keep School CSN--SportsIllustrated;
    do i=1 to 10;
       if services[i]=. then services[i]=maxranks[i]+1;
-      end;
+   end;
 run;
 
 * Assume that the ranks are ordinal and that unranked teams would have
@@ -133,3 +133,4 @@ proc print;
    title4 'Teams Ordered by Scores on First Principal Component';
    var School Prin1;
 run;
+

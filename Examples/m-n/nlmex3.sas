@@ -28,7 +28,6 @@ data inhaler;
 1 1 1  2   4 1 0  1   3 1 1  1
 ;
 
-
 proc nlmixed data=inhaler corr ecorr;
    parms b0=0 b1=0 b2=0 b3=0 sd=1 i1=1 i2=1;
    bounds i1 > 0, i2 > 0;
@@ -48,3 +47,4 @@ proc nlmixed data=inhaler corr ecorr;
    estimate 'thresh3' i1 + i2;
    estimate 'icc' sd*sd/(1+sd*sd);
 run;
+

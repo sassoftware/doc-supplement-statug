@@ -48,3 +48,4 @@ proc catmod data=ingots;
    direct Heat Soak;
    model Y=Heat Soak / freq covb corrb itprint design;
 quit;
+

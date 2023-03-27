@@ -318,3 +318,4 @@ proc spp data=amacrine edgecorr=on seed=1
    process cells= (X,Y / area=(0,0,1.6,1) mark=Type)
                   / K cross=types('on' 'off');
 run;
+

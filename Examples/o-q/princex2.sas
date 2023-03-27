@@ -1,18 +1,12 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: PRINCEX2                                            */
+/*    NAME: princex2                                            */
 /*   TITLE: Documentation Example 2 for PROC PRINCOMP           */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: multivariate analysis                               */
 /*   PROCS: PRINCOMP                                            */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC PRINCOMP, Example 2                            */
-/*    MISC:                                                     */
-/*                                                              */
 /****************************************************************/
 
 /*-----------------------------------------------------------*/
@@ -80,7 +74,6 @@ Houston        .  .  .  . 24  .  .  .  .  .
 Virginia Tech  .  .  .  .  .  . 13  .  .  .
 ;
 
-
 /* PROC MEANS is used to output a data set containing the      */
 /* maximum value of each of the newspaper and magazine         */
 /* rankings.  The output data set, maxrank, is then used       */
@@ -113,7 +106,6 @@ data Basketball;
    end;
 run;
 
-
 ods graphics on;
 
 proc princomp data=Basketball n=1 out=PCBasketball standard
@@ -131,3 +123,4 @@ proc print;
    title 'Pre-Season 1985 College Basketball Rankings';
    title2 'College Teams as Ordered by PROC PRINCOMP';
 run;
+

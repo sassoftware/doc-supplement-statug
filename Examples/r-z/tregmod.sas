@@ -324,3 +324,4 @@ run;
 proc print data=coded(firstobs=21 obs=25);
    var set brand &_trgind;
 run;
+

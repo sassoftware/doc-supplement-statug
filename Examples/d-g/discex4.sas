@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -58,11 +57,10 @@ Clover    53 08 06 54
 Clover    32 32 62 16
 ;
 
-
 title2 'Using the Linear Discriminant Function';
 
 proc discrim data=crops outstat=cropstat method=normal pool=yes
-             list crossvalidate;
+   list crossvalidate;
    class Crop;
    priors prop;
    id xvalues;
@@ -78,7 +76,6 @@ Cotton    29 24 26 28
 Sugarbeets54 23 21 54
 Clover    32 32 62 16
 ;
-
 
 title2 'Classification of Test Data';
 
@@ -101,3 +98,4 @@ proc discrim data=crops method=normal pool=no crossvalidate;
    id xvalues;
    var x1-x4;
 run;
+

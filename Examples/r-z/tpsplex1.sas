@@ -11,6 +11,7 @@
 /*   PROCS: TPSPLINE,REG                                        */
 /*                                                              */
 /****************************************************************/
+
 data Measure;
    input x1 x2 y @@;
    datalines;
@@ -40,6 +41,7 @@ data Measure;
   .5  1.0   18.56884576     .5  1.0    18.61010439
  1.0  1.0   15.86586951    1.0  1.0    15.90136745
 ;
+
 data Measure;
    set Measure;
    x1sq = x1*x1;
@@ -58,6 +60,7 @@ proc tpspline data= measure;
    model y = x1 x1sq (x2);
    score data = pred out  = predy;
 run;
+
 proc template;
    define statgraph surface;
       dynamic _X _Y _Z _T;
@@ -70,6 +73,8 @@ proc template;
       endgraph;
    end;
 run;
+
 proc sgrender data=predy template=surface;
    dynamic _X='x1' _Y='x2' _Z='P_y' _T='Plot of Fitted Surface on a Fine Grid';
 run;
+

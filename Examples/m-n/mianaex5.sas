@@ -74,3 +74,4 @@ run;
 proc mianalyze parms=gmparms covb=gmcovb parminfo=gmpinfo;
    modeleffects Intercept RunTime RunPulse;
 run;
+

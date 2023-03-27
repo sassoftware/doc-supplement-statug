@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: ODSGRAF                                             */
+/*    NAME: ODSGREX1                                            */
 /*   TITLE: Documentation Example 1 for ODS Graphics            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -87,3 +87,4 @@ run;
 
 *
 ods html close;
+

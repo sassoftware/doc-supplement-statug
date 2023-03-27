@@ -51,3 +51,4 @@ proc fmm data=galaxies;
    model v = / K=5 equate=scale;
    restrict int 0 (scale 1) = 0.9025;
 run;
+

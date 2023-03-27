@@ -10,6 +10,7 @@
 /*   PROCS: REG                                                 */
 /*                                                              */
 /****************************************************************/
+
 *-------------------Data on Physical Fitness-------------------*
 | These measurements were made on men involved in a physical   |
 | fitness course at N.C.State Univ. The variables are Age      |
@@ -40,6 +41,7 @@ data fitness;
 49 76.32 48.673  9.40 56 186 188   48 61.24 47.920 11.50 52 170 176
 52 82.78 47.467 10.50 53 170 172
 ;
+
 proc reg data=fitness;
    model Oxygen=Age Weight RunTime RunPulse RestPulse MaxPulse
          / selection=forward;
@@ -48,20 +50,24 @@ proc reg data=fitness;
    model Oxygen=Age Weight RunTime RunPulse RestPulse MaxPulse
          / selection=maxr;
 run;
+
 ods graphics on;
 
 proc reg data=fitness plots=(criteria sbc);
    model Oxygen=Age Weight RunTime RunPulse RestPulse MaxPulse
          / selection=forward details=summary;
 run;
+
 proc reg data=fitness plots=(criteria(label) cp);
    model Oxygen=Age Weight RunTime RunPulse RestPulse MaxPulse
          / selection=rsquare cp;
    title 'Physical fitness data: all models';
 run;
+
 proc reg data=fitness plots(only)=cp(label);
    model Oxygen=Age Weight RunTime RunPulse RestPulse MaxPulse
          / selection=cp best=20;
 run;
 
 ods graphics off;
+

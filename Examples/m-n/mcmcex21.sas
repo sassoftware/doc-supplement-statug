@@ -134,3 +134,4 @@ run;
 %mend sepPSRF;
 
 %sepPSRF(nparm=&nparm, var=&var, nsim=&nsim);
+

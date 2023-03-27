@@ -54,6 +54,7 @@ Perch   42.3  7.1064    Perch   42.5  7.2250    Perch   42.4  7.4624
 Perch   42.5  6.6300    Perch   44.6  6.8684    Perch   45.2  7.2772
 Perch   45.5  7.4165    Perch   46.0  8.1420    .       46.6  7.5958
 ;
+;
 
 proc mi data=Fish3 seed=30535 out=outfish3;
    class Species;
@@ -84,3 +85,4 @@ proc mianalyze parms(link=glogit)=lgsparms
                mult;
    modeleffects Intercept Length Width;
 run;
+

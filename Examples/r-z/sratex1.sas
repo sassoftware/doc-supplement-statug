@@ -7,10 +7,7 @@
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: standardized rate                                   */
 /*   PROCS: STDRATE                                             */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC STDRATE, EXAMPLE 1                             */
-/*    MISC:                                                     */
 /****************************************************************/
 
 data Alaska;
@@ -77,3 +74,4 @@ proc stdrate data=TwoStates
    reference  total=PYear;
    strata Sex Age / effect;
 run;
+

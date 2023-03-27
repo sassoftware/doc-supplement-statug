@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: ODSGRAF                                             */
+/*    NAME: ODSGREX2                                            */
 /*   TITLE: Documentation Example 2 for ODS Graphics            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -62,3 +62,4 @@ run;
 ods rtf close;
 ods listing;
 */
+

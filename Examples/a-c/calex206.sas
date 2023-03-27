@@ -127,3 +127,5 @@ proc calis data=mardia robust=sat pcorr;
    path
       fact1 ===>  mechanics vector algebra analysis statistics = 1. ;
 run;
+
+

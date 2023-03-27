@@ -52,3 +52,4 @@ proc logistic data=Screen;
    model Disease(event='Present')=Test
          / pevent=.5 .01 ctable pprob=.5;
 run;
+

@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -43,10 +42,10 @@ data d;
  4.0   250   82.0
 ;
 
-
 ods graphics on;
 proc rsreg data=d plots=(ridge surface);
    model MBT=Time Temp / lackfit;
    ridge max;
 run;
 ods graphics off;
+

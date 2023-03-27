@@ -220,3 +220,4 @@ proc phreg data=Myeloma;
                          Frac LogPBM Protein Scalc;
    bayes seed=1 nmc=10000 outpost=phout;
 run;
+

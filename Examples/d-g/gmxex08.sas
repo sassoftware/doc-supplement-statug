@@ -17,15 +17,15 @@
 /****************************************************************/
 
 data pr;
-  input child gender$ y1 y2 y3 y4;
-  array yy y1-y4;
-  do time=1 to 4;
-     age = time*2 + 6;
-     y   = yy{time};
-     output;
-  end;
-  drop y1-y4;
-  datalines;
+   input child gender$ y1 y2 y3 y4;
+   array yy y1-y4;
+   do time=1 to 4;
+      age = time*2 + 6;
+      y   = yy{time};
+      output;
+   end;
+   drop y1-y4;
+   datalines;
  1   F   21.0    20.0    21.5    23.0
  2   F   21.0    21.5    24.0    25.5
  3   F   20.5    24.0    24.5    26.0
@@ -71,3 +71,4 @@ proc glimmix data=pr;
    random time / subject=child type=ar(1) residual;
    ods select ModelInfo CovB CovBDetails;
 run;
+

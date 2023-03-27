@@ -56,3 +56,4 @@ proc genmod data=a;
    effectplot interaction(plotby=disease);
 run;
 ods graphics off;
+

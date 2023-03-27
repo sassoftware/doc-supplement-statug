@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Effect Size Measures for F Tests in GLM ---------------------*/
+
 data Test;
    do Task = 1 to 7;
       do Gender = 'M','F';
@@ -32,12 +34,16 @@ data Test;
 9.1 4.5 7.6 4.9     4.3 7.7 6.5 7.7
 4.5 3.8 5.9 6.1     1.7 2.5 4.3 2.7
 ;
+
 proc glm data=Test;
    class Gender Task;
    model Response = Gender|Task / ss1;
 run;
+
 /* Same Analysis with EFFECTSIZE Option and ALPHA=0.1 ----------*/
+
 proc glm data=Test;
    class Gender Task;
    model Response = Gender|Task / ss1 effectsize alpha=0.1;
 run;
+

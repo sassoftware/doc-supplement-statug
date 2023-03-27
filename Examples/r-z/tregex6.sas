@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -41,7 +40,6 @@ Volkswagen Rabbit       4858509709695795487885000 5 4 3
 Volvo      DL           9989998909999987989919000 4 5 5
 ;
 
-
 ods graphics on;
 
 * Compute Coordinates for a 2-Dimensional Scatter Plot of Automobiles;
@@ -79,3 +77,4 @@ run;
 
 proc print;
 run;
+

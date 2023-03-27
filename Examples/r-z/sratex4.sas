@@ -7,10 +7,7 @@
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: standardized rate                                   */
 /*   PROCS: STDRATE                                             */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC STDRATE, EXAMPLE 4                             */
-/*    MISC:                                                     */
 /****************************************************************/
 
 data Florida_Cs;
@@ -98,3 +95,4 @@ proc sgplot data=Smr_Cs;
    xaxis label="SMR";
    refline 1 / axis=x transparency=0.5;
 run;
+

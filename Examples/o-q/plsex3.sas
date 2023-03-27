@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /*                                                              */
 /****************************************************************/
+
 /* Example 3: Choosing a PLS Model by Test Set Validation */
+
 data ftrain;
    input obsnam $ tot tyr f1-f30 @@;
    try = tot - tyr;
@@ -112,6 +114,7 @@ mix6    0.0001 0.00009
  -1.425 -1.543 -1.661 -1.804 -1.877 -1.959 -2.034 -2.249
  -2.502 -2.732 -2.964 -3.142 -3.313 -3.576
 ;
+
 data ftest;
    input obsnam $ tot tyr f1-f30 @@;
    try = tot - tyr;
@@ -195,21 +198,28 @@ tyro2   0.0001 0.0001
  -3.781 -4.029 -4.241 -4.366 -4.501 -4.366 -4.501 -4.501
  -4.668 -4.668 -4.865 -4.865 -5.109 -5.111
 ;
+
 /* Fit PLS model with 10 factors */
+
 proc pls data=ftrain nfac=10;
    model tot_log tyr_log try_log = f1-f30;
 run;
+
 /* Choose the number of factors by testset validation with */
 /* significance testing.                                   */
+
 ods graphics on;
 
 proc pls data=ftrain nfac=10 cv=testset(ftest)
                              cvtest(stat=press seed=12345);
    model tot_log tyr_log try_log = f1-f30;
 run;
+
 /* Plot the factor loadings */
+
 proc pls data=ftrain nfac=4 plot=XLoadingProfiles;
    model tot_log tyr_log try_log = f1-f30;
 run;
 
 ods graphics off;
+

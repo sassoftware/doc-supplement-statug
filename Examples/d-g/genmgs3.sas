@@ -46,3 +46,4 @@ proc genmod data=six;
    model  wheeze(event='1') = city age smoke  /  dist=bin;
    repeated  subject=case / type=exch covb corrw;
 run;
+

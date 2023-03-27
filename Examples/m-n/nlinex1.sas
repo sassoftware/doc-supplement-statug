@@ -72,3 +72,4 @@ proc nlin data=a;
    else mean = alpha + beta*x0/2;
    model y = mean;
 run;
+

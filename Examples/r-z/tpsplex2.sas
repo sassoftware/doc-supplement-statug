@@ -11,6 +11,7 @@
 /*   PROCS: TPSPLINE,REG                                        */
 /*                                                              */
 /****************************************************************/
+
 data Measure;
    input x1 x2 y @@;
    datalines;
@@ -40,6 +41,7 @@ data Measure;
   .5  1.0   18.56884576     .5  1.0    18.61010439
  1.0  1.0   15.86586951    1.0  1.0    15.90136745
 ;
+
 data Measure;
    set Measure;
    x1sq = x1*x1;
@@ -53,6 +55,7 @@ data pred;
       end;
    end;
 run;
+
 data Measure;
    set Measure;
    x1sq = x1*x1;
@@ -64,11 +67,14 @@ proc tpspline data= Measure;
    model y = (x1 x2) / m=3;
    score data = pred out = predy;
 run;
+
 proc reg data= Measure;
    model y = x1 x1sq x2 x2sq x1x2;
 run;
+
 proc tpspline data=measure;
    model  y=(x1 x2) /m=3 df=6 lognlambda=(-4 to 1 by 0.5);
    score data = pred
           out = predy;
 run;
+

@@ -43,3 +43,4 @@ data New;
 run;
 proc means data=New(keep=Indicator) n mean;
 run;
+

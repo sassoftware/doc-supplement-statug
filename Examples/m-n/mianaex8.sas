@@ -73,3 +73,4 @@ proc mianalyze parms(classvar=full)=mxparms;
    class Species;
    modeleffects Intercept Species Width;
 run;
+

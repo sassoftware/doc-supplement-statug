@@ -10,12 +10,11 @@
 /*    KEYS: Cochran-Armitage trend test, exact test,            */
 /*    KEYS: ODS Graphics, stacked bar chart                     */
 /*   PROCS: FREQ                                                */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC FREQ, Example 8                                */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Cochran-Armitage Trend Test ---------------------------------*/
+
 data pain;
    input Dose Adverse $ Count @@;
    datalines;
@@ -25,6 +24,7 @@ data pain;
 3 No 18   3 Yes 14
 4 No  9   4 Yes 23
 ;
+
 ods graphics on;
 proc freq data=Pain;
    tables Adverse*Dose / trend measures cl
@@ -35,3 +35,4 @@ proc freq data=Pain;
    title 'Clinical Trial for Treatment of Pain';
 run;
 ods graphics off;
+

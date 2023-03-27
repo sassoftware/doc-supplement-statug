@@ -16,6 +16,7 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data graze;
    length GrazeType $ 10;
    input GrazeType $ WtGain @@;
@@ -37,6 +38,7 @@ continuous 112   continuous  69
 continuous 104   continuous  95
 continuous  53   continuous  21
 ;
+
 proc sort;
    by GrazeType;
 run;
@@ -46,9 +48,12 @@ proc means data=graze noprint;
    by GrazeType;
    output out=newgraze;
 run;
+
 proc print data=newgraze;
 run;
+
 proc ttest data=newgraze;
    class GrazeType;
    var WtGain;
 run;
+

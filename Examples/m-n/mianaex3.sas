@@ -62,3 +62,4 @@ run;
 proc mianalyze data=outreg edf=28;
    modeleffects Intercept RunTime RunPulse;
 run;
+

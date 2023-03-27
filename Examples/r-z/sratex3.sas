@@ -7,10 +7,7 @@
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: standardized rate                                   */
 /*   PROCS: STDRATE                                             */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC STDRATE, EXAMPLE 3                             */
-/*    MISC:                                                     */
 /****************************************************************/
 
 data Factory;
@@ -62,3 +59,4 @@ proc stdrate data=Factory1
               event=Event total=Count;
    strata Age;
 run;
+

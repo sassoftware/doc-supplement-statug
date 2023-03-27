@@ -49,3 +49,4 @@ proc robustreg method=m(wf=bisquare(c=3.5)) data=stack;
    id    exp;
    test  x3;
 run;
+

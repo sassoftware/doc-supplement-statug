@@ -19,3 +19,4 @@ proc spp data=sashelp.bei;
    trend elev = field(x,y,Elevation);
    covtest trees = grad elev;
 run;
+

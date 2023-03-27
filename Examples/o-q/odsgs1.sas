@@ -140,3 +140,4 @@ proc glm data=sashelp.class;
    class sex;
    model height=sex / solution;
 quit;
+

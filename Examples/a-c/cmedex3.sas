@@ -25,3 +25,4 @@ proc causalmed data=sashelp.birthwgt decomp;
    evaluate 'Low Birth-Weight' LowBirthWgt='Yes' / nodecomp;
    evaluate 'Normal Birth-Weight' LowBirthWgt='No' / nodecomp;
 run;
+

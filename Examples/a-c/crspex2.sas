@@ -1,16 +1,12 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: CRSPEX2                                             */
+/*    NAME: crspex2                                             */
 /*   TITLE: Documentation Example 2 for PROC CORRESP            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: marketing research, categorical data analysis       */
 /*   PROCS: CORRESP                                             */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC CORRESP, EXAMPLE 2                             */
-/*    MISC:                                                     */
 /****************************************************************/
 
 title 'United States Population, 1920-1970';
@@ -58,3 +54,4 @@ proc corresp data=uspop print=percent observed cellchi2 rp cp chi2p
    id Region;
    weight w;
 run;
+

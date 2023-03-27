@@ -231,3 +231,4 @@ proc phreg data=Myeloma;
    z4 = Time*platelet;
    bayes seed=1 nmc=10000 outpost=phout;
 run;
+

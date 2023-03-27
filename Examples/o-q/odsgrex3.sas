@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: ODSGRAF                                             */
+/*    NAME: ODSGREX3                                            */
 /*   TITLE: Documentation Example 3 for ODS Graphics            */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -62,6 +62,7 @@ run;
 ods latex close;
 ods listing;
 */
+
 /*
 ods _all_ close;
 ods latex style=Journal2;
@@ -75,6 +76,7 @@ run;
 ods latex close;
 ods listing;
 */
+
 /*
 ods _all_ close;
 ods latex style=Journal3;
@@ -88,3 +90,4 @@ run;
 ods latex close;
 ods listing;
 */
+

@@ -14,6 +14,7 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 data A;
    input lifetime @@;
    mfg = 'A';
@@ -63,14 +64,17 @@ data B;
 data lifdat;
    set A B;
 run;
+
 proc genmod data = lifdat;
    class mfg;
    model lifetime = mfg / dist=gamma
                           link=log
                           type3;
 run;
+
 proc genmod data = lifdat;
    model lifetime = / dist=gamma
                       link=log
                       lrci;
 run;
+

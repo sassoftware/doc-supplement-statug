@@ -5,13 +5,13 @@
 /*   TITLE: Getting Started Example for PROC SURVEYIMPUTE       */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: survey sampling, stratification, imputation         */
-/*    KEYS: fully efficient fractional imputation               */
+/*    KEYS: survey sampling, stratification, clustering         */
+/*    KEYS: imputation                                          */
+/*    KEYS: fully efficient fractional imputation (FEFI)        */
+/*    KEYS: imputation-adjusted replicate weights               */
+/*    KEYS: frequency tables                                    */
 /*   PROCS: SURVEYIMPUTE, SURVEYFREQ                            */
-/*    DATA:                                                     */
-/*                                                              */
-/*     REF: PROC SURVEYIMPUTE, Getting Started                  */
-/*    MISC:                                                     */
+/*     REF: PROC SURVEYIMPUTE, Getting Started Example          */
 /****************************************************************/
 
 data SIS_Survey_Sub;
@@ -82,3 +82,4 @@ proc surveyfreq data=SIS_Survey_Imputed varmethod=jackknife;
    weight ImpWt;
    repweights ImpRepWt: / jkcoefs=SIS_JKCoefs;
 run;
+

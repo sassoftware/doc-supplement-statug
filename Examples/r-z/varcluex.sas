@@ -1,4 +1,3 @@
-
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
@@ -36,7 +35,6 @@ Girth      .301   .277   .237   .327   .730   .583   1.0    .539
 Width      .382   .415   .345   .365   .629   .577   .539   1.0
 ;
 
-
 proc varclus data=phys8;
 run;
 
@@ -47,3 +45,4 @@ ods graphics on;
 
 proc varclus data=phys8 maxc=8 summary;
 run;
+

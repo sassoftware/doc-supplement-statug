@@ -1,21 +1,20 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVLEX1                                              */
+/*    NAME: svlex1                                              */
 /*   TITLE: Documentation Example 1 for PROC SURVEYLOGISTIC     */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: logistic regression, survey sampling                */
-/*    KEYS: link functions, stratification, clustering          */
-/*    KEYS: unequal weighting, categorical data analysis        */
+/*    KEYS: logistic regression, survey sampling,               */
+/*          link functions, stratification, clustering,         */
+/*          unequal weighting, categorical data analysis        */
 /*   PROCS: SURVEYLOGISTIC                                      */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYLOGISTIC, Example 1                      */
-/*                                                              */
 /*    MISC: Logistic Regression with Different Link             */
 /*          Functions for Stratified Cluster Sampling           */
+/*                                                              */
 /****************************************************************/
+
 proc format;
    value Class
       1='Freshman' 2='Sophomore'
@@ -31,6 +30,7 @@ data Enrollment;
 3 3903
 4 4196
 ;
+
 proc format;
    value Design 1='A' 2='B' 3='C';
    value Rating
@@ -65,8 +65,10 @@ data WebSurvey;
    if Class=3 then Weight=3903/300;
    if Class=4 then Weight=4196/300;
 run;
+
 proc print data=WebSurvey(obs=20);
 run;
+
 proc surveylogistic data=WebSurvey total=Enrollment;
    stratum Class;
    freq Count;
@@ -74,6 +76,7 @@ proc surveylogistic data=WebSurvey total=Enrollment;
    model Rating (order=internal) = design;
    weight Weight;
 run;
+
 proc surveylogistic data=WebSurvey total=Enrollment;
    stratum Class;
    freq Count;
@@ -81,3 +84,4 @@ proc surveylogistic data=WebSurvey total=Enrollment;
    model Rating (ref='neutral') = Design /link=glogit;
    weight Weight;
 run;
+

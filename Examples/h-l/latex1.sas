@@ -33,3 +33,4 @@ data Soy(drop=plot);
 
 proc lattice data=Soy;
 run;
+

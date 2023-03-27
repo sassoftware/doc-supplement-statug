@@ -16,6 +16,7 @@
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/
+
 data asthma;
    input Drug1 $ Drug2 $ PEF1 PEF2 @@;
    datalines;
@@ -25,8 +26,10 @@ for sal 330 365
 sal for 370 385   sal for 310 400  sal for 380 410
 sal for 290 320   sal for 260 340  sal for 90  220
 ;
+
 proc print data=asthma;
 run;
+
 ods graphics on;
 
 proc ttest data=asthma plots=interval;
@@ -34,3 +37,4 @@ proc ttest data=asthma plots=interval;
 run;
 
 ods graphics off;
+

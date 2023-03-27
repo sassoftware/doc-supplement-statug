@@ -44,3 +44,4 @@ proc quantselect data=sashelp.baseball plots=all;
                   Div
          / quantiles=0.1 selection=lasso(adaptive stop=aic choose=sbc sh=7);
 run;
+

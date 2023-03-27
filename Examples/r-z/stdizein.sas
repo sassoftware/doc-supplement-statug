@@ -27,7 +27,6 @@ data TotalScores;
 36 urban 151  37 urban 127  38 urban 167  39 urban 170  40 urban 123
 ;
 
-
 ods graphics on;
 proc boxplot data=TotalScores;
    plot total*Type / boxstyle=schematic noserifs;
@@ -68,9 +67,9 @@ data NoOutlier;
    if (total = 64) then delete;
 run;
 
-
 proc stdize data=NoOutlier method=std pstat;
    title2 'After Removing Outlier, METHOD=STD';
    var total;
    by Type;
 run;
+

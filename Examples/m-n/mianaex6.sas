@@ -69,3 +69,4 @@ run;
 proc mianalyze parms=glmparms xpxi=glmxpxi edf=28;
    modeleffects Intercept RunTime RunPulse;
 run;
+

@@ -77,3 +77,4 @@ proc catmod data=growth2 order=data;
    contrast 'Diagnosis effect, week 1' all_parms 1 -1 0 0;
    contrast 'Equal time effects' all_parms 0 0 1 -1;
 quit;
+

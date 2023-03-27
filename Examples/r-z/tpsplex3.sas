@@ -11,6 +11,7 @@
 /*   PROCS: TPSPLINE                                            */
 /*                                                              */
 /****************************************************************/
+
 data so4;
    input latitude longitude so4 @@;
    datalines;
@@ -105,6 +106,7 @@ data so4;
 43.87333 104.19222 0.306 44.91722 110.42028 0.210
 45.07611  72.67556 2.646
 ;
+
 data pred;
    do latitude = 25 to 47 by 1;
       do longitude = 68 to 124 by 1;
@@ -112,15 +114,19 @@ data pred;
       end;
    end;
 run;
+
 ods graphics on;
 proc tpspline data=so4 plots(only)=criterion;
    model so4 = (latitude longitude) /lognlambda=(-6 to 1 by 0.1);
    score data=pred out=prediction1;
 run;
+
 proc tpspline data=so4;
    model so4 = (latitude longitude) / range=(-4,-2);
    score data=pred out=prediction2;
 run;
+
 proc tpspline data=so4;
    model so4 = (latitude longitude) / lognlambda=(0.277 -2.56);
 run;
+

@@ -91,3 +91,4 @@ run;
 proc print data=OutEx2(obs=10);
    var PatientID Drug Gender Age BMI _ps_ _Strata_;
 run;
+

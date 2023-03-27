@@ -13,6 +13,7 @@
 /*    MISC:                                                     */
 /*                                                              */
 /****************************************************************/
+
 data octane;
    input Rater Customer;
    label Rater    = 'Rater'
@@ -267,8 +268,10 @@ data octane;
 88.0 84.0
   .H 90.0
 ;
+
 ods graphics on;
 proc kde data=octane;
    bivar Rater Customer / plots=all;
 run;
 ods graphics off;
+

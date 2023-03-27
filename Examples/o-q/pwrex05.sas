@@ -55,3 +55,4 @@ proc power;
       ntotal = .
       power = 0.85 0.95;
 run;
+

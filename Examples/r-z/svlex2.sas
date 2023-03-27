@@ -1,19 +1,15 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: SVLEX2                                              */
+/*    NAME: svlex2                                              */
 /*   TITLE: Documentation Example 2 for PROC SURVEYLOGISTIC     */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: logistic regression, survey sampling                */
-/*    KEYS: link functions, stratification, clustering          */
-/*    KEYS: unequal weighting, categorical data analysis        */
-/*    KEYS: MEPS                                                */
+/*    KEYS: logistic regression, survey sampling, MEPS          */
+/*          link functions, stratification, clustering,         */
+/*          unequal weighting, categorical data analysis        */
 /*   PROCS: SURVEYLOGISTIC                                      */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC SURVEYLOGISTIC, Example 2                      */
-/*                                                              */
 /*    MISC: The Household Component of the Medical              */
 /*          Expenditure Panel Survey (MEPS)                     */
 /*                                                              */
@@ -93,3 +89,4 @@ proc surveylogistic data=meps;
    class SEX RACEX POVCAT99;
    model INSCOV99 = TOTEXP99 SEX RACEX POVCAT99 / link=glogit;
 run;
+

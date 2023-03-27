@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Mixed Model Analysis of Variance ----------------------------*/
+
 data machine;
    input machine person rating @@;
    datalines;
@@ -25,13 +27,16 @@ data machine;
 3 4 64.1  3 4 66.2  3 4 64.0  3 5 72.1  3 5 72.0  3 5 71.1  3 6 62.0
 3 6 61.4  3 6 60.5
 ;
+
 proc glm data=machine;
    class machine person;
    model rating=machine person machine*person;
    random person machine*person / test;
 run;
+
 proc mixed data=machine method=type3;
    class machine person;
    model rating = machine;
    random person machine*person;
 run;
+

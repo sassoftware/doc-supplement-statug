@@ -39,3 +39,4 @@ proc anova data = Clover;
    model Nitrogen = Strain;
    means Strain / tukey;
 run;
+

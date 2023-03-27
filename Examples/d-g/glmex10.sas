@@ -13,7 +13,9 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
+
 /* Testing for Equal Group Variances ---------------------------*/
+
 data upsit;
    input agegroup smell @@;
    datalines;
@@ -46,15 +48,19 @@ data upsit;
 5 1.098  5 1.162  5 1.040  5 0.558  5 0.960  5 1.098  5 0.884
 5 1.162  5 1.098  5 0.859  5 1.275  5 1.162  5 0.785  5 0.859
 ;
+
 proc glm data=upsit;
    class agegroup;
    model smell = agegroup;
    means agegroup / hovtest welch;
 run;
+
 /* Perform a One-way ANOVA with Graphics and Diagnostics -------*/
+
 ods graphics on;
 proc glm data=upsit plot=diagnostics;
    class agegroup;
    model smell = agegroup;
 run;
 ods graphics off;
+

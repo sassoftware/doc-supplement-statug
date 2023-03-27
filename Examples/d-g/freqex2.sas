@@ -7,12 +7,11 @@
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: frequency tables, ODS Graphics, dot plots           */
 /*   PROCS: FREQ                                                */
-/*    DATA:                                                     */
-/*                                                              */
 /*     REF: PROC FREQ, Example 2                                */
-/*    MISC:                                                     */
 /****************************************************************/
+
 /* Frequency Dot Plots -----------------------------------------*/
+
 data Color;
    input Region Eyes $ Hair $ Count @@;
    label Eyes  ='Eye Color'
@@ -29,6 +28,7 @@ data Color;
 2 green dark   23  2 brown fair   56  2 brown red    42
 2 brown medium 53  2 brown dark   54  2 brown black  13
 ;
+
 ods graphics on;
 proc freq data=Color order=freq;
    tables Hair Hair*Eyes / plots=freqplot(type=dotplot);
@@ -37,3 +37,4 @@ proc freq data=Color order=freq;
    title 'Eye and Hair Color of European Children';
 run;
 ods graphics off;
+

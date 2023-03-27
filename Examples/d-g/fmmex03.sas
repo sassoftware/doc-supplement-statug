@@ -57,3 +57,4 @@ run;
 proc fmm data=assay(where=(num ne 60));
    model num = dose logd / dist=Poisson;
 run;
+
