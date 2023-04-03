@@ -2,7 +2,7 @@
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
 /*    NAME: scoreex3                                            */
-/*   TITLE: Documentation Examples for PROC SCORE               */
+/*   TITLE: Documentation Example 3 for PROC SCORE              */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
 /*    KEYS: Scoring                                             */

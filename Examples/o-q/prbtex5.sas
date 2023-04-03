@@ -1,8 +1,8 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: probitex                                            */
-/*   TITLE: Documentation Example 1 for PROC PROBIT             */
+/*    NAME: prbtex5                                             */
+/*   TITLE: Documentation Example 5 for PROC PROBIT             */
 /*                                                              */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -15,29 +15,27 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
-data a;
-   infile cards eof=eof;
-   input Dose N Response @@;
-   Observed= Response/N;
-   output;
-   return;
-eof: do Dose=0.5 to 7.5 by 0.25;
-        output;
-     end;
+data epidemic;
+   input treat$ dose n r sex @@;
+   label dose = Dose;
    datalines;
-1 10 1  2 12 2  3 10 4  4 10 5
-5 12 8  6 10 8  7 10 10
+A  2.17 142 142  0   A   .57 132  47  1  A  1.68 128 105  1   A  1.08 126 100  0
+A  1.79 125 118  0   B  1.66 117 115  1  B  1.49 127 114  0   B  1.17  51  44  1
+B  2.00 127 126  0   B   .80 129 100  1
+;
+
+data xval;
+   input treat $ dose sex;
+   datalines;
+B  2.  1
 ;
 
 ods graphics on;
 
-proc probit log10;
-   model Response/N=Dose / lackfit inversecl itprint;
-   output out=B p=Prob std=std xbeta=xbeta;
-run;
-
-proc probit log10 plot=predpplot;
-   model Response/N=Dose / d=logistic inversecl;
-   output out=B p=Prob std=std xbeta=xbeta;
+proc probit data=epidemic;
+   class treat sex;
+   model r/n = dose treat sex treat*sex;
+   slice treat*sex / diff;
+   effectplot;
 run;
 

@@ -7,30 +7,96 @@
 /*                                                              */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
-/*    KEYS: FORWARDSWAP selection                               */
+/*    KEYS: SCREEN option, FORWARD  selection                   */
 /*   PROCS: HPREG                                               */
 /*                                                              */
 /****************************************************************/
 
+%let nObs      = 50000;
+%let nContIn   = 25;
+%let nContOut  = 500;
+%let nClassIn  = 5;
+%let nClassOut = 500;
+%let maxLevs   = 5;
+%let noiseScale= 1;
 
-  data ex3Data;
-     array x{20};
-     do i=1 to 10000;
-        do j=1 to 20;
-           x{j} = ranuni(1);
-        end;
-        y = 3*x1 + 7*x2 -5*x3 + 5*x1*x3 +
-            4*x2*x13 + x7 + x11 -x13  + x1*x4 + rannor(1);
-        output;
-     end;
-  run;
+data ex4Data;
+   array xIn{&nContIn};
+   array xOut{&nContOut};
+   array cIn{&nClassIn};
+   array cOut{&nClassOut};
+
+   drop i j sign nLevs xBeta;
+
+   do i=1 to &nObs;
+      sign  = -1;
+      xBeta = 0;
+      do j=1 to dim(xIn);
+         xIn{j} = ranuni(1);
+         xBeta  = xBeta + j*sign*xIn{j};
+         sign   = -sign;
+      end;
+      do j=1 to dim(xOut);
+         xOut{j} = ranuni(1);
+      end;
+
+      xWeakIn1 = ranuni(1);
+      xWeakin2 = ranuni(1);
+
+      xBeta  = xBeta + 0.1*xWeakIn1+ 0.1*xWeakIn2;
+
+      do j=1 to dim(cIn);
+         nLevs  = 2 + mod(j,&maxlevs-1);
+         cIn{j} = 1+int(ranuni(1)*nLevs);
+         xBeta  = xBeta + j*sign*(cIn{j}-nLevs/2);
+         sign   = -sign;
+      end;
+
+      do j=1 to dim(cOut);
+         nLevs  = 2 + mod(j,&maxlevs-1);
+         cOut{j} = 1+int(ranuni(1)*nLevs);
+      end;
+
+      y = xBeta + &noiseScale*rannor(1);
+
+      output;
+   end;
+run;
 
 
- proc hpreg data=ex3Data;
-     model y = x1|x2|x3|x4|x5|x6|x7|x8|x9|x10|X11|
-               x12|x13|x14|x5|x16|x7|x18|x19|x20@2 /
-                   include=(x1 x2 x3) start=(x1*x2 x1*x3 x2*x3);
-     selection method=forwardswap(select=rsquare maxef=15 choose=sbc)
-               details=all;
- run;
+proc hpreg data=ex4Data;
+   class c: ;
+   model y = x: c: ;
+   selection method=forward screen(details=all)=100 20;
+   performance details;
+run;
+
+
+proc hpreg data=ex4Data;
+   class c: ;
+   model y = x: c: ;
+   selection method=forward screen(details=all)=100 20;
+   ods output screenedfit.screening = iscreening
+              residualfit.screening=rscreening;
+   performance details;
+run;
+
+data _null_;
+   set work.iscreening(where=(rank<6 or rank>97));
+   if rank=4 or rank=5 then do;
+      rank = .;
+      effect = '  . ';
+      correlation=.;
+   end;
+   file print ods=(template='HPSTAT.HPREG.Screening');
+   put _ods_;
+run;
+
+
+proc hpreg data=ex4Data;
+   class c: ;
+   model y = x: c: ;
+   selection method=forward;
+   performance details;
+run;
 

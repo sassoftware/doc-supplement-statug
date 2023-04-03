@@ -20,11 +20,11 @@ proc contents varnum data=sashelp.baseball;
 run;
 
 proc hpreg data=sashelp.baseball;
-  class league division;
-  model logSalary = nAtBat nHits nHome nRuns nRBI nBB
-                    yrMajor crAtBat crHits crHome crRuns crRbi
-                    crBB league division nOuts nAssts nError;
-  selection method=stepwise;
+   class league division;
+   model logSalary = nAtBat nHits nHome nRuns nRBI nBB
+                     yrMajor crAtBat crHits crHome crRuns crRbi
+                     crBB league division nOuts nAssts nError;
+   selection method=stepwise;
 run;
 
 proc hpreg data=sashelp.baseball;

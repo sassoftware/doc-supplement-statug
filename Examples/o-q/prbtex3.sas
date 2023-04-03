@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: probitex3                                           */
+/*    NAME: prbtex3                                             */
 /*   TITLE: Documentation Example 3 for PROC PROBIT             */
 /*                                                              */
 /* PRODUCT: STAT                                                */

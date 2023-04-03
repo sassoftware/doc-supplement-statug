@@ -1,7 +1,7 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: probitex2                                           */
+/*    NAME: prbtex2                                             */
 /*   TITLE: Documentation Example 2 for PROC PROBIT             */
 /*                                                              */
 /* PRODUCT: STAT                                                */
@@ -46,6 +46,8 @@ test      40      None       16
 test      40      Mild        6
 test      40      Severe     19
 ;
+
+ods graphics on;
 
 proc probit data=multi;
    class Prep;

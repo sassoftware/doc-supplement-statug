@@ -1,8 +1,8 @@
 /****************************************************************/
 /*          S A S   S A M P L E   L I B R A R Y                 */
 /*                                                              */
-/*    NAME: probitex4                                           */
-/*   TITLE: Documentation Example 4 for PROC PROBIT             */
+/*    NAME: prbtex1                                             */
+/*   TITLE: Documentation Example 1 for PROC PROBIT             */
 /*                                                              */
 /* PRODUCT: STAT                                                */
 /*  SYSTEM: ALL                                                 */
@@ -15,29 +15,29 @@
 /*    MISC:                                                     */
 /****************************************************************/
 
-data epidemic;
-   input treat$ dose n r sex @@;
-   label dose = Dose;
+data a;
+   infile cards eof=eof;
+   input Dose N Response @@;
+   Observed= Response/N;
+   output;
+   return;
+eof: do Dose=0.5 to 7.5 by 0.25;
+        output;
+     end;
    datalines;
-A  2.17 142 142  0   A   .57 132  47  1  A  1.68 128 105  1   A  1.08 126 100  0
-A  1.79 125 118  0   B  1.66 117 115  1  B  1.49 127 114  0   B  1.17  51  44  1
-B  2.00 127 126  0   B   .80 129 100  1
+1 10 1  2 12 2  3 10 4  4 10 5
+5 12 8  6 10 8  7 10 10
 ;
 
-data xval;
-   input treat $ dose sex;
-   datalines;
-B  2.  1
-;
+ods graphics on;
 
-proc probit optc lackfit covout data=epidemic
-            outest = out1 xdata = xval
-            Plots=(predpplot ippplot lpredplot);
-   class treat sex;
-   model r/n = dose treat sex sex*treat/corrb covb inversecl;
-   output out = out2 p =p;
+proc probit log10;
+   model Response/N=Dose / lackfit inversecl itprint;
+   output out=B p=Prob std=std xbeta=xbeta;
 run;
 
-proc print data=out1;
+proc probit log10 plot=predpplot;
+   model Response/N=Dose / d=logistic inversecl;
+   output out=B p=Prob std=std xbeta=xbeta;
 run;
 
