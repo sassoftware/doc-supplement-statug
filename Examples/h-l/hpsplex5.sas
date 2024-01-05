@@ -11,7 +11,6 @@
 /*    KEYS: Model Selection                                     */
 /*   PROCS: HPSTAT                                              */
 /*                                                              */
-/* SUPPORT: Joseph Pingenot                                     */
 /****************************************************************/
 
 data MBE_Data;

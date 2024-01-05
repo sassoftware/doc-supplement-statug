@@ -9,7 +9,6 @@
 /*   PROCS: MODECLUS, SGPLOT                                    */
 /*    DATA:                                                     */
 /*                                                              */
-/* SUPPORT: saswfk                UPDATE: July 25, 2010         */
 /*     REF: PROC MODECLUS, Example 5                            */
 /*    MISC:                                                     */
 /*                                                              */

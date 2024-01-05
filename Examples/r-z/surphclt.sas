@@ -8,7 +8,6 @@
 /*    KEYS: Time Variable, CLASS Variable, Time-Dependent       */
 /*   PROCS: SURVEYPHREG                                         */
 /*    DATA:                                                     */
-/* SUPPORT: pumukh                                              */
 /*     REF: PROC SURVEYPHREG, Time and CLASS                    */
 /*    MISC:                                                     */
 /****************************************************************/

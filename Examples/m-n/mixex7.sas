@@ -10,7 +10,6 @@
 /*   PROCS: MIXED, PRINT                                        */
 /*    DATA:                                                     */
 /*                                                              */
-/* SUPPORT: Tianlin Wang                                        */
 /*     REF:                                                     */
 /*    MISC: Influence diagnostics                               */
 /*                                                              */

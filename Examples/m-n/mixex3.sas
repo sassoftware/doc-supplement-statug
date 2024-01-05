@@ -10,7 +10,6 @@
 /*   PROCS: MIXED, PRINT, TEMPLATE, SGRENDER                    */
 /*    DATA:                                                     */
 /*                                                              */
-/* SUPPORT: Tianlin Wang                                        */
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /*                                                              */

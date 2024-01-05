@@ -10,7 +10,6 @@
 /*   PROCS: MIXED                                               */
 /*    DATA:                                                     */
 /*                                                              */
-/* SUPPORT: Tianlin Wang                                        */
 /*     REF:                                                     */
 /*    MISC: This job may require considerable CPU time.         */
 /*                                                              */

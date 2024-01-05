@@ -9,7 +9,6 @@
 /*    KEYS: cost-complexity pruning                             */
 /*   PROCS: HPSPLIT                                             */
 /*                                                              */
-/* SUPPORT: Bob Rodriguez                                       */
 /****************************************************************/
 
 proc print data=sampsio.LAQ(obs=5);

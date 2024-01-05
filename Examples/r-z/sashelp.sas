@@ -9,7 +9,6 @@
 /*   PROCS: REG, PRINT, FREQ, CONTENTS                          */
 /*    DATA:                                                     */
 /*                                                              */
-/* SUPPORT: saswfk                UPDATE: July 25, 2016         */
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /****************************************************************/

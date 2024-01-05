@@ -9,7 +9,6 @@
 /*   PROCS:                                                     */
 /*    DATA:                                                     */
 /*                                                              */
-/* SUPPORT: saswfk                UPDATE: July 25, 2013         */
 /*     REF: ods graphics                                        */
 /*    MISC:                                                     */
 /*   NOTES:                                                     */

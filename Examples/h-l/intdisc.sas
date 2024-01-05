@@ -9,7 +9,6 @@
 /*   PROCS: CANDISC SGPLOT                                      */
 /*    DATA:                                                     */
 /*                                                              */
-/* SUPPORT: saswfk                UPDATE: July 25, 2010         */
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /*                                                              */

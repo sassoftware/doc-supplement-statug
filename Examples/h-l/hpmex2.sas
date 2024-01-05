@@ -10,7 +10,6 @@
 /*   PROCS: HPMIXED                                             */
 /*    DATA:                                                     */
 /*                                                              */
-/* SUPPORT: Tianlin Wang                                        */
 /*     REF: PROC HPMIXED, EXAMPLE 2.                            */
 /*    MISC:                                                     */
 /****************************************************************/

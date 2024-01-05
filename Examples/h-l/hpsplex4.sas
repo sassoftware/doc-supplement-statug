@@ -10,7 +10,6 @@
 /*    KEYS:                                                     */
 /*   PROCS: HPSPLIT                                             */
 /*                                                              */
-/* SUPPORT: Joseph Pingenot                                     */
 /****************************************************************/
 
 /* Convert variable names to mixed case */

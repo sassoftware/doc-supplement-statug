@@ -10,7 +10,6 @@
 /*   PROCS: SURVEYPHREG                                         */
 /*    DATA:                                                     */
 /*                                                              */
-/* SUPPORT: Pushpal Mukhopadhyay  UPDATE: January 5, 2010       */
 /*     REF: PROC SURVEYPHREG, Getting Started                   */
 /*    MISC:                                                     */
 /****************************************************************/

@@ -9,7 +9,6 @@
 /*    KEYS: Model Selection                                     */
 /*   PROCS: HPSTAT                                              */
 /*                                                              */
-/* SUPPORT: Joseph Pingenot                                     */
 /****************************************************************/
 
 ods graphics on;

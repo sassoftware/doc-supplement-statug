@@ -10,7 +10,6 @@
 /*    KEYS: Classification Trees                                */
 /*   PROCS: HPSPLIT                                             */
 /*                                                              */
-/* SUPPORT: Bob Rodriguez                                       */
 /****************************************************************/
 
 %let url = http://archive.ics.uci.edu/ml/machine-learning-databases;

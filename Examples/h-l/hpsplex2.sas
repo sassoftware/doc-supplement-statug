@@ -9,7 +9,6 @@
 /*    KEYS: cost-complexity pruning                             */
 /*   PROCS: HPSTAT                                              */
 /*                                                              */
-/* SUPPORT: Ralph Abbey                                         */
 /****************************************************************/
 
 ods graphics on;

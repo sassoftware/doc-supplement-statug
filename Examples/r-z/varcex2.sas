@@ -11,7 +11,6 @@
 /*   PROCS: VARCOMP                                             */
 /*    DATA:                                                     */
 /*                                                              */
-/* SUPPORT: Tianlin Wang                                        */
 /*     REF: PROC VARCOMP, EXAMPLE 2.                            */
 /*    MISC:                                                     */
 /****************************************************************/

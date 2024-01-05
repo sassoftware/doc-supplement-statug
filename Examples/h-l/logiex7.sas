@@ -61,3 +61,9 @@ proc logistic data=Data1 plots(only)=roc(id=id);
    effectplot;
 run;
 
+proc logistic data=Data1 plots(only)=oddsratio;
+   effect polyAge=polynomial(Age / degree=2);
+   model disease/n=polyAge;
+   oddsratio Age;
+run;
+

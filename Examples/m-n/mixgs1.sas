@@ -9,7 +9,6 @@
 /*   PROCS: MIXED                                               */
 /*    DATA:                                                     */
 /*                                                              */
-/* SUPPORT: Tianlin Wang                                        */
 /*     REF:                                                     */
 /*    MISC:                                                     */
 /*                                                              */

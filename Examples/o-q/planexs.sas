@@ -9,7 +9,6 @@
 /*   PROCS: PLAN                                                */
 /*    DATA:                                                     */
 /*                                                              */
-/* SUPPORT: sasrdt                                              */
 /*     REF: PROC PLAN, SYNTAX EXAMPLES.                         */
 /*    MISC:                                                     */
 /****************************************************************/
