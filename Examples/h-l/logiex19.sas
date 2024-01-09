@@ -25,14 +25,12 @@ The following data were originally published by Mroz (1987) and
 downloaded from Woolridge (2002).  This data set is based on a
 sample of 753 married white women. The dependent variable is a
 discrete measure of labor force participation
-(\Variable{InLaborForce}). Explanatory variables are the number of
-children age 5 or younger (\Variable{KidsLt6}), the number of
-children ages 6 to 18 (\Variable{KidsGe6}), the woman's age
-(\Variable{Age}), the woman's years of schooling
-(\Variable{Education}), wife's labor experience
-(\Variable{Experience}), square of experience
-(\Variable{SqExperience}), and the family income excluding the
-wife's wage (\Variable{IncomeExcl}).
+(InLaborForce). Explanatory variables are the number of children
+age 5 or younger (KidsLt6), the number of children ages 6 to 18
+(KidsGe6), the woman's age (Age), the woman's years of schooling
+(Education), wife's labor experience (Experience), square of
+experience (SqExperience), and the family income excluding the
+wife's wage (IncomeExcl).
 */
 
 title 'Example 19: Goodness-of-Fit Tests and Calibration';
